@@ -1,0 +1,874 @@
+如何用mutex和condition variable实现读写锁?
+
+
+找出一个矩阵里“平衡数”的总个数.“平衡数”的定义： 这个数所在row之上所有row
+的数字之和=所在row之下所有row的数字之和, 这个数所在column左边所有col的数字之
+和=所在col右边所有col的数字之和
+时间 O（mxn） 空间O（m+n）
+请问怎么做？ 有个思路是：用四个数组，两个和row有关，一个存之上的row数字和，
+一个存之下的row数字和，另两个和col相关，同理。
+看不懂， 谁给解释一下？谢
+设置两个数组，分别代表某一行及以上所有数字之和，某一列及以左边所有数字之和。
+然后可以o(1)求出某一行上面的和是否等于下面的和。列也是同理。
+然后一次MxN扫描可以找出这个平衡数。
+
+
+一面墙dimension: m*n, 家里有各种尺寸的照片，设计一个算法贴最多照片
+
+
+
+there are two groups of people; n number of A's & n of B's. We want to have 
+n pairs of A and B from two groups and  to minimize the sum of the weight 
+differences.
+EG
+        A[]={5,3,4};
+        B[]={1,6,2}; 
+min = 5
+3-1, 4-2,5-6
+
+
+
+1. unfair coin，flip的几率是：head 1/4，tail 3/4，请写个function返回投head和
+tail各是50%
+2. 很多machine发message，怎么样才能不发重复的？
+
+
+
+1. given the list {{1,1},2,{1,1}}，返回10……因为，(four 1's at depth 2, one
+2 at depth 1). 给定 {1,{4,{6}}} ，返回27……因为， (one 1 at depth 1, one 4
+at depth 2, and one 6 at depth 3)
+2. leetcode: traversal binary tree level by level
+3. 给2个string，判断是否可以map. say (foo, abb) 这2个string是可以map的, f->a
+, o->b. say (foo, sdf)，是不可以map的……返回bool值
+4. 给一个string，每10个letter一组，输出所有出现次数超过一次的strings with 
+length of 10. 一定要用rolling hashing做
+5. 给一个数组，输出连续元素的最大和。
+6. 判断2个linkedlist是否在某一点会重合. O(1) space.
+7. leetcode: Max Points on a Line
+8. string reverse. 输入 "Hello, word"， 输出 "word Hello,".
+9. 给一个数组，输出连续元素的最大乘积。
+10. leetcode: permutations
+11.  给一个数组，a(10, 2, 5)……输出一个数组, b(10, 50, 20)……b[i]是除了a[i
+]以外剩下a中所有元素的乘积……不准用除法.
+
+
+（1） 中年白人： 先在手机上演示了一个game, 就是一个球从起点开始沿着通道，看
+能不能滚到终点。不过有限制， 每次球一走到底要不到边界，要不到障碍物，中间不
+能停留。 可以上下左右走，然后让写个function 给定起点， 终点，和图，判断是不
+是solvable. 写出来了， 就是用BFS,有个小bug被指出。然后问复杂度， 问如何优化。
+（2） 韩国人： a) 给一个dictionary, 再给一个set of coding string （g5, goo3,
+goog2, go2le.........). return all string from dictionary that can be 
+matched with the coding string. 要求尽量减少dictionary look up 次数。给了个
+方法，但一直不满意复杂度。
+                     （b)如何用Trie,   把问题(a)解决,要求写code 建一个Trie包
+括所有字典词和coding string.不是很明白。。。凭感觉写了个。
+
+（3） 阿三， 非常拽。。。 给一个dictionary, 一个string,找出dict 里能全部用
+string里的letter 表示的所有最长的词。给了算法，死活不满意，不让我写code. 估
+计被黑了。
+  (4）阿三。 design google calendar .  要求分析如何存data, 如何invoke user 
+created events, 如何handle 100000events per second, 然后要写了一部分thread 
+safe 的code 实现如何invoke event.
+
+(5)年轻白人： (a)leetcode 上的coin 题， 用DP. (b)给你一个password 假定6位， 
+有个function 每call 一次就给你一个triplet 是password 里的随即三位，order不变
+。比如google, 可能返回， ggl, goe, oog, ool, ........
+问如何最有效破译这个密码，写code. 
+
+
+
+1. median of integer stream. 没写代码，讲了下思路和数据结构……这题版上有讨
+论过，非常感谢！ http://www.ardendertat.com/2011/11/03/programming-interview-que
+2. 在一个x轴上，有很多矩阵，这些矩阵下面的那条横线跟x轴是重叠的……矩阵之间
+可以部分重叠或者一个矩阵被另一个矩阵完全覆盖……要求输出最后图像的轮廓……不
+知道描述清楚了没有…这题没写代码，讲了下思路……
+3. 给了一堆开会时间, (si, ei), 开始时间和结束时间……判断是否可以只用一个会
+议室满足所有会议.注意，(4,5), (5,6)……这个输入返回true……
+4. 同样的一堆会议时间，返回最少需要多少间会议室.
+
+
+
+一共四轮，每一轮都是一个来自不同组的人面
+第一轮类似一个string替换，问题是HTML中class label的名字太长，会影响网络传输
+的速度，想出一个办法如何把这么长的name给替换掉。然后是一些简历以及稍微
+behavior问题
+第二轮先是问了一些java的概念，然后出了一道题，二维平面上有很多圆，圆心都在原
+点，同时平面上有很多点，问哪两个相邻的圆环之间的点最多
+第三轮第一个题是longest palindromic substring，我没敢用manacher's algorithm
+，用了一个简单的O(N^2)的算法，之后面试官也没有问下去，直接问了第二题。第二题
+是一颗二叉树，哪个路径上的节点最多，路径不是从root到leaf，而是可以从任何地方
+开始，可以从child到parent，返回这样最长的路径上的节点数。我写了一个算法面试
+官没看懂，于是后面的时间都在给他证明，不过总算在结束之前他看懂了
+第四轮问的题目更简单，判断两个string是不是anagram，一棵二叉树是不是bst，给一
+个很大的user log，怎么确定unique的user数量，还有一道忘记了，但也是那种一看就
+知道怎么做的
+
+
+给一字典，求所能组成的最长的回文串，每个词最多用一次。
+
+
+10月17日，第一轮电面：
+   第一题：上海的电话isTree(vector<pair<int,int> >& edges);  (离散化+dfs判环
+判联通)
+   第二题，               
+     Given a 2D space of maximum size NxN which supports two operations :
+     [1] void UPDATE(x,y,v) - sets the value of cell [x,y] to v
+     [2] int QUERY(x1,y1,x2,y2) - returns sub-rectangle sum (x1,y1) to (x2,
+y2)
+      inclusive, and there is an infinite stream of such 2 types of 
+operations which have to supported. How would you store the values for 
+efficient updates and retrievals ? （二维线段树  说算法+分析复杂度）
+    第一轮答得还可以。
+10月30日，第二轮电面：(挂)
+    美国的电话，面试官很nice：
+    第一题。一个二叉树，节点值有正有负，求树中的任意路径的最大值。路径的值就
+是路径经过点的值的和。然后我说dfs，面试官就让写代码  。 写代码一开始dfs的接
+口声明有问题，期间停下来修改了一下，然后写完。被面试官查出1个bug。面试官提示
+了，一开始找出了另外个bug；面试官又提示了一下，才找出了面试官想要我fix的bug
+。杯具。
+    第二题。给三个字符串，a，b，c。问a 和b 能不能组成c，且保证c 中a b 的字母
+顺序不变。 一开始我给了一个没验证贪心的想法。然后面试官让我验证或举个反例。
+我想贪心多数没戏，就又说了种dp的思路。面试官让我写下来。我写完之后，让我解释
+了解释。然后突然悲催地发现我的解法是O(2^n)的。。面试后想想如果我的解法状态去
+重后，就和普通的dp无异了。。  杯具  。。 然后就挂了。
+
+
+给一个数字，可以删除k个digit，返回最小的结果
+example num=42139,k=1 == > 2139
+
+
+
+投篮游戏,奖金100块,两个选择:
+1. 投3次,至少中2次才能拿走奖金
+2. 投8次,至少中5次才能拿走奖金
+选哪个赢面大?以及原因?谢谢!
+
+
+2. in-place words reversal in a sentence
+e.g., "this is simple" -> "simple is this"
+
+
+5. 一个web服务器与50,000个手机保持着TCP连接，
+突然服务器崩溃重启，所有的TCP连接全部terminated
+（不是半开，要重新从FIN开始握手）。
+服务器瞬间要负担50,000个TCP重连请求，
+问：服务器端应如何加速这一重连过程？
+
+
+
+给定N个点，每个点有(x,y)坐标， 要找一个最小面积的矩形，使得它cover至少k个点.
+这个题目输入是那N个坐标和参数k, 输出是最小面积矩形
+这个题O(N)能不能搞定，还是必须要O(N^2). 哪位大牛谈谈
+
+
+1. 一个web crawler，能通过一个url找到另外多个url。例如url 1 to url 2,3,4. 
+url 2 to url 5,6,7.所有这些都存在一个文本文档里边，问怎么找到path from one 
+url to another one。
+2. 一个sorted array of integers，找到magic index.
+例如A=[-6,-4,0,3,6,11,22,66] 找到A[3]=3 
+使用binary search
+
+
+
+
+Linkedin
+
+phone1：烙印
+lowest common ancestor w/ and w/o parent pointer
+phone2：国人
+search in rotated sorted array
+
+onsite:
+1.两个国人
+implement addInterval(start, end) and getcoverage(), 
+2.两个国人
+talk projects and some behavior question 
+3.烙印
+lunch, talk about technologies interest 
+4.亚裔，不确定是否国人
+Manager, talked a lot of behavior questions, interest and projects 
+5.烙印
+Design: tinyurl 
+6.烙印+小白
+1.exclusive array, give an arr1, return a new arr2, arr2[i] is the 
+multiplication of all elements in arr1 except arr1[i] 
+2.boolean isMirrorTrees(tree1, tree2)/inplace convert a tree to its mirror 
+tree/create a new mirror tree
+3.find the intersection of two linked list(do not use hashmap)
+
+
+Amazon
+
+phone1: 烙印
+Given a list of test results (each with a test date, Student ID, and the 
+student’s Score), return the Final Score for each student. A student’s 
+Final Score is calculated as the average of his/her 5 highest test scores. 
+You can assume each student has at least 5 test scores. 
+
+phone2:白男
+1.大数plusOne 
+2.给你一个按字母顺序排好的字典（但你不知道字母顺序,非英语），要求找出字母顺序
+例：
+单词顺序：
+    wrt
+    wrf
+    er
+    ett
+    rftt
+字母顺序：
+    w,e,r,t,f
+
+onsite:
+1. 白男
+class MagicNumber{
+boolean isMagicNum(long num);
+long nextMagic(long num){
+    while(!isMagicNum(num)){
+    num++;
+}
+return num;
+}
+}
+consider a data structure to improve the nextMagic(long num) 
+2. 烙印
+behavior questions and text editor design(insert, add, search, cut, paste) 
+3. 白男
+大数加法 (int数组表示大数，每一个元素代表一个2^31进制数字) 
+4. 日本人manager
+lunch interview: 
+    4.1 describe a time you are stressful to meet a deadline
+    4.2 describe a time you feel most proud in your professional career
+    4.3 what would you change in your past project if you have a chance 
+5. 白男
+give API: List<Movie> getMovies(Actor a);  List<Actor> getActors(Movie m);
+implement: int findDistance(Actor a, Actor b) 
+6. 白男
+System design, open question, give your solution, describe pros and cons 
+
+
+Google
+phone： 白男
+1. remove duplicates of the array in place
+2. 一道BFS题。具体是什么记不清了
+
+on-site:
+
+1. 白男
+count islands in a m*n grid （一个联通的值为1的区域被视为一个island）
+例：
+    0011010
+    0010010
+    1000110
+    0000001
+
+    4 islands found in above grid
+Design： copy and shuffle lines in a 8 GB file, memory limit 1 GB (you are 
+given multiple machines)
+2.国人
+void minMSwap(int[] num, int m), return the min array after m swaps， each 
+swap happens only between two adjacent elements([4,2,1,3], 2 return [1,4,2,3
+] )
+4,2,1,3
+4,1,2,3
+1,4,2,3
+design a protocol to syncing gmail messages among different client apps 
+
+3.小白
+give a list of <id, parent id, weight>, build the tree(not limited to a 
+binary tree), then update each node’s sum value(sum is the sum of all its 
+descendents’ weights)
+int[] num incremental(大数加一)
+design interface for memory cache
+
+4. 国女
+find a intersection to build office so that the sum of all employees’ 
+commute distances is minimum. （the map is represented as a m*n grid, you 
+are given each employee’s coordination, they can only move in up-down and 
+left-right directions）
+
+5. 白男manager
+How to find median of unsorted integers in linear time
+Design the system architecture(FE and BE) for above service in a distributed
+system (find optimal office location).
+
+
+FB
+phone: 小白
+word break, suffixtree
+
+Onsite:
+1. 越南人？
+Talked the resume, project and behavior questions. lowest common ancestor 
+with parent pointer. 
+2. 白男
+is valid binary search tree (handle edge case), if the tree size exist 
+memory limit, how to handle? 
+3. 白男
+Design question, FB search
+4. 国人
+give a time, search in a log file. 需要自己提问需求，并考虑边界情况。
+    00:23 *****
+    00:24 *****
+    00:56 *****
+    01:02 *****
+
+how to distribute the work to 10 servers?
+5. 白男
+Celebrity Problem
+
+
+
+2轮back to back，intern
+
+1）find a loop in a list, lc原题
+2）reverse words in a string
+3) 什么是hashtable
+4）parking lot design
+
+1）找inorder successor在BST
+2）本来给parking lot design，我说刚做过，换成了找2个string是否是rotate的
+
+
+
+景：不怎么样学校的fresh phd，EE，目前暂时留实验室博后，科研经历凑合，做过
+些大项目（multi-million dollar），发过些酸溜溜transaction paper，如此。
+
+接近两个星期前的面试，至今在等消息，公司很好（总公司有超过20万的员工，我面的
+是下属research center的R&D）。生平第一次面试，没任何经验也很紧张。
+
+面试前一晚到达的，取了车提前踩了点。第二天早上提前半小时到的公司，在车上等了
+10分钟进去sign in，同时遇见了招我onsite的group manager，寒暄之后把我领进他的
+办公室闲聊，介绍他group的情况。紧接着把我带进一个会议厅开始正式面试，另一个
+manager（应该是专门抓research的）也join了进来，主要是根据简历问问题（博士课
+题和做过的项目），也牵扯技术细节，然后我主动在旁边白板上开始写写画画然后解释
+。前后一个小时，总体感觉不差。
+
+完后是三个工程师技术面，大家自我介绍后开始问了些常规问题，比如爱好之类的，
+sort of breaking the ice。紧接着就是技术问题，有的很general有的很细，也不时
+需要在后面的白板上写写画画，总体感觉还不错但也有瑕疵。这个过程也是一个小时。
+
+中午吃饭仍旧是两个manager，就是简单的闲聊和对公司的介绍，包括生活什么的，问
+了我还有没有其他面试，我说有，也报了公司名号（这个我的理解是可以说，真诚很重
+要，再一个同时有其他好公司的面试对自己也应该是加分的事）。
+
+午饭后是presentation,对方整个group都参加。topic不限，我就主要讲了我的博士课
+题和其他项目的经历。presentation引来了非常多的问题，有好的问题也有不怎么着边
+的问题，因为group大多数的人和我做的东西还是不太接近，感觉一些message没有被
+receive，还有就是感觉提问的人也比较尖锐（当然这些肯定不是personal的，多次出
+去开会做presentation这点我已经习惯了）。总之感觉presentation不是特别顺利，
+presentation的内容我出去开会和答辩前前后后做过至少3次了，反应都很好，所以感
+觉不是不clear的问题。anyway,没办法。
+
+presentation完后是另外3个工程师技术面，依旧一个小时。因为当时有点累，感觉还
+是有的问题答得凑合有的不甚理想，反正感觉就非常一般。
+
+最后最载的就是面两个project leader，我至今都还是懵的，当时因为实在很累。一个
+白人，一个感觉是印度或者孟加拉的（就且当他是烙印吧）。烙印上来不问技术问题，
+拿着我的简历就说，你09年本科毕业，13年底博士毕业，你硕士哪儿去了。我说我是直
+博，他说那你们学校很peculiar啊（这词很明显的negative意味，我当时一下就知道来
+者不善），说你修过哪些课，我简短回答。然后又问你学过FEA没,我说没上过课，但这
+几年一直在用，他又追问你用过speed吗，我说没有，但是我用过maxwell,magnet,
+ansys.然后白人感觉挺配合烙印，接过话说，你们这种我一般不hire的，太年轻没经验
+，handle不了我的task，我没时间让你学。最气人的还问了句你学过数学吗，这人在面
+试我前还打印了我论文问我里面一个矩阵是什么物理意义，我没学过数学你看我论文干
+嘛。我当时很苦笑不得说graduate时期没学过，但本科都学过微积分复变函数什么的。
+然后他们又不痛不痒的聊了下我visa status，结果是一个小时的schedule还差老远就
+面完了。我当时比较懵，但事后感觉还是犯了国人的老毛病，比较实在，面对那些咄咄
+逼人的情况没有据理力争只是简单作答，我觉得这就算是面试的经验了吧。
+
+然后这剩余的时间被一个国人工程师带着参观了下实验室，条件很好很impressive。然
+后这位国人非常热心，介绍了他们的情况，还说我这种靠简历居然能拿到onsite的很奇
+葩，他们一般只会内推。我告诉他说我多半来不了，因为刚才那两个project leader一
+直在pick on me。他说你运气不好，这两个人确实比较tough，被你遇见了。
+
+最后的最后就是HR面试，让个人介绍，介绍做的科研项目（其实她都不懂，应该就是看
+我交流），然后说career规划什么的，我说honestly 我没想那么远，就是在公司干好
+research(拿黄豆豆的话说就是好好干等着涨工钱). 最后她介绍了下他们公司的
+benefit什么的给了我张introduction就完事了。
+
+总结：感觉面得很一般，也觉得多半会挂。上星期在华盛顿开会又遇见了他们公司的
+group manager,说估计一周左右给我结果。后来我没沉住气发邮件问了下另外一个当时
+国人面试官（感觉他人挺实在，面试的时候也对我不偏不倚），他告诉我说规定私下不
+可以和candidate透露信息，但是他也确实不知道结果，但根据他了解到其他人对我的
+反应来看，劝我如果有别的offer可以优先考虑别的公司，所以能给我说到这个份上也
+挺够意思了。总体而言，回顾我的onsite，我没有遗憾，我就是去present我自己的，
+是怎么样就怎么样，没有任何夸大也没有任何隐瞒，I get what I deserve, no 
+matter what that is.
+
+
+1. switch的工作原理流程。
+
+2. 估计挂在这里了。
+1）. 生死棋盘游戏。
+我只想到最简单的方法，遍历所有cell，根据规则更新棋盘是生是死。还有别的更好方
+法吗？
+2）. 生成迷宫，基本上不怎么会。
+我先说随机生成0/1。但可能会出现迷宫不可解的情况，然后我就差不多挂了。
+求更好方法。
+
+3. 从文件中读入记录，然后生成树，计算pathsum，
+文件记录格式，node, parent, weight.
+然后讨论一些特殊的情况。
+
+4. LRU实现，我其中用的了map，顺便写一个hash table实现map。
+我其中有一行出现了bug，删除的时候忘记更新map了。
+
+5. 实现memcpy，这个比较没头绪，不知道要考啥，先写一个最简单的
+大概是 *dst = *src， 之类的，然后问怎么优化让他更快点，
+因为刚开始用的是 char 的指针，我说把指针变成 uint_32t 会更快点，当然也可以
+uint_64t了，
+有什么别的建议吗？
+
+
+
+
+刚面完的，两道题。
+（1）给一个unsigned int数组，size为n，数组的sum = a，计算一个k的值，将数组中
+所有大于k的数改为k之后，数组的sum变为b。Ex,  [1,2,5,7,7,8] = a = 30, b = 26,
+                         那么k = 6，因为[1,2,5,6,6,6] = 26。
+要求时间复杂度是n*logn.
+(2)给一张L*W的纸，给一堆 l(i)* w(i)的模板，每个size的模板有各自的price p(i)
+，求这张纸所能剪出的最大值。
+
+应该是挂了，我一面阿三就发怵，光弄清楚他的问题描述就得每道题5分钟。
+
+第一题思路：
+for example: 
+[4,6,87,93,46,8] = 244
+50 = k
+target [4,6,50,50,46,8] = 164
+
+after sort [4,6,8,46,87,93] 
+
+4 * 6 = 24
+[2,4,42,83,89]
+2 * 5 = 10 + 24 = 34
+[2,40,81,87]
+2 * 4 = 8 + 34 = 42
+[38,79,85]
+38 * 3 = 114 + 42 = 156
+[41, 47]
+we don't keep going because 156 + 41 > 164
+there are 2 numbers left in the array.
+so, 164 - 156 = 8
+46 + 8/2 = 50, this is the k we want
+
+第二题思路：
+DP。
+状态转移方程：
+value[i][j] = max{
+max{value[k][j] + value[i-k][j]}, 
+max{value[i][m] + value[i][j - m]}
+} 
+0< k < i, 0< m < j
+
+
+
+
+Find the complement domino pairs.
+
+多米诺骨牌由2个数字构成，每个数字可以是0-6. 给定an array of Dominos, find if
+there are two complement dominos. Complement dominos是说两个多米诺骨牌a和b
+。a的上半部分的数字和b的上半部分的数字相加是6，a的下半部分的数字和b的下半部
+分的数字相加也是6。多米诺骨牌可以翻转。
+
+举个例子，
+
++----+     +----+
+|   x    |      | x  x  |
+| x  x  |      | x  x  |
++----+     +----+
+|    x   |      |    x   |
+|    x   |      | x   x |
++----+     +----+
+是complement dominos，
+
++----+      +----+
+| x   x  |      |         |
+| x   x  |      |         |
++----+      +----+
+|    x    |      |x x x |
+|    x    |      |x x x |
++----+      +----+
+以上每一个和自身都是complementory，但是在上面的题中，IFF array里面有2个一样
+的才算。
+
+请大牛赐教用什么data structure表示domino，然后怎么找complement。多谢啦！！
+
+为了让大家less confused，这是一个多米诺骨牌的例子：http://www.amazon.com/Double-Professional-Dominoes-Spinner-Wooden/dp/B001VE30PQ/ref=sr_1_2?ie=UTF8&qid=1393973008&sr=8-2&keywords=Domino
+
+
+
+2. Given zero-indexed array A of N integers,
+Sets S[K] are finite for each K, S[K] = { A[K], A[A[K]], A[A[A[K]]], ... }. 
+returns the size of the largest set S[K] for this array
+
+
+1. 找出整数二进制里边被1包围的0的最长数目，比如10001001，返回3， 11000，返回
+0.
+
+
+
+一轮店面
+第一题判断一个string的开头第一个字母是不是大写，两行代码就能写完，没有任何陷
+阱。第二题让我用Java（因为我本来用python）写判断binary tree是不是bst。两个题
+都很简单，然后还让我说一下自己做过的最challenging的一个project，整个面试不到
+二十分钟就说问完了问我还有没有问题，我连忙问他为什么这么快是不是我什么地方做
+错了他不愿继续问下去。答曰他在G工作七年多面了不下一百人，十分清楚哪些人去
+onsite不是在浪费他们engineer的时间，觉得我没有问题。。。
+
+过了一周果然hr说去onsite，由于我所在的城市有G的office，所以去那里面，早上三
+轮然后吃午餐，下午再两轮，一共五轮
+
+第一轮
+给一个矩阵，每个格子上有三种可能，空房，阻碍物或者是保安，阻碍物不能进，空房
+四个方向都能进，要写代码给每个空房标记其离最近的保安的距离，比如
+
+000
+BGG
+B00
+
+B表示障碍物，G表示保安，0表示空房，应该标记为
+
+211
+BGG
+B11
+
+我说扫一遍矩阵，然后遇到每个G就bfs整个矩阵, 他说不是optimal，optimal可以做到
+O(N^2)。当时想不出，他说那就先按我那个想法写代码。写完就到时间了。后来回家后
+就想到optimal的解法了，对所有G一起开始bfs就可以了。
+
+第二轮
+写一个函数生成满足下面三个条件的integer
+1. 非负
+2. 不能有重复数字
+3. 递增，既后面产生的比前面产生的要大
+
+我问要一次性全部生成所有数字还是每呼叫一次函数产生一个，他让我先写一次性产生
+全部的，这个不难，backtracking，follow up是假设现在给一个符合条件的数字，如
+789，返回下一个（比输入大但是最小的）数字，790。一开始我没思路，说很多edge 
+case，然后多观察几个例子后发现有些规律，说出来后他说看起来不错，然后举了几个
+例子让我模拟跑一遍，没有问题，他说ok，不用写code了，正好也到时间了
+
+第三轮
+问了一个Java的问题
+假设有两个class，A和B，B是A的子类，
+先有下面几句
+A a = new A();
+B b = new B();
+List<A> la = new List<A>();
+List<B> lb = new List<B>();
+（反正就是建了A，B的各一个instance，list of A 和 list of B 各一个instance）
+然后问下面四句哪句能过compiler，哪句不能：
+a = b;
+b = a;
+la = lb;
+lb = la;
+
+答案是只有第一句能过，我一开始答1和3能过（我真心不熟Java，python里面的话啥能
+过啊亲）。
+
+然后出了一道python generator的题，写代码，还有follow up，也要写代码，最后都
+超出时间了。
+
+中午吃饭, 下午接着面
+
+第四轮
+问我知不知道zip文件，我说用过但不知原理。他就说我们来讨论一下
+
+假设一个文件压缩后的表示是
+
+#3, #5, #6, 2 5, #8...
+
+”#k“形式的代表这个数字k，两个数字“i j”形式的代表取前 i 个
+数字做 j 长的 circular重复，像上面那个表示，前面3个都是表示单个数字，
+然后 2 5表示取前2个数字 （既56），组成5个数字，不够的从头再取，所以就是56565
+最后上面解压缩后应该为
+3, 5, 6, 5, 6, 5, 6, 5, 8...
+
+要我写的是压缩算法的代码。
+我提出从头扫，一边一边用hashtable记下见过的number，每前进一位就检查hashtable
+有没有符合当前数字模式的number出现过，然后他说还不错，写代码。一边写一边出现
+bug，一边发现很多写代码前没考虑的东西，最后勉强算写完，时间也到了，他说这个
+他也没写过，是在一篇paper上看到的算法，原算法跟我的有些不同，倒是都用了
+hashtable。。。
+
+第五轮
+拿着我简历进来，说有人跟你谈过你的简历吗，我说没有，他表示万分惊讶，然后在我
+简历上挑了一个research project让我说说，说完后用c++出了一个题，一个cipher类
+，有一个member function是对输入加密，加密方法为对input的每16个Byte和一个
+increasing counter做xor，这个increasing counter也是有16Byte，从00..01（前
+15Byte都是0，最后1Byte是1）开始，还有一个要求，举例说：
+第一个input 有20个Byte，前16个Byte就和00..01做xor，后4个Byte和00..02的前
+4Byte做xor
+然后之后再对第二个input加密的时候，对这个input的前12Byte用00..02的后12Byte（
+即11个Byte 0，1个Byte 1）
+
+然后让我写这个class
+
+我问了一句要是couter的数用完了怎么办，他反问我这个counter有16Byte，多久会用
+完。因为已经很累了，算错了好几次，中途我还说16乘以8等于64。。。反正在他逼迫
+下我硬着头皮模拟算了一下，得出结果就是很久很久很久才会用完，不用担心。然后又
+因为好久没写c或c++，还有真的很累，脑袋一片发麻，茫然不知如何下手，他看不下去
+了就说那你就写一个能从小到大生成这个counter能表示的所有integer的函数吧，你要
+对python熟一点的话就用Python，这个写完后有两个小bug，迅速改正过来，然后就到
+时间了。问我还有没有问题，我就随便问了一下这个office有哪些project，然后就结
+束了。
+
+
+
+想起来以前碰到过一题contour of overlapping rectangles
+给定a set of 可能overlapping的rectangle, 所有rectangle的底边都放在一条水平线
+上，rectangle大小不一样，之间可能部分重叠，求它的外接轮廓，
+这个有没有比较clean的解法
+this?
+http://stackoverflow.com/questions/2289987/get-contour-of-set-o
+
+
+
+第0轮：做coding exercise,一个小时，实际5分钟就搞完了，后面一直在写testcase 
+给三个参数，s,l,d,分别代表小砖长度，大砖长度，目标长度，砖的数量无限，问有无
+可能达到目标长，返回true or false;
+       比如1,2,5 返回true,因为1+2+2=5
+       我的code:
+       if(s > l || s <= 0 || l <= 0 || d <= 0)       
+            throw new Exception ();
+        for(int i = 0; i <= d; i += l)   
+            if((d - i) % s == 0)
+                return true;
+        return false;
+第一轮：1.上来先问我这code的问题，感觉面试官没看懂，拿了一堆类似1，X , Y的数
+据测我程序，我都看不下去了，小砖长度为1，我第一次循环直接就true了啊，有毛好
+测的。。后来我提示了一下，他测了个2，5, 8..还是第一次就出结果。。有意思么。。
+        2.matrix rotate 90度。。非常基本的题，先让我跟他讲思路，怎么讲感觉他
+都不理解，后来终于趁他若有所思的时候开始写code了，写完了他还不懂，又是4*4的
+矩阵，每个element都要跑一遍给他看，简直无语，看完好像还是没懂我是啥意思
+    3.design 数据库，纯建一个表就完事了，加点key,foreign key什么的
+    4.merge two sorted linklist，这次他总算看懂我代码了，啥也没问
+第二轮：1.OO design。design Duck。Duck has many species，different species 
+有不同的叫声，但是飞翔和游泳是一样的。我就搞了个抽象类继承下什么的。后来变成
+有N种飞行，问我怎么改，我SB了，写了N种飞行method在父类里，另外还有个主fly 
+method，根据鸟的fly类型在主fly method里调用不同的method；然后他告诉我应该定
+义一个fly class.这个没答好
+        2.basic questions: deadlock, how to synchronize, database join, 
+singleton 这个基本不难，就问的点比较杂
+第三轮：1.has a Random5() which generate random number from 1-5. Write a 
+function generate 1-125
+      我的code:
+      int Random125(){
+        int result=0;
+        result+=25*(Random5()-1);
+        result+=5*(Random5()-1);
+        result+=(Random5()-1);
+        if(result==0)
+            return 125;
+        return result;
+    }
+    然后这面试官又说我这个不是evenly random，说中间的数出现的多，两边的数出
+现的少。。我擦，这不可能啊。。解释了很久面试官不信不耐烦了搞下一题了
+    2.问我怎么处理推特这样的大规模读写数据的请求，系统设计吧相当于。
+      最后说到cache上，我拿LRU解决的，所以就implement LinkedHashMap，然后写
+了个LRU算法。。最后问还有没有改进
+      这个我基本都答上来了，还行
+      
+      
+      
+第一次onsite screen。不知为何没有phone screen，可能因为我住的近，他们直接叫
+我过去了。一个小时一个白哥。问了how to delete a node from binary search tree
+。CLRS上直接有解法。白哥答案要求的很笼统，写个psuedo code就pass了。连找
+successor node的具体实现都不用写出来。后来又问不用mutex怎么实现share data 
+between threads。我说GPU里面有一个东西叫thread synchronizer （我master学位做
+了些CUDA编程），白哥没理解，说他会用个queue把thread都queue起来，然后一个一个
+的run thread。我说那thread concurrently加到queue中间去时，怎么保证queue状态
+的consistency。白哥想想说queue里边要有个mutex，最后承认必须要有某种形式的
+mutex。我心里暗笑，不敢表现出来。anyway,白哥似乎觉得我还算机灵，给了好评。因
+此有了第二次onsite。
+
+第二次onsite，4 hours，4个三哥。第一位senior developer，上来就是reverse 
+linked list。我靠这么基础的题我竟然栽了，用两个指针搞了半天以为搞定了，结果
+三哥说你这不对，我才发现必须要三个指针。真是大意失荆州，leetcode刷了那么久全
+白刷了。改完以后三哥也没有耐心再让我查错，接着要我Find a node in a binary 
+tree.  Not BST。这里要感谢ultrabo以前总结的tree的12种走法，幸亏我看了一下，
+还记了一点。三哥果然不接受简单明了的recursive解法，我只好摆出stack+flag，三
+哥又拒绝之，我死乞白赖又憋出一个stack+HashSet（用于记录node出现次数，功能和
+flag一样），三哥仍不满足，我顿时放弃。Ultrabo总结的方法里面有用一个指针mark 
+tree node 的方法，可当时我觉得回字这么多写法不会变态到全部考一遍吧，没想到三
+哥没底线啊没底线。两题过去时间无几，三哥不再出coding题，开始一轮概念题rapid 
+fire， process vs thread， np hard vs np complete，Semaphore vs mutex, 还有
+一些不记得了。基本是我刚开始回答，三哥听到了几个关键字就打断直接下一题。总之
+感觉不算太好。接下来六哥，coding题，1） Find the weight of a tree = sum of 
+weight of all node in the tree.  Weight of node = value of node * level of 
+the node in the tree。靠又是tree，这家怎么这么喜欢在树上爬来爬去，猴子么？我
+问recursive可不可以，三哥许可，写了recursive的出来，他又改主意，说要
+iteration。我就用queue写了BFS，queue里边用一个mock node 作为不同level间的间
+隔，不喜，要我想办法count。我当时没想起来java的各种collection都有size（），
+就用了两个int变量switch的办法，仍不喜。耗了点时间思考，结果就没时间做第二题
+了。2）Find a sub tree with min weight. 这题没做，但三哥提前给了。第三个是个
+三叔director，感觉人挺好的。就出了个BFS找graph中两个node最短路径，要输出这个
+路径，很基础的题，我写的也不算太熟练，但三叔没有计较太多。又问了Process vs 
+thread，我心里诅咒发誓回去以后把这题tatoo到手掌心。还问了不少Java相关，JVM增
+么garbage collection, how to implement that, 我完全没概念，用queue定时check
+？他启发我说有什么不好，我说可能做很多无用功，他说有什么别的方法，我瞎蒙一个
+event trigger，他就转而详细问了event handle实现的机理。这个幸亏我还了解了一
+下，就说了一堆，三叔好像还满意。还有Java exception handling，幸亏我也了解了
+一下，又扯了一堆。List vs array, how java implement collection and list? 不
+懂就瞎讲了一下。后来有机会show一下master做的research，我是做CUDA模拟的，我自
+己把visualization的部分录制了一个video，从iphone上放给三叔看，大喜，感觉还好
+。最后大boss从California 打电话过来，还叫了另一个三哥在旁围观，String to 
+integer conversion，String的形式很简单，也没有小数点或者e，考察了over flow怎
+么办。然后就是一系列概念题，JSON vs XML， How to represent a many to many 
+relationship in Data Base，Java vs C++, differences，How APS.Net maintain 
+session status。我都回答的不算太好。所以整体感觉实在不是很好，不知道为什么有
+第三轮，可能是三叔力挺。
+第三次onsite，一个三哥一个白哥，1.5小时。纯coding没有什么概念题了。三哥问我
+一个项目里面怎么做LRU的，我说用个linkedlist做queue，用个HashMap找linkedlist
+里边的node。他就问update queue 里的node怎么搞。最后就退化成这么一个初级问题
+了，把一个doubly linked list 中间某个node分离出来然后attach到linked list 头
+部。我写了下，也没写完就第二题了，singly linked list 怎么检查是否palindrome
+。要求时间O（n），不能有extra space。我想想觉得只能先找出linkedlist总长，然
+后定位到linkedlist中间，再把中间到末尾的链结反转，然后两头向中间对称的比较，
+最后再把linkedlist还原。算法狂麻烦，我就硬着头皮上，也没有时间写完。但是三哥
+也没太计较了。有牛人有更简洁的办法吗？最后一个白哥，考了个标准的leetcode 
+3Sum。哈哈，终于有一个题一泻千里痛快的出来了。结果中间又留下小错（HashMap的
+数字取出后要记得还回去），被白哥提醒，慌忙查找发现后改正。这样就总算全部面完。
+总结：（仅适用ServiceNow，或许还有类似的三哥dominant的公司）
+coding还是要熟练，但是遇到没写好的也没有必要太计较。年轻的developer，
+engineer倾向于出偏题怪题，而且颇计较回字有几种写法。领导director 之类反而
+coding不会太怪太偏。重点搞定领导级别的人物，小兵之流screw了也不会是决定性因
+素。领导面前要强势，多表现，小兵面前要示弱示友好。当然能无错秒coding题应该最
+好。我offer这么烂可能还是interview不算太出色。最后是一定要培养一下ppt技能，
+大家平时锻炼锻炼口语说话，也不能就是刷题了。
+花了三个多小时终于写完，苦逼的微软拼音啊。希望能帮助版里的各位，也算给自己一
+个总结。祝人人有满意大offer!!!
+
+那个检查linked list是不是palindrome的，我觉得可以这么做：用slow／fast 
+pointer的方法，slow pointer向前移动的同时把linked list反转（反转之前包存／更
+新slow pointer之后的那个结点）；等fast pointer到达linked list的end的时候，
+slow pointer就应该指向linked list中间的结点；然后从linked list中间向两边移动
+：slow pointer向左移动，slow pointer之后的那个指针向右移动，每一步比较指向的
+key是否相同。移动slow pointer的同时再反转linked list。等slow pointer移动到末
+尾，linked list也就恢复了。
+
+
+3.老美，上来先客套一下然后问coding，一个string，里面写了一些页码范围然后打印
+机要打这些范围的页，用逗号分割，然后输出最后要打哪些页，比如“1，2-5，3-4”
+，最后应该输出1，2，3，4，5，思路很简单，把string split，然后逐个sub扫描，结
+果里面存在的就啥也不做，没有的就加进去，中间要考虑很多invalid的情况，比如多
+个字母或者多个符号，由于上一轮的老印占用太多时间，这轮就只问了这一个问题。
+4.老美小胖，小胖问了俩题目，第一个判断symmetric tree，口水题，秒之，然后写一
+堆test case，第二题，一个数组存有一堆数字，每个数字会把数组分成左右两部分，
+然后求能够让左右各自的和最接近的那个partition，很幸运我做过类似的题，听完题
+脑袋里面已经有了最优解，这时候想起走之前一哥们的提醒，知道答案的时候要先装作
+不知道，于是我就开始演，先装作没见过这题苦苦思考，给了一个brute force的解，
+时间复杂度O(N^2),小胖听完说他要linear complexity的解，我就又开始装思考，小胖
+很配合，果然给了个hint，于是我觉得再演就要出事儿了，就告诉他最优解的思路然后
+很快写出代码，谁知道小胖这时候竟然指着我的一行代码challenge，说我那行应该放
+下面，小弟笑了，你面我之前也不好好准备下，小弟虽然不牛可谁让小弟做过原题呢，
+小胖找死我就不客气了，很礼貌的指出小胖他的做法错在哪，小胖瞬间明白过来了，很
+后悔刚才问了一个这么多余的问题，笑嘻嘻的说我的代码是对的，羞嗒嗒的结束了这一
+轮。
+
+
+上个月刚面的,45分钟一轮,一共4轮, 第一轮就碰上了bar raiser,已跪
+
+1. (Bar Raiser) Amazon服务器有很多log文件记录用户访问Amazon的行为,每条log形
+式为(时间   访问者ID   访问网页)
+     每个访问者访问Amazon网页所产生的每条log不一定在同一个log文件里,相近时间
+的log也不一定在一个文件里.
+     
+    问:
+     用户每次访问Amazon都会产生一串访问序列(类似先主页 ->搜索产品->产品介绍-
+>另一个产品->.....), 针对每一串   访问序列,仅取前三个网页组成一个三元组(如上
+面的例子,就是<主页,某搜索页面,某产品页面>), 统计TOP K 的三元组.
+(跪在这题上了,先要确定如何判断用户的一次访问,然后是怎样从好多log文件中高效地
+提取每个用户每次访问的前三个网页,存在什么地方,最后把这堆信息用heap或者其他什
+么取top k).
+
+2. 给一个二叉树,找到与给定节点距离为N的所有节点(没有parent link,有parent 
+link),两个节点间隔着几条边,就是距离为几
+
+3.  1) Remove duplicate in an array
+     2) Longest common prefix in an array of strings.
+
+4. 1) Top K elements in an array.
+    2) 两个单词,长度一样,找出从一个单词变到另一个单词的最短路径,每次只能改变
+一个字母,且改变字母后的单词必须是有效的单词(我是假定有字典能判断一个单词是否
+有效,然后BFS.)
+
+
+给定存有一个整数组的 binary file，数组长度不定。设计一个程序读取这个文件，找
+出这个数组中最大的K个元素并排序，同是记录这个数组最后的K个元素。要求首先考虑
+内存优化，其次运算速度。
+
+我的做法是首先从文件中读取K个元素，如果数组长度不大于K,则直接排序。否则先找
+出这个数组中最小的元素，然后从文件中读取下一个元素，比较后替换最小值。依次进
+行直到文件结束，然后再统一排序。同时把数组的最后K个元素存在一个QUEUE里。
+
+不确认是不是最优解法，欢迎大家讨论。
+
+
+FB面经
+Round 1: 
+1) 给一棵树，tree node里面增加定义一项 vector<TreeNode*> afterIt,也就是保存
+这一层中此节点之后（右侧）的所有节点指针。求如何实现这个vector。
+
+2) 着色，给定一个矩阵，内部某区间被1以不规则形状封闭包围起来，其它位置都是0
+，要求在该被包围区间内任何一点点击，把整个被包围的空间里0全部改成数字1。
+
+Round 2:
+1)  给定无限integer流，找Top K大；如果不是流而是数组，如何优化。
+
+2）给一组interval区间，[Ai, Aj]， 其中Ai表示人员A进入会场时间，Aj表示人员A离
+开会场时间。要求，有没有任何时间点上会场一个人都没有。
+
+Manager面聊了聊，他说需要Hadoop experience，但是说不是那种会在Hadoop上建应用
+而是实际会
+manipulate Hadoop那种，问了不少细节，他说实际更加靠近Distributed System的感
+觉。
+
+
+一道面试的概率题。
+
+两个人轮流掷骰子，谁先掷到六，谁赢。
+
+问题：
+
+一个人先掷或后掷，和他赢游戏有没有关系？
+
+两个人赢此游戏的概率各是多少？
+
+另一道面试的概率题：
+
+有五样东西，放在无穷多的盒子里，一个盒子里，放一个东西。任意抽盒子，直到将这
+五种东西全抽齐。就是说抽中的东西里可以有重复的种类。问要将这五样东西抽齐，需
+抽的盒子的个数的期望。
+
+都是经典概率题
+russian roulette: 6/11
+coupon collection: 5/5+5/4+5/3+5/2+5/1
+
+
+
+f电面面筋
+才第一轮，感觉面的不太好。leetcode刷了这么多还是不行呀。
+
+面试官感觉是非老美非烙印非老中的外国人，口语很好，略有口音，但是电话音质太差
+，整个过程听起来很累。
+
+先让自我介绍，问了最喜欢的project，希望在技术方面讲细一点，但是我的那个
+project可讲的细节太多了要讲好久，讲了一会儿感觉他没什么反应，就问说如果感兴
+趣我可以更深入讲，他说不用了，挺好，然后开始code题目。
+
+第一道是经典题给很多（millions以上）个点，以（x，y）坐标表示，找出离原点最近
+的k个点。k 远小于 n。
+开始还想了一会儿，后来想到用priority queue来做，问了时间复杂度是nlogk。面完
+后问了一下别人，发现是可以用selection做的，更快。
+第二道比较tricky给是一个string和一个alphabet，找出包含所有alphabet的最短的
+substring。我的方法是用hashset保存alphabet，读string，每遇到一个字母，就从
+hashset里面移除对应字母，最后如果hashset为空则string包含所有字母。在面试官提
+示下发现可以试着缩短这个string，再check是否包含所有字母这样子做，code写完了
+没有多余时间优化，大致讲了一下思路，就结束了。这道题stackOverflow上面也有人讨
+论，感兴趣的可以搜一下。
+
+另外求leetcode 和CC150之外，如何找到这种题练？感觉这个难度还是比leetcode平均
+难度高一些啊。

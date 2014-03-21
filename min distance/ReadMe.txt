@@ -1,0 +1,1 @@
+There are n points on a 2D plan, find the k points that are closest to origin ( x=0, y=0)
