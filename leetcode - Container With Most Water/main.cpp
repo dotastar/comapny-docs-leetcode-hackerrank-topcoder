@@ -4,6 +4,7 @@ using namespace std;
 
 class Solution {
 public:
+    //O(N*N)
     int maxArea1(vector<int> &height) {
         int r = 0;
         for(size_t i = 0;i < height.size();++i){
@@ -15,6 +16,7 @@ public:
         }
         return r;
     }
+    //O(N)
     int maxArea2(vector<int> &height) {
         int r = 0;
         int i = 0, j = height.size() - 1;

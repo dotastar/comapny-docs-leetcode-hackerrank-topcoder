@@ -42,6 +42,20 @@ struct ListNode {
     ListNode(int x) : val(x), next(NULL) {}
 };
 
+struct UndirectedGraphNode {
+    int label;
+    vector<UndirectedGraphNode *> neighbors;
+    UndirectedGraphNode(int x) : label(x) {};
+};
+
+struct Point {
+    int x;
+    int y;
+    Point() : x(0), y(0) {}
+    Point(int a, int b) : x(a), y(b) {}
+};
+
+ 
 void print(const vector<int> & r)
 {
     for(size_t j = 0;j < r.size();++j)

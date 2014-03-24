@@ -1,18 +1,11 @@
-#include <iostream>
-#include <vector>
+#include "../inc.h"
 
 using namespace std;
 
-//Definition for a point.
-struct Point {
-    int x;
-    int y;
-    Point() : x(0), y(0) {}
-    Point(int a, int b) : x(a), y(b) {}
-};
 
 class Solution1 {
 public:
+    //O(N^3)
     int maxPoints(vector<Point> &points) {
         if(points.size() < 3)
             return points.size();
@@ -42,9 +35,9 @@ public:
     }
 };
 
-/*
 class Solution2 {
 public:
+    //O(N^2)
     int maxPoints(vector<Point> &points) {
         if(points.size() < 3)
             return points.size();
@@ -74,7 +67,6 @@ public:
         return ret;
     }
 };
-*/
 
 int main()
 {
@@ -84,6 +76,6 @@ int main()
         v.push_back(Point(-7,7));
         v.push_back(Point(-1,5));
         v.push_back(Point(9,-25));
-        cout<<Solution1().maxPoints(v)<<endl;
+        cout<<Solution2().maxPoints(v)<<endl;
     }
 }

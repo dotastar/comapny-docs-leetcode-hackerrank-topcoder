@@ -20,6 +20,8 @@ public:
     char *strStr2(char *haystack, char *needle) {
         if(!haystack || !needle)
             return NULL;
+
+        //TODO KMP
     }
 };
 

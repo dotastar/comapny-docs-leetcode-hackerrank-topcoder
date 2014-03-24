@@ -4,6 +4,7 @@ using namespace std;
 
 class Solution {
 public:
+    //O(N^2)
     int canCompleteCircuit(vector<int> &gas, vector<int> &cost) {
         int sum = 0;
         size_t m = 0;
@@ -35,6 +36,7 @@ public:
         }
         return -1;
     }
+    //O(N)
     int canCompleteCircuit2(vector<int> &gas, vector<int> &cost) {
         if(gas.empty())
             return -1;

@@ -173,6 +173,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "repeated sequence in stream
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "string of repeat pattern", "string of repeat pattern\string of repeat pattern.vcproj", "{09B8F731-B5F9-4A62-84E1-AEFAFE743136}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Stack or Queue that Support Push Pop and GetMin in Constant Time", "Stack or Queue that Support Push Pop and GetMin in Constant Time\Stack or Queue that Support Push Pop and GetMin in Constant Time.vcproj", "{86165B73-A071-49EF-9B88-BFBCB25BE701}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -511,6 +513,10 @@ Global
 		{09B8F731-B5F9-4A62-84E1-AEFAFE743136}.Debug|Win32.Build.0 = Debug|Win32
 		{09B8F731-B5F9-4A62-84E1-AEFAFE743136}.Release|Win32.ActiveCfg = Release|Win32
 		{09B8F731-B5F9-4A62-84E1-AEFAFE743136}.Release|Win32.Build.0 = Release|Win32
+		{86165B73-A071-49EF-9B88-BFBCB25BE701}.Debug|Win32.ActiveCfg = Debug|Win32
+		{86165B73-A071-49EF-9B88-BFBCB25BE701}.Debug|Win32.Build.0 = Debug|Win32
+		{86165B73-A071-49EF-9B88-BFBCB25BE701}.Release|Win32.ActiveCfg = Release|Win32
+		{86165B73-A071-49EF-9B88-BFBCB25BE701}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
