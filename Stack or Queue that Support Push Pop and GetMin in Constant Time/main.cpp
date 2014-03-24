@@ -30,14 +30,12 @@ private:
 struct MyQueue
 {
     void push_rear(int v){
-        bool m = (!que_.empty() && que_.back() > v);
-        que_.push_back(v);
-        if(m){
-            if(minQue_.empty() || minQue_.back() < v){
-                minQue_.push_back(v);
-            }else
-                minQue_.back() = v;
+        if(!que_.empty() && que_.back() > v){
+            while(!minQue_.empty() && minQue_.back() > v)
+                minQue_.pop_back();
+            minQue_.push_back(v);
         }
+        que_.push_back(v);
     }
     bool pop_front(int & v){
         if(que_.empty())
