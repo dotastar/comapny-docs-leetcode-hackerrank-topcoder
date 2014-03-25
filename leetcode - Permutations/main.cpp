@@ -83,12 +83,34 @@ public:
                 r.push_back(i + '1');
         return r;
     }
-};
-
+    bool prev_permutation(vector<int> & arr)
+    {
+        if (arr.empty())
+            return false;
+        size_t i = arr.size() - 1;
+        for (; i > 0 && arr[i - 1] <= arr[i]; --i);
+        reverse(arr, i);
+        if (!i) //this is already the first permutation, reverse to the last permutation and return
+            return false;
+        size_t j = arr.size() - 1;
+        for (; j > i && arr[j - 1] <= arr[i - 1]; --j);
+        swap(arr[i - 1], arr[j]);
+        return true;
+    }
+}; 
 
 int main()
 {
     cout<<Solution().getPermutation(3, 1)<<endl;
     cout<<Solution().getPermutation(3, 2)<<endl;
-    cout<<Solution().getPermutation(3, 3)<<endl;
+    cout << Solution().getPermutation(3, 3) << endl;
+    {
+        vector<int> a;
+        for (int i = 0; i < 4; ++i)
+            a.push_back(i+1);
+        Solution().prev_permutation(a);
+        do{
+            print(a);
+        } while (Solution().prev_permutation(a));
+    }
 }
