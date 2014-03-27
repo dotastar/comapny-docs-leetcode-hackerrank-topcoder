@@ -1,6 +1,6 @@
 #include "..\inc.h"
 
-class Solution {
+class Solution1 {
 public:
     struct Node{
         char ch_;
@@ -47,20 +47,61 @@ public:
     }
 };
 
-int main()
+class Solution2 {
+public:
+    bool help(char s, char p){
+        return (s == p || (s && '.' == p));
+    }
+    bool isMatch(const char *s, const char *p) {
+        if (!p || !*p)
+            return (!s || !*s);
+        assert('*' != *p);
+        for (++p ; ; ){
+            if ('*' == *p){
+                for (;;++s){
+                    if (isMatch(s, p + 1))
+                        return true;
+                    if (!help(*s, *(p - 1))){
+                        ++p;
+                        break;
+                    }
+                }
+            } else {
+                if (!help(*s++, *(p - 1)))
+                    return false;
+                if (!*p)
+                    break;
+                ++p;
+            }
+        }
+        return (!*s);
+    }
+};
+
+template<class S>
+void test()
 {
-    cout<<Solution().isMatch("acaabbaccbbacaabbbb", "a*.*b*.*a*aa*a*")<<endl;
+    typedef S Solution;
     cout<<Solution().isMatch("aaaaaaaaaaaaab", "a*a*a*a*a*a*a*a*a*a*a*a*b")<<endl;
-    cout<<Solution().isMatch("", ".")<<endl;
     cout<<Solution().isMatch("aaa", "ab*a*c*a")<<endl;
-    cout<<Solution().isMatch("aa","a")<<endl;
     cout<<Solution().isMatch("aa","aa")<<endl;
-    cout<<Solution().isMatch("aaa","aa")<<endl;
     cout<<Solution().isMatch("aa", "a*")<<endl;
     cout<<Solution().isMatch("aa", ".*")<<endl;
     cout<<Solution().isMatch("ab", ".*")<<endl;
     cout<<Solution().isMatch("aab", "c*a*b")<<endl;
     cout<<Solution().isMatch("aa", "aab*")<<endl;
     cout<<Solution().isMatch("aaa", "a*a")<<endl;
+    cout << "----\n";
     cout<<Solution().isMatch("ab", ".*c")<<endl;
+    cout << Solution().isMatch("acaabbaccbbacaabbbb", "a*.*b*.*a*aa*a*") << endl;
+    cout << Solution().isMatch("", ".") << endl;
+    cout << Solution().isMatch("aa", "a") << endl;
+    cout << Solution().isMatch("aaa", "aa") << endl;
+    cout << "END\n";
+}
+
+int main()
+{
+    test<Solution1>();
+    test<Solution2>();
 }
