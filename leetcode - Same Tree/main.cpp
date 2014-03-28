@@ -1,13 +1,5 @@
-/**
- * Definition for binary tree
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
- * };
- */
-/*
+#include "../inc.h"
+
 class Solution {
 public:
     bool isSameTree(TreeNode *p, TreeNode *q) {
@@ -34,5 +26,5 @@ public:
         return true;
     }
 };
-*/
+
 int main(){}

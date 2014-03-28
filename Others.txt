@@ -875,6 +875,49 @@ hashset里面移除对应字母，最后如果hashset为空则string包含所有字母。在面试官提
 
 
 
+Google题目
+Scrambled Texts
+
+Imagine that I have a script that applies a permutation序列 to the characters of a string. Of course,
+the permutation is different if the strings are different length, but for strings of the same length,
+it always applies the same permutation, chosen at random from among all n! possible permutations.
+For example, let’s say that given the 15-character input ABCDEFGHIJKLMNO, it outputs CMLNFAOHDIJKBGE.
+Then for any other 15-character string, it would apply the same permutation, so that MYLANGUAGEMODEL
+would be scrambled to LDOEGMLAAGEMYUN.
+
+The following are the results of submitting ten different 128-character strings to this script.
+Since they are the same length, they have all had the same permutation applied to them.
+The original strings in each case are ordinary English text with all spaces, numbers, punctuation标点符号,
+and other non-alphabetic characters removed. The strings are not especially interesting.
+They were copied or transcribed改编 from obscure sources, and have all been changed slightly from the original
+(without intentionally introducing spelling or grammatical errors). Your goal is to recover the original strings
+in any way you see fit.
+
+1. IATSNEDBOONANYNOOOTSPROOLEDCCUODYOUFBOAHORRFWWKTHJEHDEENHUTISYNOCTEAFAOFLCSAONRLOIEUCHNATNULAAYDSUDMEIMATADUIMSYRHVOADETMMJTPIIN
+2. EOHYEYRHBOESOCTWUSSEVMHYLIDTHNOLEUSLEDAIRLOLEAEWAETEELKNBSEHTSNWNBNNETNMEELEMNHHRTTRIYIARMENCELBGSCIETEOEIEALESRAICETSLSHAELHIEL
+3. FSTEDTHGDESTPSSORRINFHNCCEAEEEEUEIARGREATEAHTTIEAEOSITNDHNCEINLUODTNHSXERASTIHITTSESRINTTAWEATAVDOAOOSILIEEHHCPYTNICMTTIITUEVTHO
+4. MCDAIERIBROOEDGEUDUIARRLEEENSPEEEIERENCFOETRDVRATSETRSCINLNMNEOENATOOLYBNURLAOOTSEAMEEAAEASECCEKRMCNNECRMSFPELSRRIEXTDHCSRNUDPRA
+5. AFTTEEGDOCISGEAHHRKNIEVTNNASEHOHBTTSNOEHAKTOADTHAETSHDIMEICMULOERHEEINUEOAINOTCSETNDSIOEBMVAKGWYYADADNOWTTUNTNMEEBNDAYADRSANSHRN
+6. EIERTDMHNMONAENIADLUDLGSALNISIHGLCTBARRNLEEHAREAPONEMTNWBSWEOLWYNHITOGOYEOEETLETBTDLEAHAOWOSTTEIOONRLOSETRINHAHHHWILSMPRYTIEWTSE
+7. HLABRSEOIAERRVDTNYAGAROWTILWNOGNAIINURGBROTHGETNDHIWODHINFIGONORRTFOOEHAAGWRESLRYSFENAREIEHLEOENUNRESONRTTWRAANISHTCANITPWMWWTVD
+8. STLIKNRTETDEEEIEHFTEPBCTHEAIALIWNTOROTRSIHHUIEAININNRRSEOTNNNETOODNHETSGPLTEXUIHILTIDAUSFHNTOTREITEGMHANSAHGGRRYUIEBMADFRCSEDDTB
+9. ILHHHRTDFPBEGOREEIXLWKTWCEDEIABTSGOOANIUFRDHAOFDSNCNHDTWVNTLERLNERASRAAUBVSSEEUPCSTENYDMELOWFTEEBAUEOISEAJOIDIOEEMNPOLGAANIOSTPT
+10.ALTANSGHIHRIESSUIONEINKIEGEMYMPTRELTOUBMEFLRHUNBUISOABTDWSSODEEAFDIAIULUDEANSEGYYANPOPREOWOCAOEARVARNHRSLELORWRYTDYTNFFKTYWUTAAO
+
+You should respond to this email within the next few days with the following:
+
+1， Your best guess as to the original strings (if you have one)
+2， A description of how you approached the problem, and
+3， A description of how much time you spent on this problem, including dead ends, preparatory work, and so on.
+
+It is our expectation that you will spend not more than about 8 hours on this problem. We’d normally like
+to see a response within two days of when you read this. If you have scheduling constraints that would make it
+inconvenient to start working on this right away, just let us know whether to expect a response and when.
+Please note that this is a difficult problem, and it’s possible to impress us without solving it completely,
+so don’t be afraid to submit your best work at the end of the time period.
+
+
+
 Find all words from a dictionary that are Y edit distance away.
 
 

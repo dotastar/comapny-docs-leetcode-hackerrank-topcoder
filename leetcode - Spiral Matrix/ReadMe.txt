@@ -12,7 +12,7 @@ Given the following matrix:
 You should return [1,2,3,6,9,8,7,4,5].
 
 II
-Given an integer n, generate a square matrix filled with elements from 1 to n2 in spiral order.
+Given an integer n, generate a square matrix filled with elements from 1 to n^2 in spiral order.
 
 For example,
 Given n = 3,

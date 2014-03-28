@@ -1,4 +1,4 @@
-/*
+#include "../inc.h"
 
 class Solution {
 public:
@@ -20,6 +20,6 @@ public:
         return n2p / np / np / (n + 1);
     }
 };
-*/
+
 
 int main(){}
