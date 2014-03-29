@@ -138,29 +138,126 @@ public:
         }
         return r;
     }
+
+    //O(N^2), no need for post repetition check
+    vector<vector<int> > threeSum5(vector<int> &num) {
+        vector<vector<int> > r;
+        if (num.size() < 3)
+            return r;
+        //record each number and times
+        unordered_map<int, int> m;
+        for (size_t i = 0; i < num.size(); ++i)
+            ++m[num[i]];
+        //sort numbers
+        sort(num.begin(), num.end());
+        //iterate first number(smallest)
+        for (size_t i = 0; i < num.size() - 2; ++i){
+            if (num[i] > 0)
+                break;
+            if (i && num[i] == num[i - 1])  //skip repeated first number
+                continue;
+            size_t j = i + 1;
+            if (num[j] == num[i]){  //handle second number == first number
+                int v = -2 * num[i];
+                unordered_map<int, int>::const_iterator wh = m.find(v);
+                //if third number > second number, that's OK
+                //else if third number == second number, we should check if the number appears 3 times or more
+                if (wh != m.end() && (v > num[j] || (v == num[j] && wh->second >= 3))){
+                    r.push_back(vector<int>(2, num[i]));
+                    r.back().push_back(v);
+                }
+                ++j;
+            }
+            for (; j < num.size() - 1; ++j){
+                if (num[j] == num[j - 1])   //skip repeated second number
+                    continue;
+                int v = -num[i] - num[j];
+                if (v < num[j]) //third number must >= second number
+                    break;
+                unordered_map<int, int>::const_iterator wh = m.find(v);
+                //if third number > second number, that's OK
+                //else if third number == second number, we should check if the number appears 2 times or more
+                if (wh != m.end() && (v > num[j] || (v == num[j] && wh->second >= 2))){
+                    r.push_back(vector<int>(1, num[i]));
+                    r.back().push_back(num[j]);
+                    r.back().push_back(v);
+                }
+            }
+        }
+        return r;
+    }
 };
+
+void test(vector<int> & n)
+{
+    vector<vector<int> > r = Solution().threeSum5(n);
+    sort(r.begin(), r.end());
+    vector<vector<int> > c;
+    /*
+    c = Solution().threeSum1(n);
+    sort(c.begin(), c.end());
+    if (r != c){
+        cout << "array: ";
+        print(n);
+        cout << "Solution 5:\n";
+        print(r);
+        cout << "Solution 1:\n";
+        print(c);
+        exit(1);
+    }
+    c = Solution().threeSum2(n);
+    sort(c.begin(), c.end());
+    if (r != c){
+        cout << "array: ";
+        print(n);
+        cout << "Solution 5:\n";
+        print(r);
+        cout << "Solution 2:\n";
+        print(c);
+        exit(1);
+    }
+    c = Solution().threeSum3(n);
+    sort(c.begin(), c.end());
+    if (r != c){
+        cout << "array: ";
+        print(n);
+        cout << "Solution 5:\n";
+        print(r);
+        cout << "Solution 3:\n";
+        print(c);
+        exit(1);
+    }
+    c = Solution().threeSum4(n);
+    sort(c.begin(), c.end());
+    if (r != c){
+        cout << "array: ";
+        print(n);
+        cout << "Solution 5:\n";
+        print(r);
+        cout << "Solution 4:\n";
+        print(c);
+        exit(1);
+    }*/
+}
 
 int main()
 {
     {
-        int a[] = {-1, 0, 1, 2, -1, -4};
+        int a[] = { -1, 0, 1, 2, -1, -4 };
         vector<int> n(a, a + sizeof a / sizeof a[0]);
-        print(Solution().threeSum4(n));
-        cout<<endl;
+        test(n);
     }{
         int a[] = {-9,1,-6,-4,-4,0,-1,2,-6,5,6,-9,-10,-8,0,9,-6,4,-8,6,4,1,-10,-1,-9,-9,5,-4};
         vector<int> n(a, a + sizeof a / sizeof a[0]);
-        print(Solution().threeSum4(n));
-        cout<<endl;
-    }{
+        test(n);
+}{
         int a[] = {-7,-10,-1,3,0,-7,-9,-1,10,8,-6,4,14,-8,9,-15,0,-4,-5,9,11,3,-5,-8,2,-6,-14,7,-14,10,5,-6,7,11,4,-7,11,11,7,7,-4,-14,-12,-13,-14,4,-13,1,-15,-2,-12,11,-14,-2,10,3,-1,11,-5,1,-2,7,2,-10,-5,-8,-10,14,10,13,-2,-9,6,-7,-7,7,12,-5,-14,4,0,-11,-8,2,-6,-13,12,0,5,-15,8,-12,-1,-4,-15,2,-5,-9,-7,12,11,6,10,-6,14,-12,9,3,-10,10,-8,-2,6,-9,7,7,-7,4,-8,5,-4,8,0,3,11,0,-10,-9};
         vector<int> n(a, a + sizeof a / sizeof a[0]);
-        print(Solution().threeSum4(n));
-        cout<<endl;
+        test(n);
     }{
         int a[] = {12,13,-10,-15,4,5,-8,11,10,3,-11,4,-10,4,-7,9,1,8,-5,-1,-9,-4,3,-14,-11,14,0,-8,-6,-2,14,-9,-4,11,-8,-14,-7,-9,4,10,9,9,-1,7,-10,7,1,6,-8,12,12,-10,-7,0,-9,-3,-1,-1,-4,8,12,-13,6,-7,13,5,-14,13,12,6,8,-2,-8,-15,-10,-3,-1,7,10,7,-4,7,4,-4,14,3,0,-10,-13,11,5,6,13,-4,6,3,-13,8,1,6,-9,-14,-11,-10,8,-5,-6,-7,9,-11,7,12,3,-4,-7,-6,14,8,-1,8,-4,-11};
         vector<int> n(a, a + sizeof a / sizeof a[0]);
-        print(Solution().threeSum3(n));
-        cout<<endl;
+        test(n);
     }
+    cout << "PASS\n";
 }

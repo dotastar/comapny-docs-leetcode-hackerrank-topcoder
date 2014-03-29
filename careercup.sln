@@ -171,6 +171,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "string of repeat pattern", 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Stack or Queue that Support Push Pop and GetMin in Constant Time", "Stack or Queue that Support Push Pop and GetMin in Constant Time\Stack or Queue that Support Push Pop and GetMin in Constant Time.vcxproj", "{86165B73-A071-49EF-9B88-BFBCB25BE701}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "leetcode-3Sum", "leetcode-3Sum\leetcode-3Sum.vcxproj", "{5481AB20-D1EF-49FF-B4B6-9A8447E2BECE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -501,6 +503,10 @@ Global
 		{86165B73-A071-49EF-9B88-BFBCB25BE701}.Debug|Win32.Build.0 = Debug|Win32
 		{86165B73-A071-49EF-9B88-BFBCB25BE701}.Release|Win32.ActiveCfg = Release|Win32
 		{86165B73-A071-49EF-9B88-BFBCB25BE701}.Release|Win32.Build.0 = Release|Win32
+		{5481AB20-D1EF-49FF-B4B6-9A8447E2BECE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5481AB20-D1EF-49FF-B4B6-9A8447E2BECE}.Debug|Win32.Build.0 = Debug|Win32
+		{5481AB20-D1EF-49FF-B4B6-9A8447E2BECE}.Release|Win32.ActiveCfg = Release|Win32
+		{5481AB20-D1EF-49FF-B4B6-9A8447E2BECE}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
