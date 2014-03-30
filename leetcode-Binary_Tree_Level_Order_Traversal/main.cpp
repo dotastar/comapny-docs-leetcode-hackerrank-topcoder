@@ -1,14 +1,8 @@
-/**
- * Definition for binary tree
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
- * };
- */
+#include "../inc.h"
+
 class Solution {
 public:
+    //BFS
     vector<vector<int> > levelOrder(TreeNode *root) {
         vector<vector<int> > r;
         if(!root)
@@ -28,6 +22,22 @@ public:
         }
         return r;
     }
+    //DFS
+    vector<vector<int> > levelOrder2(TreeNode *root) {
+        vector<vector<int> > r;
+        help(root, 1, r);
+        return r;
+    }
+    void help(TreeNode * root, size_t level, vector<vector<int> > & r){
+        if (!root)
+            return;
+        if (level > r.size())
+            r.resize(level);
+        r[level - 1].push_back(root->val);
+        help(root->left, level + 1, r);
+        help(root->right, level + 1, r);
+    }
+
     vector<vector<int> > levelOrderBottom(TreeNode *root) {
         vector<vector<int> > r;
         if(!root)
@@ -51,3 +61,8 @@ public:
         return r;
     }
 };
+
+int main()
+{
+
+}
