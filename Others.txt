@@ -957,3 +957,31 @@ code题是decode，比如说1 → 1, 2 -- > 01, 3 → 001, 4 → 0001,....，给你一个
 无限的stream，要求输出数字，应该没啥难度，follow up是如何优化，我给的答案是
 map，就是依次取char而不是bit，然后把char的值对应到string上，他说cpu还有一个
 instruction可以直接查询此个char有多少个leading zero
+
+
+
+给你一个password 假定6位， 
+有个function 每call 一次就给你一个triplet 是password 里的随即三位，order不变
+。比如google, 可能返回， ggl, goe, oog, ool, ........
+问如何最有效破译这个密码，写code. 
+
+
+
+Given a string S and a string T, find the minimum window in S which will 
+contain all the characters in T IN THE ORDER AS IT APPEARS IN T in 
+complexity O(n).
+S = "ADOBECODEBANC"
+T = "ABC"
+Minimum window is NOT "BANC", but "ADOBEC"
+记录pattern中所有字母在原来string的位置
+A:0,10
+B:3,9
+C:5,12
+ABC的话，从A开始取出0，找到B开始第一个>0的位置:3，找到C>3的第一个位置5
+[0-5]成为一个window
+pop掉A:0后
+A:10
+B:3,9
+C:5,12
+然后A=10，B中3<10, pop掉，9<10, pop掉，没有元素了，结束。
+复杂度O(S*T)
