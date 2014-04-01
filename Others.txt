@@ -13,9 +13,6 @@
 然后一次MxN扫描可以找出这个平衡数。
 
 
-一面墙dimension: m*n, 家里有各种尺寸的照片，设计一个算法贴最多照片
-
-
 
 there are two groups of people; n number of A's & n of B's. We want to have 
 n pairs of A and B from two groups and  to minimize the sum of the weight 
@@ -985,3 +982,6 @@ B:3,9
 C:5,12
 然后A=10，B中3<10, pop掉，9<10, pop掉，没有元素了，结束。
 复杂度O(S*T)
+
+
+

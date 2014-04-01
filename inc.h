@@ -9,6 +9,8 @@
 #include <sstream>
 #include <cassert>
 #include <string>
+#include <queue>
+#include <functional>
 #include <ctime>
 
 using namespace std;
