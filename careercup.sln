@@ -198,6 +198,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "collect apples", "collect a
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "topcoder -  AvoidRoads", "topcoder -  AvoidRoads\topcoder -  AvoidRoads.vcxproj", "{911BFDBC-920D-4629-BE2E-8D0AC94DB925}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "topcoder - ChessMetric", "topcoder - ChessMetric\topcoder - ChessMetric.vcxproj", "{F3C889D9-4040-4078-A448-8D0E9F589D17}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -580,6 +582,10 @@ Global
 		{911BFDBC-920D-4629-BE2E-8D0AC94DB925}.Debug|Win32.Build.0 = Debug|Win32
 		{911BFDBC-920D-4629-BE2E-8D0AC94DB925}.Release|Win32.ActiveCfg = Release|Win32
 		{911BFDBC-920D-4629-BE2E-8D0AC94DB925}.Release|Win32.Build.0 = Release|Win32
+		{F3C889D9-4040-4078-A448-8D0E9F589D17}.Debug|Win32.ActiveCfg = Debug|Win32
+		{F3C889D9-4040-4078-A448-8D0E9F589D17}.Debug|Win32.Build.0 = Debug|Win32
+		{F3C889D9-4040-4078-A448-8D0E9F589D17}.Release|Win32.ActiveCfg = Release|Win32
+		{F3C889D9-4040-4078-A448-8D0E9F589D17}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
