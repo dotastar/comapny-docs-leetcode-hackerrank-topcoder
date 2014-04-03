@@ -68,3 +68,10 @@ Big number.
 2
 {"0 0 1 0", "1 2 2 2", "1 1 2 1"}
 Returns: 0
+
+
+dozerg:
+令T(i, j)为从原点走到点(i, j)的路径数，则状态转化方程为：
+T(i, j) = 
+    T(i - 1, j)     if (i - 1, j) -> (i, j)没有block
+  + T(i, j - 1)		if (i, j - 1) -> (i, j)没有block

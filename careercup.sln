@@ -5,6 +5,7 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{969402F9-56B0-4CA0-B515-515DEDA859E7}"
 	ProjectSection(SolutionItems) = preProject
+		Dynamic Programming From novice to advanced.pdf = Dynamic Programming From novice to advanced.pdf
 		inc.h = inc.h
 		Others.txt = Others.txt
 	EndProjectSection
