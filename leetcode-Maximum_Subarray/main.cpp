@@ -1,5 +1,6 @@
 class Solution {
 public:
+    //O(N)
     int maxSubArray(int A[], int n) {
         if(n <= 0)
             return 0;
@@ -18,6 +19,7 @@ public:
         }
         return r;
     }
-    int maxSubArray(int A[], int n) {
+    //
+    int maxSubArray2(int A[], int n) {
     }
 };

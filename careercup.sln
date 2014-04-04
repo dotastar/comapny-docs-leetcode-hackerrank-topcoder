@@ -200,6 +200,12 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "topcoder -  AvoidRoads", "t
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "topcoder - ChessMetric", "topcoder - ChessMetric\topcoder - ChessMetric.vcxproj", "{F3C889D9-4040-4078-A448-8D0E9F589D17}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "leetcode-Longest_Valid_Parentheses", "leetcode-Longest_Valid_Parentheses\leetcode-Longest_Valid_Parentheses.vcxproj", "{4BDA850D-992E-441A-B5CE-C21C79D93527}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "leetcode-Minimum_Path_Sum", "leetcode-Minimum_Path_Sum\leetcode-Minimum_Path_Sum.vcxproj", "{061E6309-098F-479C-9A77-9A423A56EA85}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "leetcode-Pow", "leetcode-Pow\leetcode-Pow.vcxproj", "{96E87AE0-B566-4381-8AFD-25409EE07369}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -586,6 +592,18 @@ Global
 		{F3C889D9-4040-4078-A448-8D0E9F589D17}.Debug|Win32.Build.0 = Debug|Win32
 		{F3C889D9-4040-4078-A448-8D0E9F589D17}.Release|Win32.ActiveCfg = Release|Win32
 		{F3C889D9-4040-4078-A448-8D0E9F589D17}.Release|Win32.Build.0 = Release|Win32
+		{4BDA850D-992E-441A-B5CE-C21C79D93527}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4BDA850D-992E-441A-B5CE-C21C79D93527}.Debug|Win32.Build.0 = Debug|Win32
+		{4BDA850D-992E-441A-B5CE-C21C79D93527}.Release|Win32.ActiveCfg = Release|Win32
+		{4BDA850D-992E-441A-B5CE-C21C79D93527}.Release|Win32.Build.0 = Release|Win32
+		{061E6309-098F-479C-9A77-9A423A56EA85}.Debug|Win32.ActiveCfg = Debug|Win32
+		{061E6309-098F-479C-9A77-9A423A56EA85}.Debug|Win32.Build.0 = Debug|Win32
+		{061E6309-098F-479C-9A77-9A423A56EA85}.Release|Win32.ActiveCfg = Release|Win32
+		{061E6309-098F-479C-9A77-9A423A56EA85}.Release|Win32.Build.0 = Release|Win32
+		{96E87AE0-B566-4381-8AFD-25409EE07369}.Debug|Win32.ActiveCfg = Debug|Win32
+		{96E87AE0-B566-4381-8AFD-25409EE07369}.Debug|Win32.Build.0 = Debug|Win32
+		{96E87AE0-B566-4381-8AFD-25409EE07369}.Release|Win32.ActiveCfg = Release|Win32
+		{96E87AE0-B566-4381-8AFD-25409EE07369}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

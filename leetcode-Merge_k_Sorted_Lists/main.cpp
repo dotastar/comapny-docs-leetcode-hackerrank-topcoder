@@ -10,7 +10,7 @@
  */
 class Solution {
 public:
-    //O(N * logM): N is node count, M is list count
+    //O(N * logK): N is total node count, K is list count
     ListNode *mergeKLists(vector<ListNode *> &lists) {
         if(lists.empty())
             return NULL;

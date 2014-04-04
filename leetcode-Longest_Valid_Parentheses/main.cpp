@@ -25,7 +25,7 @@ public:
     }
     //O(N) space
     int longestValidParentheses2(string s) {
-        vector<int> stack, his;
+        vector<int> stack;
         int r = 0;
         for(size_t i = 0;i < s.size();++i)
             switch(s[i]){
@@ -39,6 +39,7 @@ public:
             }
         return r;
     }
+
 
 
     //from zhang lei at http://fisherlei.blogspot.com/2013/03/leetcode-longest-valid-parentheses.html
@@ -75,9 +76,9 @@ public:
 
 int main()
 {
-    cout<<Solution().longestValidParentheses2("()")<<endl;
-    cout<<Solution().longestValidParentheses2("(()")<<endl;
-    cout<<Solution().longestValidParentheses2(")()())")<<endl;
+    cout<<Solution().longestValidParentheses3("()")<<endl;
+    cout<<Solution().longestValidParentheses3("(()")<<endl;
+    cout<<Solution().longestValidParentheses3(")()())")<<endl;
     cout<<Solution().longestValidParentheses2("(()()")<<endl;
     cout<<Solution().longestValidParentheses2("()(())")<<endl;
     cout<<Solution().longestValidParentheses2("())(())")<<endl;
