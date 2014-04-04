@@ -11,7 +11,7 @@
  */
 class Solution {
 public:
-    //O(logN) space
+    //O(logN) space (use stack space)
     void recoverTree1(TreeNode *root) {
         vector<TreeNode *> r(3);
         help(root, r);

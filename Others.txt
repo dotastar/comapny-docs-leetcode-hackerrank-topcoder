@@ -1,3 +1,11 @@
+ALGORITHM PROBLEMS FOR DUMMIES: PETR MITRICHEV'S BLOG
+http://petr-mitrichev.blogspot.com/
+
+TopCoder Algorithm Tutorials
+http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=alg_index
+
+http://www.cnblogs.com/10jschen/archive/2012/08/19/2646087.html
+
 如何用mutex和condition variable实现读写锁?
 
 
