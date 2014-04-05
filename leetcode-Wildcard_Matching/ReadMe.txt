@@ -19,8 +19,16 @@ isMatch("aab", "c*a*b") → false
 
 
 
-Analysis:
+dozerg:
+可以简化成二维DP：
+令T(i, j)表示s[1...i]是否能用p[1...j]匹配，则有状态转换方程：
+T(i, j) = T(i, j - 1) || T(i - 1, j), if p[j] == '*'（如果s(i)匹配p(j-1)，那么也匹配p(j-1)*；同理，如果s(i-1)匹配p(j)=p(j-1)*，那么s(i)也匹配p(j)）
+        = T(i - 1, j - 1), if p[j] = '?'
+        = T(i - 1, j - 1) && s[i] == p[j]
+初始状态：T(0, 0) = true        
 
+
+others Analysis:
 For each element in s
 If *s==*p or *p == ? which means this is a match, then goes to next element s++ p++.
 If p=='*', this is also a match, but one or many chars may be available, so let us save this *'s position and the matched s position.

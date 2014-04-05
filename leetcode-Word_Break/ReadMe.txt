@@ -17,3 +17,11 @@ s = "catsanddog",
 dict = ["cat", "cats", "and", "sand", "dog"].
 
 A solution is ["cats and dog", "cat sand dog"].
+
+
+
+dozerg:
+I
+令T(i)表示s.substr(i, npos)是否可以Break，则有状态转换方程：
+T(i) = false || T(i + W1) || T(i + W2) || ... ,  if s.substr(i, Wi) is a valid word
+使用Trie，可以将valid word的检测降低到O(N)复杂度

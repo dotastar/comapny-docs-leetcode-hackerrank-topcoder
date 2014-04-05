@@ -206,6 +206,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "leetcode-Minimum_Path_Sum",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "leetcode-Pow", "leetcode-Pow\leetcode-Pow.vcxproj", "{96E87AE0-B566-4381-8AFD-25409EE07369}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "leetcode-Wildcard_Matching", "leetcode-Wildcard_Matching\leetcode-Wildcard_Matching.vcxproj", "{437CCB78-306B-4487-8B21-32680769B79A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "leetcode-Word_Break", "leetcode-Word_Break\leetcode-Word_Break.vcxproj", "{D37C77F4-7094-4F43-807C-AF71D11F631A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -604,6 +608,14 @@ Global
 		{96E87AE0-B566-4381-8AFD-25409EE07369}.Debug|Win32.Build.0 = Debug|Win32
 		{96E87AE0-B566-4381-8AFD-25409EE07369}.Release|Win32.ActiveCfg = Release|Win32
 		{96E87AE0-B566-4381-8AFD-25409EE07369}.Release|Win32.Build.0 = Release|Win32
+		{437CCB78-306B-4487-8B21-32680769B79A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{437CCB78-306B-4487-8B21-32680769B79A}.Debug|Win32.Build.0 = Debug|Win32
+		{437CCB78-306B-4487-8B21-32680769B79A}.Release|Win32.ActiveCfg = Release|Win32
+		{437CCB78-306B-4487-8B21-32680769B79A}.Release|Win32.Build.0 = Release|Win32
+		{D37C77F4-7094-4F43-807C-AF71D11F631A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D37C77F4-7094-4F43-807C-AF71D11F631A}.Debug|Win32.Build.0 = Debug|Win32
+		{D37C77F4-7094-4F43-807C-AF71D11F631A}.Release|Win32.ActiveCfg = Release|Win32
+		{D37C77F4-7094-4F43-807C-AF71D11F631A}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
