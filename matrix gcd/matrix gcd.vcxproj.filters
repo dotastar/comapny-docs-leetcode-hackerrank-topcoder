@@ -24,4 +24,9 @@
       <Filter>资源文件</Filter>
     </Text>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Segment Tree.pdf">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
 </Project>
