@@ -1,7 +1,7 @@
 Question was on Arithmetic progression 
 
 Example : 
-Given the AP :- 1 3 7 9 11 13 find the missing value "which would be 5 here". 
+Given the AP : 1 3 7 9 11 13 find the missing value "which would be 5 here". 
 
 Conditions : 
 Get an user for the length of AP sequence and make sure user provides length is above 3. 
