@@ -1,0 +1,58 @@
+import java.util.Queue;
+import java.util.Stack;
+class Solution {
+    public int solution(int[] A) {
+        // write your code in Java SE 7
+            Queue<Integer> leftv = new LinkedList<Integer>();
+		 	Queue<Integer> lefti = new LinkedList<Integer>();
+		 	Stack<Integer> rightv = new Stack<Integer>();
+		 	Stack<Integer> righti = new Stack<Integer>();
+		 	
+		 	int leftmin = A[0] + 1;
+		 	for(int i =0; i < A.length; i++){
+		 		if(A[i] < leftmin){
+		 			lefti.add(i);
+		 			leftv.add(A[i]);
+		 			leftmin = A[i];
+		 		}
+		 	}
+		 	
+		 	int rightmax = A[A.length - 1] - 1;
+		 	for(int i = A.length - 1; i >= 0; i--){
+		 		if(A[i] > rightmax){
+		 			righti.add(i);
+		 			rightv.add(A[i]);
+		 			rightmax = A[i];
+		 		}
+		 	}
+
+		 	int maxl = 0;
+		 	while(!leftv.isEmpty() && !rightv.isEmpty()){
+		 		
+		 		if(rightv.peek() < leftv.peek()){
+		 			leftv.poll();
+		 			lefti.poll();
+		 		}
+		 			
+		 		if(!leftv.isEmpty()){
+		 			if(lefti.peek() > righti.peek()){
+		 				while(!righti.isEmpty() && lefti.peek() > righti.peek()){
+		 					righti.pop();
+		 					rightv.pop();
+		 				}
+		 				continue;
+		 			}
+		 			else{
+		 				int l = lefti.peek();
+		 				int r = righti.peek();
+		 				if(r - l > maxl)
+		 					maxl = r - l;
+		 				righti.pop();
+		 				rightv.pop();
+		 				continue;
+		 			}
+		 		}
+		 	}
+		 	return maxl;
+    }
+}

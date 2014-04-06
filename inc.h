@@ -65,6 +65,16 @@ void print(const vector<int> & r)
     cout<<endl;
 }
 
+void print2(const vector<int> & r)
+{
+    for (size_t j = 0; j < r.size(); ++j){
+        if (j)
+            cout << ", ";
+        cout << r[j];
+    }
+    cout << endl;
+}
+
 void print(const vector<double> & r)
 {
     for(size_t j = 0;j < r.size();++j)
