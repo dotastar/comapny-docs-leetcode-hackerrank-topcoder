@@ -34,6 +34,7 @@ min = 5
 
 
 
+
 1. unfair coin，flip的几率是：head 1/4，tail 3/4，请写个function返回投head和
 tail各是50%
 2. 很多machine发message，怎么样才能不发重复的？

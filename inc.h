@@ -175,3 +175,17 @@ void print(const set<int> & s)
         cout<<*i<<' ';
     cout<<endl;
 }
+
+void genArray(vector<int> & A, int count, int from, int to)
+{
+    int range = to - from + 1;
+    if (range <= 0)
+        return;
+    srand((unsigned int)time(NULL));
+    for (int i = 0; i < count; ++i){
+        int r = rand();
+        r <<= 16;
+        r += rand();
+        A.push_back(r % range + from);
+    }
+}

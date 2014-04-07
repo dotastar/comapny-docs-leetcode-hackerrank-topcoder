@@ -233,6 +233,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{90DAA0BE-7
 		docs\Dynamic Programming From novice to advanced.pdf = docs\Dynamic Programming From novice to advanced.pdf
 	EndProjectSection
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Balanced Partition", "Balanced Partition\Balanced Partition.vcxproj", "{358F4209-61BF-4271-9B73-65DB22CF037B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -675,6 +677,10 @@ Global
 		{C5E91234-67CB-4B98-9533-40010D90D415}.Debug|Win32.Build.0 = Debug|Win32
 		{C5E91234-67CB-4B98-9533-40010D90D415}.Release|Win32.ActiveCfg = Release|Win32
 		{C5E91234-67CB-4B98-9533-40010D90D415}.Release|Win32.Build.0 = Release|Win32
+		{358F4209-61BF-4271-9B73-65DB22CF037B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{358F4209-61BF-4271-9B73-65DB22CF037B}.Debug|Win32.Build.0 = Debug|Win32
+		{358F4209-61BF-4271-9B73-65DB22CF037B}.Release|Win32.ActiveCfg = Release|Win32
+		{358F4209-61BF-4271-9B73-65DB22CF037B}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
