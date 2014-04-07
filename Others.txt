@@ -1,3 +1,6 @@
+Dynamic Programming Practice Problems
+http://people.cs.clemson.edu/~bcdean/dp_practice/
+
 ALGORITHM PROBLEMS FOR DUMMIES: PETR MITRICHEV'S BLOG
 http://petr-mitrichev.blogspot.com/
 
