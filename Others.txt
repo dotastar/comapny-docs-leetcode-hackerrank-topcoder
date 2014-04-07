@@ -30,6 +30,7 @@ EG
         B[]={1,6,2}; 
 min = 5
 3-1, 4-2,5-6
+见《Assignment Problem and Hungarian algorithm.pdf》
 
 
 
@@ -992,4 +993,52 @@ C:5,12
 复杂度O(S*T)
 
 
+第三题： 就是这个题把我整跪了， binary semaphore 
+def inc: 
+  while True: 
+      v = v + 1  //---A
+     set(s)       // ---B
 
+def disp: 
+  while True: 
+     wait(s)      //---C
+       print v    //----D
+求输出序列的可能情况 v 是shared value 初始为0 
+s是binary semophore 初始为0。set(s) 置s为1，wait(s) unset s 并且blocking。 
+第一问 0 是否能输出， 回答 不能，因为会blocking ， OK。 
+第二问， 后面的情况，会输出什么样的递增数字， 我一想执行序列可能为 ABABCD， 
+这样的话 有些number 就missing了，然后他问是否任意的都missing？ 我说是，然后
+OK，他问我 能否重复出现数字，我回答如果重复的话 就是CDCD 就waiting了。。然后
+我知道悲剧了，因为他给个例子。。 ABCABDCD， 这样的话就有两个重复，然后又问我
+能否多次重复，我就抽自己嘴巴了，说能，然后就没时间了，后来发现其实是不能的，
+最多重复两次
+
+
+
+给了一个Quack的类，里面有三个方法：
+pop(): 随机从头或者尾扔出一个元素；
+peek(): 随机看头或者尾的一个元素，peek()之后pop()的话一定会pop()出peek()的那
+个元素；
+push()：向尾部插入一个元素
+问题是：给一个排序好的Quack,怎么把里面的元素原封不动的放到一个Array里面。
+follow-up：如果quack里面有重复的元素，怎么处理
+dozerg:
+2个array，low和high，先pop一个元素，然后peek：
+如果peek的元素 < pop的元素，那么将pop的元素放入high的front位置；
+如果peek的元素 > pop的元素，那么将pop的元素放入low的back位置；
+最后合并low和high即得到整个array。
+follow up：
+加一个array，eq，每次pop元素先放eq。
+如果peek的元素 < pop的元素，那么将eq的所有元素放入high的front位置；
+如果peek的元素 > pop的元素，那么将eq的所有元素放入low的back位置；
+如果peek的元素 = pop的元素，将pop的元素放入eq；
+
+
+
+写一个function,实现photoshop画图软件的一个功能,就是用吸管吸了绿色, 点在白色
+上,所有相邻的白色都变成绿色.
+//x, y是吸管点到的点.
+void paint(Color sourceColor, Color[][] &map, int x, int y) 
+我写了个BFS. 就是把相邻的点enque, 然后把当前点paint.
+不知道DFS或者DP会不会有更快的解.
+http://en.wikipedia.org/wiki/Flood_fill

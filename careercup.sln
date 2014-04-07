@@ -5,7 +5,6 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{969402F9-56B0-4CA0-B515-515DEDA859E7}"
 	ProjectSection(SolutionItems) = preProject
-		Dynamic Programming From novice to advanced.pdf = Dynamic Programming From novice to advanced.pdf
 		inc.h = inc.h
 		Others.txt = Others.txt
 	EndProjectSection
@@ -227,6 +226,12 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "codility - GenomicRangeQuery", "codility - GenomicRangeQuery\codility - GenomicRangeQuery.vcxproj", "{F62D5130-5B04-43FA-B35A-05E10D9FE6B8}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "codility - MinAvgTwoSlice", "codility - MinAvgTwoSlice\codility - MinAvgTwoSlice.vcxproj", "{C5E91234-67CB-4B98-9533-40010D90D415}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{90DAA0BE-7DC9-4D74-B1CB-E93ABF702140}"
+	ProjectSection(SolutionItems) = preProject
+		docs\Assignment Problem and Hungarian algorithm.pdf = docs\Assignment Problem and Hungarian algorithm.pdf
+		docs\Dynamic Programming From novice to advanced.pdf = docs\Dynamic Programming From novice to advanced.pdf
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -673,5 +678,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{90DAA0BE-7DC9-4D74-B1CB-E93ABF702140} = {969402F9-56B0-4CA0-B515-515DEDA859E7}
 	EndGlobalSection
 EndGlobal
