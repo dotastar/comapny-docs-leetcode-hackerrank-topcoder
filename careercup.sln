@@ -235,6 +235,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{90DAA0BE-7
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Balanced Partition", "Balanced Partition\Balanced Partition.vcxproj", "{358F4209-61BF-4271-9B73-65DB22CF037B}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Box Stacking", "Box Stacking\Box Stacking.vcxproj", "{99E8B6A6-BAA4-440D-8B75-B300076564D3}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Building Bridges", "Building Bridges\Building Bridges.vcxproj", "{2B3B52A2-9DFD-4345-8E17-9E07DA3578B5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -681,6 +685,14 @@ Global
 		{358F4209-61BF-4271-9B73-65DB22CF037B}.Debug|Win32.Build.0 = Debug|Win32
 		{358F4209-61BF-4271-9B73-65DB22CF037B}.Release|Win32.ActiveCfg = Release|Win32
 		{358F4209-61BF-4271-9B73-65DB22CF037B}.Release|Win32.Build.0 = Release|Win32
+		{99E8B6A6-BAA4-440D-8B75-B300076564D3}.Debug|Win32.ActiveCfg = Debug|Win32
+		{99E8B6A6-BAA4-440D-8B75-B300076564D3}.Debug|Win32.Build.0 = Debug|Win32
+		{99E8B6A6-BAA4-440D-8B75-B300076564D3}.Release|Win32.ActiveCfg = Release|Win32
+		{99E8B6A6-BAA4-440D-8B75-B300076564D3}.Release|Win32.Build.0 = Release|Win32
+		{2B3B52A2-9DFD-4345-8E17-9E07DA3578B5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2B3B52A2-9DFD-4345-8E17-9E07DA3578B5}.Debug|Win32.Build.0 = Debug|Win32
+		{2B3B52A2-9DFD-4345-8E17-9E07DA3578B5}.Release|Win32.ActiveCfg = Release|Win32
+		{2B3B52A2-9DFD-4345-8E17-9E07DA3578B5}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

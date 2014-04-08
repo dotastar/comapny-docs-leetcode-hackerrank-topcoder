@@ -12,6 +12,8 @@ http://www.cnblogs.com/10jschen/archive/2012/08/19/2646087.html
 如何用mutex和condition variable实现读写锁?
 
 
+
+
 找出一个矩阵里“平衡数”的总个数.“平衡数”的定义： 这个数所在row之上所有row
 的数字之和=所在row之下所有row的数字之和, 这个数所在column左边所有col的数字之
 和=所在col右边所有col的数字之和

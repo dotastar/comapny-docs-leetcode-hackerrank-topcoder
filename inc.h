@@ -57,6 +57,15 @@ struct Point {
     Point(int a, int b) : x(a), y(b) {}
 };
 
+struct Box
+{
+    int h, w, d;
+    Box(){}
+    Box(int i, int j, int k) :h(i), w(j), d(k){}
+    bool operator >(const Box & a) const{
+        return (d > a.d);
+    }
+};
  
 void print(const vector<int> & r)
 {
@@ -176,16 +185,38 @@ void print(const set<int> & s)
     cout<<endl;
 }
 
-void genArray(vector<int> & A, int count, int from, int to)
+void print(const vector<Box> & b)
+{
+    for (size_t i = 0; i < b.size(); ++i)
+        cout << "(" << b[i].h << "," << b[i].w << "," << b[i].d << ") ";
+    cout << endl;
+}
+
+int genRand(int from, int to)
 {
     int range = to - from + 1;
     if (range <= 0)
-        return;
-    srand((unsigned int)time(NULL));
-    for (int i = 0; i < count; ++i){
-        int r = rand();
-        r <<= 16;
-        r += rand();
-        A.push_back(r % range + from);
-    }
+        return 0;
+    int r = rand();
+    r <<= 16;
+    r += rand();
+    return (r % range + from);
+}
+
+void genArray(vector<int> & A, int count, int from, int to)
+{
+    for (int i = 0; i < count; ++i)
+        A.push_back(genRand(from, to));
+}
+
+void genPairArray(vector<pair<int, int> > & A, int count, int from, int to)
+{
+    for (int i = 0; i < count; ++i)
+        A.push_back(make_pair(genRand(from, to), genRand(from, to)));
+}
+
+void genBoxArray(vector<Box> & A, int count, int from, int to)
+{
+    for (int i = 0; i < count; ++i)
+        A.push_back(Box(genRand(from, to), genRand(from, to), genRand(from, to)));
 }

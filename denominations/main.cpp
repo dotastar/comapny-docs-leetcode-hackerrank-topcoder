@@ -104,6 +104,28 @@ namespace m2{
     }
 }
 
+namespace followup{
+    int solve(const vector<int> & a, int n)
+    {
+        if (n <= 0)
+            return 0;
+        vector<int> ret(n + 1, -1);
+        ret[0] = 0;
+        for (size_t i = 0; i < a.size(); ++i){
+            for (size_t j = a[i]; j < ret.size(); ++j){
+                int r = ret[j - a[i]];
+                if (r >= 0){
+                    ++r;
+                    if (ret[j] >= 0)
+                        r = min(ret[j], r);
+                    ret[j] = r;
+                }
+            }
+        }
+        return ret[n];
+    }
+}
+
 int main()
 {
     {
@@ -113,5 +135,13 @@ int main()
         std::cout<<m1::count(5, don)<<"\n";
 
         m2::solve(don, 5);
+    }
+    cout << "---\n";
+    {
+        const int d[] = { 3, 6, 9, 12, 15 };
+        std::vector<int> don(d, d + sizeof d / sizeof d[0]);
+        std::cout << followup::solve(don, 100) << "\n";
+        std::cout << followup::solve(don, 200) << "\n";
+        std::cout << followup::solve(don, 300) << "\n";
     }
 }
