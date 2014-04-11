@@ -9,6 +9,12 @@ http://community.topcoder.com/tc?module=Static&d1=tutorials&d2=alg_index
 
 http://www.cnblogs.com/10jschen/archive/2012/08/19/2646087.html
 
+https://www.interviewstreet.com/recruit2/
+
+https://www.hackerrank.com/
+
+
+
 如何用mutex和condition variable实现读写锁?
 
 
@@ -1048,3 +1054,19 @@ void paint(Color sourceColor, Color[][] &map, int x, int y)
 我写了个BFS. 就是把相邻的点enque, 然后把当前点paint.
 不知道DFS或者DP会不会有更快的解.
 http://en.wikipedia.org/wiki/Flood_fill
+
+
+
+Given a point P and other N points in two dimensional space, 
+find K points out of the N points which are nearest to P.
+follow up:如果没有P作为基点，如何找相距最近的K个点？
+http://en.wikipedia.org/wiki/Particle_swarm_optimization
+
+
+
+输入一串正则表达式（只含a、b、|、*），和长度L，算出符合的长度L的字符串的个数
+sample input：((a*)(b(a*)))  100
+sample output：100
+
+
+给定n和mi，(m1+m...+mi)=n，求【n!/m1!m2!...mi!】  mod 【10^9+7】
