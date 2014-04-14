@@ -245,6 +245,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Utopian Tree",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Service Lane", "hackerrank - Service Lane\hackerrank - Service Lane.vcxproj", "{99B86524-F425-44B4-B36A-B76E20227F07}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Is Fibo", "hackerrank - Is Fibo\hackerrank - Is Fibo.vcxproj", "{6732805A-BC45-4D55-AAC6-164A75D84406}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -711,6 +713,10 @@ Global
 		{99B86524-F425-44B4-B36A-B76E20227F07}.Debug|Win32.Build.0 = Debug|Win32
 		{99B86524-F425-44B4-B36A-B76E20227F07}.Release|Win32.ActiveCfg = Release|Win32
 		{99B86524-F425-44B4-B36A-B76E20227F07}.Release|Win32.Build.0 = Release|Win32
+		{6732805A-BC45-4D55-AAC6-164A75D84406}.Debug|Win32.ActiveCfg = Debug|Win32
+		{6732805A-BC45-4D55-AAC6-164A75D84406}.Debug|Win32.Build.0 = Debug|Win32
+		{6732805A-BC45-4D55-AAC6-164A75D84406}.Release|Win32.ActiveCfg = Release|Win32
+		{6732805A-BC45-4D55-AAC6-164A75D84406}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
