@@ -247,6 +247,12 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Service Lane",
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Is Fibo", "hackerrank - Is Fibo\hackerrank - Is Fibo.vcxproj", "{6732805A-BC45-4D55-AAC6-164A75D84406}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Angry Children", "hackerrank - Angry Children\hackerrank - Angry Children.vcxproj", "{CBE3C56B-8167-4037-B331-9488BCA6B5D5}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Sherlock and The Beast", "hackerrank - Sherlock and The Beast\hackerrank - Sherlock and The Beast.vcxproj", "{C86BA713-0517-41D8-93E4-C09BB1CA564A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Insertion Sort Advanced Analysis", "hackerrank - Insertion Sort Advanced Analysis\hackerrank - Insertion Sort Advanced Analysis.vcxproj", "{FDFDA359-377C-44C3-905A-7B30B1C56CD5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -717,6 +723,18 @@ Global
 		{6732805A-BC45-4D55-AAC6-164A75D84406}.Debug|Win32.Build.0 = Debug|Win32
 		{6732805A-BC45-4D55-AAC6-164A75D84406}.Release|Win32.ActiveCfg = Release|Win32
 		{6732805A-BC45-4D55-AAC6-164A75D84406}.Release|Win32.Build.0 = Release|Win32
+		{CBE3C56B-8167-4037-B331-9488BCA6B5D5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CBE3C56B-8167-4037-B331-9488BCA6B5D5}.Debug|Win32.Build.0 = Debug|Win32
+		{CBE3C56B-8167-4037-B331-9488BCA6B5D5}.Release|Win32.ActiveCfg = Release|Win32
+		{CBE3C56B-8167-4037-B331-9488BCA6B5D5}.Release|Win32.Build.0 = Release|Win32
+		{C86BA713-0517-41D8-93E4-C09BB1CA564A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{C86BA713-0517-41D8-93E4-C09BB1CA564A}.Debug|Win32.Build.0 = Debug|Win32
+		{C86BA713-0517-41D8-93E4-C09BB1CA564A}.Release|Win32.ActiveCfg = Release|Win32
+		{C86BA713-0517-41D8-93E4-C09BB1CA564A}.Release|Win32.Build.0 = Release|Win32
+		{FDFDA359-377C-44C3-905A-7B30B1C56CD5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FDFDA359-377C-44C3-905A-7B30B1C56CD5}.Debug|Win32.Build.0 = Debug|Win32
+		{FDFDA359-377C-44C3-905A-7B30B1C56CD5}.Release|Win32.ActiveCfg = Release|Win32
+		{FDFDA359-377C-44C3-905A-7B30B1C56CD5}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

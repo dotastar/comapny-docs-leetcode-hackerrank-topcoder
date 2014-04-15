@@ -13,6 +13,7 @@ https://www.interviewstreet.com/recruit2/
 
 https://www.hackerrank.com/
 
+http://eurce.me/
 
 
 如何用mutex和condition variable实现读写锁?
@@ -1070,3 +1071,9 @@ sample output：100
 
 
 给定n和mi，(m1+m...+mi)=n，求【n!/m1!m2!...mi!】  mod 【10^9+7】
+
+
+
+阿里巴巴算法工程师笔试题附加题
+在所有因数分解只有3,5和7的正整数中，求第k大的数。比如当k分别问1, 2, 3的时候，答案应该为3, 5, 7。
+要求时间复杂度最低。
