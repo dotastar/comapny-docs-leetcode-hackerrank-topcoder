@@ -253,6 +253,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Sherlock and T
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Insertion Sort Advanced Analysis", "hackerrank - Insertion Sort Advanced Analysis\hackerrank - Insertion Sort Advanced Analysis.vcxproj", "{FDFDA359-377C-44C3-905A-7B30B1C56CD5}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Two arrays", "hackerrank - Two arrays\hackerrank - Two arrays.vcxproj", "{2242037F-6943-4054-B609-CBD2B37CF5E5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -735,6 +737,10 @@ Global
 		{FDFDA359-377C-44C3-905A-7B30B1C56CD5}.Debug|Win32.Build.0 = Debug|Win32
 		{FDFDA359-377C-44C3-905A-7B30B1C56CD5}.Release|Win32.ActiveCfg = Release|Win32
 		{FDFDA359-377C-44C3-905A-7B30B1C56CD5}.Release|Win32.Build.0 = Release|Win32
+		{2242037F-6943-4054-B609-CBD2B37CF5E5}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2242037F-6943-4054-B609-CBD2B37CF5E5}.Debug|Win32.Build.0 = Debug|Win32
+		{2242037F-6943-4054-B609-CBD2B37CF5E5}.Release|Win32.ActiveCfg = Release|Win32
+		{2242037F-6943-4054-B609-CBD2B37CF5E5}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
