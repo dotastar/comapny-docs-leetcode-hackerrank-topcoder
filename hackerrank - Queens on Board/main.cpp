@@ -105,12 +105,16 @@ int main()
     while (t--){
         int n, m;
         cin >> n >> m;
-        vector<vector<char> > board(n);
+        vector<string> b;
         for (int i = 0; i < n; ++i){
-            board[i].resize(m);
             string line;
             cin >> line;
-            board[i].assign(line.begin(), line.end());
+            b.push_back(line);
+        }
+        vector<vector<char> > board(m);
+        for (int i = 0; i < m; ++i){
+            for (int j = 0; j < n; ++j)
+                board[i].push_back(b[j][i]);
         }
         cout << solve(board) << endl;
     }
