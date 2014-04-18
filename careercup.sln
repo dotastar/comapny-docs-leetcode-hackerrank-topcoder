@@ -265,6 +265,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Find Digits", 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Median", "hackerrank - Median\hackerrank - Median.vcxproj", "{7A0AB4AE-EFF9-4EF1-A56C-465D168C7510}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Queens on Board", "hackerrank - Queens on Board\hackerrank - Queens on Board.vcxproj", "{B8A87420-A1BE-4480-9959-74AE76357965}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -771,6 +773,10 @@ Global
 		{7A0AB4AE-EFF9-4EF1-A56C-465D168C7510}.Debug|Win32.Build.0 = Debug|Win32
 		{7A0AB4AE-EFF9-4EF1-A56C-465D168C7510}.Release|Win32.ActiveCfg = Release|Win32
 		{7A0AB4AE-EFF9-4EF1-A56C-465D168C7510}.Release|Win32.Build.0 = Release|Win32
+		{B8A87420-A1BE-4480-9959-74AE76357965}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B8A87420-A1BE-4480-9959-74AE76357965}.Debug|Win32.Build.0 = Debug|Win32
+		{B8A87420-A1BE-4480-9959-74AE76357965}.Release|Win32.ActiveCfg = Release|Win32
+		{B8A87420-A1BE-4480-9959-74AE76357965}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
