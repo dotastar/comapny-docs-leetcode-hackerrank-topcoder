@@ -67,9 +67,8 @@ namespace dozerg
 
 namespace xixiqi
 {
-    //int const M = 100010, N = 1000010;
-    int const M = 10, N = 10;
-
+    int const M = 100010, N = 1000010;
+    //int const M = 10, N = 10;
     int lowb(int t) { return t & (-t); }
     void add(int * ar, int i, int v) {
         for (; i < N; i += lowb(i))
@@ -81,7 +80,6 @@ namespace xixiqi
             s += ar[i];
         return s;
     }
-
     int main()
     {
         int T, n, i;
@@ -92,13 +90,10 @@ namespace xixiqi
         {
             scanf("%d", &n);
             for (i = 0; i<n; i++)
-            {
                 scanf("%d", s + i);
-            }
             int ar[N] = { 0 };
             ans = 0;
-            for (i = 0; i<n; i++)
-            {
+            for (i = 0; i < n; i++) {
                 ans += sum(ar, N - 1) - sum(ar, s[i]);
                 add(ar, s[i], 1);
             }

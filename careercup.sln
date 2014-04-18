@@ -255,6 +255,16 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Insertion Sort
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Two arrays", "hackerrank - Two arrays\hackerrank - Two arrays.vcxproj", "{2242037F-6943-4054-B609-CBD2B37CF5E5}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Closest Numbers", "hackerrank - Closest Numbers\hackerrank - Closest Numbers.vcxproj", "{406253A0-795D-45C1-8842-2DF92586E985}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Chocolate Feast", "hackerrank - Chocolate Feast\hackerrank - Chocolate Feast.vcxproj", "{E9F08F27-DE3D-4CD9-A2DB-E8E2E92AB985}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Red John is Back", "hackerrank - Red John is Back\hackerrank - Red John is Back.vcxproj", "{5DCB8363-F728-42CE-9905-305E7FD815CA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Find Digits", "hackerrank - Find Digits\hackerrank - Find Digits.vcxproj", "{1B3EDFB3-9D1A-4A60-93E1-1CE83042854A}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Median", "hackerrank - Median\hackerrank - Median.vcxproj", "{7A0AB4AE-EFF9-4EF1-A56C-465D168C7510}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -741,6 +751,26 @@ Global
 		{2242037F-6943-4054-B609-CBD2B37CF5E5}.Debug|Win32.Build.0 = Debug|Win32
 		{2242037F-6943-4054-B609-CBD2B37CF5E5}.Release|Win32.ActiveCfg = Release|Win32
 		{2242037F-6943-4054-B609-CBD2B37CF5E5}.Release|Win32.Build.0 = Release|Win32
+		{406253A0-795D-45C1-8842-2DF92586E985}.Debug|Win32.ActiveCfg = Debug|Win32
+		{406253A0-795D-45C1-8842-2DF92586E985}.Debug|Win32.Build.0 = Debug|Win32
+		{406253A0-795D-45C1-8842-2DF92586E985}.Release|Win32.ActiveCfg = Release|Win32
+		{406253A0-795D-45C1-8842-2DF92586E985}.Release|Win32.Build.0 = Release|Win32
+		{E9F08F27-DE3D-4CD9-A2DB-E8E2E92AB985}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E9F08F27-DE3D-4CD9-A2DB-E8E2E92AB985}.Debug|Win32.Build.0 = Debug|Win32
+		{E9F08F27-DE3D-4CD9-A2DB-E8E2E92AB985}.Release|Win32.ActiveCfg = Release|Win32
+		{E9F08F27-DE3D-4CD9-A2DB-E8E2E92AB985}.Release|Win32.Build.0 = Release|Win32
+		{5DCB8363-F728-42CE-9905-305E7FD815CA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{5DCB8363-F728-42CE-9905-305E7FD815CA}.Debug|Win32.Build.0 = Debug|Win32
+		{5DCB8363-F728-42CE-9905-305E7FD815CA}.Release|Win32.ActiveCfg = Release|Win32
+		{5DCB8363-F728-42CE-9905-305E7FD815CA}.Release|Win32.Build.0 = Release|Win32
+		{1B3EDFB3-9D1A-4A60-93E1-1CE83042854A}.Debug|Win32.ActiveCfg = Debug|Win32
+		{1B3EDFB3-9D1A-4A60-93E1-1CE83042854A}.Debug|Win32.Build.0 = Debug|Win32
+		{1B3EDFB3-9D1A-4A60-93E1-1CE83042854A}.Release|Win32.ActiveCfg = Release|Win32
+		{1B3EDFB3-9D1A-4A60-93E1-1CE83042854A}.Release|Win32.Build.0 = Release|Win32
+		{7A0AB4AE-EFF9-4EF1-A56C-465D168C7510}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7A0AB4AE-EFF9-4EF1-A56C-465D168C7510}.Debug|Win32.Build.0 = Debug|Win32
+		{7A0AB4AE-EFF9-4EF1-A56C-465D168C7510}.Release|Win32.ActiveCfg = Release|Win32
+		{7A0AB4AE-EFF9-4EF1-A56C-465D168C7510}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
