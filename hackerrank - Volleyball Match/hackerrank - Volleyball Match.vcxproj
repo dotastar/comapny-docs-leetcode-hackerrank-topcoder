@@ -11,10 +11,9 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{B8A87420-A1BE-4480-9959-74AE76357965}</ProjectGuid>
+    <ProjectGuid>{3B91F3B3-8478-44E5-8042-AC62B2BB7A86}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>hackerrankQueensonBoard</RootNamespace>
-    <ProjectName>hackerrank - Queens on Board TODO</ProjectName>
+    <RootNamespace>hackerrankVolleyballMatch</RootNamespace>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

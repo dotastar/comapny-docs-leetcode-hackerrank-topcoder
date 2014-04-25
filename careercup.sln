@@ -269,9 +269,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Queens on Boar
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "codility - First Unique Number in Array", "codility - First Unique Number in Array\codility - First Unique Number in Array.vcxproj", "{EF2496F7-EDF0-49ED-A8DD-E2C46E92D29A}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "codility - Slices Sum to 0 TODO", "codility - Slices Sum to 0\codility - Slices Sum to 0.vcxproj", "{1CA960F9-4364-4497-BEE2-A351BC00CE12}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "codility - Slices Sum to 0", "codility - Slices Sum to 0\codility - Slices Sum to 0.vcxproj", "{1CA960F9-4364-4497-BEE2-A351BC00CE12}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "codility - Base of -2 TODO", "codility - Base of -2\codility - Base of -2.vcxproj", "{0340DA57-3A8F-4740-80D0-148AE21A3E8E}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Volleyball Match", "hackerrank - Volleyball Match\hackerrank - Volleyball Match.vcxproj", "{3B91F3B3-8478-44E5-8042-AC62B2BB7A86}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -795,6 +797,10 @@ Global
 		{0340DA57-3A8F-4740-80D0-148AE21A3E8E}.Debug|Win32.Build.0 = Debug|Win32
 		{0340DA57-3A8F-4740-80D0-148AE21A3E8E}.Release|Win32.ActiveCfg = Release|Win32
 		{0340DA57-3A8F-4740-80D0-148AE21A3E8E}.Release|Win32.Build.0 = Release|Win32
+		{3B91F3B3-8478-44E5-8042-AC62B2BB7A86}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3B91F3B3-8478-44E5-8042-AC62B2BB7A86}.Debug|Win32.Build.0 = Debug|Win32
+		{3B91F3B3-8478-44E5-8042-AC62B2BB7A86}.Release|Win32.ActiveCfg = Release|Win32
+		{3B91F3B3-8478-44E5-8042-AC62B2BB7A86}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
