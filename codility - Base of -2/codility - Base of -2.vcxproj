@@ -14,7 +14,7 @@
     <ProjectGuid>{0340DA57-3A8F-4740-80D0-148AE21A3E8E}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>codilityBaseof2</RootNamespace>
-    <ProjectName>codility - Base of -2 TODO</ProjectName>
+    <ProjectName>codility - Base of -2</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -78,6 +78,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <Image Include="ReadMe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
