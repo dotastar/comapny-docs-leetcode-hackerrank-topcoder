@@ -154,19 +154,23 @@ void print(const vector<vector<string> > & path)
 
 void print(const TreeNode * root)
 {
-    vector<const TreeNode *> t(1, root);
-    for(size_t i = 0, e = t.size();i < e;++i){
-        root = t[i];
-        if(root){
-            cout<<root->val<<" ";
-            t.push_back(root->left);
-            if(root->left)
-                e = t.size();
-            t.push_back(root->right);
-            if(root->right)
-                e = t.size();
-        }else
-            cout<<"# ";
+    vector<const TreeNode *> t = {root};
+    while(!t.empty()) {
+        vector<const TreeNode *> tt;
+        for(size_t i = 0; i < t.size(); ++i) {
+            root = t[i];
+            if(root) {
+                cout << root->val << " ";
+                tt.push_back(root->left);
+                tt.push_back(root->right);
+            } else
+                cout << "# ";
+        }
+        while(!tt.empty() && !tt.back())
+            tt.pop_back();
+        if(!tt.empty())
+            cout << "| ";
+        t.swap(tt);
     }
     cout<<endl;
 }
