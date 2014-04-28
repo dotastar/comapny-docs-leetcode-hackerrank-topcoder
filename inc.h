@@ -12,11 +12,13 @@
 #include <queue>
 #include <functional>
 #include <ctime>
+#include <unordered_map>
+#include <unordered_set>
 
 using namespace std;
 
-#define unordered_map map
-#define unordered_set set
+//#define unordered_map map
+//#define unordered_set set
 
 struct Interval {
     int start;
@@ -36,6 +38,10 @@ struct TreeNode {
     TreeNode *left;
     TreeNode *right;
     TreeNode(int x = 0) : val(x), left(NULL), right(NULL) {}
+    ~TreeNode(){
+        delete left;
+        delete right;
+    }
 };
 
 struct ListNode {

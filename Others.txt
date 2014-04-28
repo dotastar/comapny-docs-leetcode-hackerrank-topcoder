@@ -15,6 +15,9 @@ https://www.hackerrank.com/
 
 http://eurce.me/
 
+https://www.hackerrank.com/blog/
+
+
 
 如何用mutex和condition variable实现读写锁?
 
