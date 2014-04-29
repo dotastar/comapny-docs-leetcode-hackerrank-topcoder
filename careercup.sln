@@ -273,11 +273,13 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "codility - Slices Sum to 0"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "codility - Base of -2", "codility - Base of -2\codility - Base of -2.vcxproj", "{0340DA57-3A8F-4740-80D0-148AE21A3E8E}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Volleyball Match TODO", "hackerrank - Volleyball Match\hackerrank - Volleyball Match.vcxproj", "{3B91F3B3-8478-44E5-8042-AC62B2BB7A86}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Volleyball Match", "hackerrank - Volleyball Match\hackerrank - Volleyball Match.vcxproj", "{3B91F3B3-8478-44E5-8042-AC62B2BB7A86}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "google - rebuild BST from preorder sequence", "google - rebuild BST from preorder sequence\google - rebuild BST from preorder sequence.vcxproj", "{F3B6B456-0C67-4532-89BE-C0DC28862C2B}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - BST maintenance", "hackerrank - BST maintenance\hackerrank - BST maintenance.vcxproj", "{13395A45-68C0-4E92-83B9-AD5B5CE24FC8}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Find the Median", "hackerrank - Find the Median\hackerrank - Find the Median.vcxproj", "{16E0113B-535D-445F-81CC-D0E7E1409434}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -813,6 +815,10 @@ Global
 		{13395A45-68C0-4E92-83B9-AD5B5CE24FC8}.Debug|Win32.Build.0 = Debug|Win32
 		{13395A45-68C0-4E92-83B9-AD5B5CE24FC8}.Release|Win32.ActiveCfg = Release|Win32
 		{13395A45-68C0-4E92-83B9-AD5B5CE24FC8}.Release|Win32.Build.0 = Release|Win32
+		{16E0113B-535D-445F-81CC-D0E7E1409434}.Debug|Win32.ActiveCfg = Debug|Win32
+		{16E0113B-535D-445F-81CC-D0E7E1409434}.Debug|Win32.Build.0 = Debug|Win32
+		{16E0113B-535D-445F-81CC-D0E7E1409434}.Release|Win32.ActiveCfg = Release|Win32
+		{16E0113B-535D-445F-81CC-D0E7E1409434}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
