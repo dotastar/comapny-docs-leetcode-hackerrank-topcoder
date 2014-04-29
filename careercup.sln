@@ -49,8 +49,6 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "square root", "square root\
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "k palindrome", "k palindrome\k palindrome.vcxproj", "{A49C2722-FAFD-4805-947C-8FF8CF6ACB98}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "rebuild tree TODO", "rebuild tree\rebuild tree.vcxproj", "{B9562F6F-FA07-406A-93F9-6D35D68428A1}"
-EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "leetcode - atoi", "atoi\atoi.vcxproj", "{E49EB4F4-38AC-4BEB-AED9-3DD85C882549}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "leetcode - eval", "leetcode - eval\leetcode - eval.vcxproj", "{0347710A-E01C-4CDB-BF26-743CC2CC3F24}"
@@ -281,6 +279,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - BST maintenanc
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Find the Median", "hackerrank - Find the Median\hackerrank - Find the Median.vcxproj", "{16E0113B-535D-445F-81CC-D0E7E1409434}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Coin on the Table", "hackerrank - Coin on the Table\hackerrank - Coin on the Table.vcxproj", "{A7A8F9B2-23B8-48AC-AA87-1DF0E0964989}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -367,10 +367,6 @@ Global
 		{A49C2722-FAFD-4805-947C-8FF8CF6ACB98}.Debug|Win32.Build.0 = Debug|Win32
 		{A49C2722-FAFD-4805-947C-8FF8CF6ACB98}.Release|Win32.ActiveCfg = Release|Win32
 		{A49C2722-FAFD-4805-947C-8FF8CF6ACB98}.Release|Win32.Build.0 = Release|Win32
-		{B9562F6F-FA07-406A-93F9-6D35D68428A1}.Debug|Win32.ActiveCfg = Debug|Win32
-		{B9562F6F-FA07-406A-93F9-6D35D68428A1}.Debug|Win32.Build.0 = Debug|Win32
-		{B9562F6F-FA07-406A-93F9-6D35D68428A1}.Release|Win32.ActiveCfg = Release|Win32
-		{B9562F6F-FA07-406A-93F9-6D35D68428A1}.Release|Win32.Build.0 = Release|Win32
 		{E49EB4F4-38AC-4BEB-AED9-3DD85C882549}.Debug|Win32.ActiveCfg = Debug|Win32
 		{E49EB4F4-38AC-4BEB-AED9-3DD85C882549}.Debug|Win32.Build.0 = Debug|Win32
 		{E49EB4F4-38AC-4BEB-AED9-3DD85C882549}.Release|Win32.ActiveCfg = Release|Win32
@@ -819,6 +815,10 @@ Global
 		{16E0113B-535D-445F-81CC-D0E7E1409434}.Debug|Win32.Build.0 = Debug|Win32
 		{16E0113B-535D-445F-81CC-D0E7E1409434}.Release|Win32.ActiveCfg = Release|Win32
 		{16E0113B-535D-445F-81CC-D0E7E1409434}.Release|Win32.Build.0 = Release|Win32
+		{A7A8F9B2-23B8-48AC-AA87-1DF0E0964989}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A7A8F9B2-23B8-48AC-AA87-1DF0E0964989}.Debug|Win32.Build.0 = Debug|Win32
+		{A7A8F9B2-23B8-48AC-AA87-1DF0E0964989}.Release|Win32.ActiveCfg = Release|Win32
+		{A7A8F9B2-23B8-48AC-AA87-1DF0E0964989}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
