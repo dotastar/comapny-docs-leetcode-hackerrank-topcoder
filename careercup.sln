@@ -189,7 +189,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Longest Increasing Subseque
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "topcoder - ZigZag", "topcoder - ZigZag\topcoder - ZigZag.vcxproj", "{E3B8B30C-2C61-4AF6-BF60-41812CB3445F}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "topcode - BadNeighbors", "topcode - BadNeighbors\topcode - BadNeighbors.vcxproj", "{B1E00C89-6621-4AED-8D02-65EAF4251762}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "topcoder - BadNeighbors", "topcoder - BadNeighbors\topcoder - BadNeighbors.vcxproj", "{B1E00C89-6621-4AED-8D02-65EAF4251762}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "collect apples", "collect apples\collect apples.vcxproj", "{70538692-DB0D-4A3E-A5E4-C39CD5DB86F1}"
 EndProject
