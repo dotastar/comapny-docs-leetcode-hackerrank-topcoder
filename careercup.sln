@@ -228,6 +228,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{90DAA0BE-7DC9-4D74-B1CB-E93ABF702140}"
 	ProjectSection(SolutionItems) = preProject
 		docs\Assignment Problem and Hungarian algorithm.pdf = docs\Assignment Problem and Hungarian algorithm.pdf
+		docs\Binary Indexed Trees.pdf = docs\Binary Indexed Trees.pdf
+		docs\Comparison-based Lower Bounds for Sorting.pdf = docs\Comparison-based Lower Bounds for Sorting.pdf
 		docs\Dynamic Programming From novice to advanced.pdf = docs\Dynamic Programming From novice to advanced.pdf
 	EndProjectSection
 EndProject
