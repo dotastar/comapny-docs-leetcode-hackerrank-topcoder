@@ -66,7 +66,7 @@ class Solution2{
                 rs = s;
             }
         }
-        return ri;  //indx[i] is real index
+        return ri;
     }
     //更新到期时间d及之前，新时间点rd的超时时间s。
     //如果s比已有时间点的超时时间更长，则更新成为rd；

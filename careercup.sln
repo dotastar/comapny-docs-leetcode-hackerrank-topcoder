@@ -285,6 +285,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Coin on the Ta
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Task Scheduling", "hackerrank - Task Scheduling\hackerrank - Task Scheduling.vcxproj", "{A1EE5543-89B7-4F21-9674-59E59D1C550F}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Triplets", "hackerrank - Triplets\hackerrank - Triplets.vcxproj", "{78C5EEC3-BF32-4CD5-B27F-59DF8CE23365}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -827,6 +829,10 @@ Global
 		{A1EE5543-89B7-4F21-9674-59E59D1C550F}.Debug|Win32.Build.0 = Debug|Win32
 		{A1EE5543-89B7-4F21-9674-59E59D1C550F}.Release|Win32.ActiveCfg = Release|Win32
 		{A1EE5543-89B7-4F21-9674-59E59D1C550F}.Release|Win32.Build.0 = Release|Win32
+		{78C5EEC3-BF32-4CD5-B27F-59DF8CE23365}.Debug|Win32.ActiveCfg = Debug|Win32
+		{78C5EEC3-BF32-4CD5-B27F-59DF8CE23365}.Debug|Win32.Build.0 = Debug|Win32
+		{78C5EEC3-BF32-4CD5-B27F-59DF8CE23365}.Release|Win32.ActiveCfg = Release|Win32
+		{78C5EEC3-BF32-4CD5-B27F-59DF8CE23365}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
