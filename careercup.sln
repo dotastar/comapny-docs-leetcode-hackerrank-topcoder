@@ -287,6 +287,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Task Schedulin
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Triplets", "hackerrank - Triplets\hackerrank - Triplets.vcxproj", "{78C5EEC3-BF32-4CD5-B27F-59DF8CE23365}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "pandigital numbers", "pandigital numbers\pandigital numbers.vcxproj", "{03B9FB52-C7C2-4A7C-B910-D2B1EBE2C6E1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -833,6 +835,10 @@ Global
 		{78C5EEC3-BF32-4CD5-B27F-59DF8CE23365}.Debug|Win32.Build.0 = Debug|Win32
 		{78C5EEC3-BF32-4CD5-B27F-59DF8CE23365}.Release|Win32.ActiveCfg = Release|Win32
 		{78C5EEC3-BF32-4CD5-B27F-59DF8CE23365}.Release|Win32.Build.0 = Release|Win32
+		{03B9FB52-C7C2-4A7C-B910-D2B1EBE2C6E1}.Debug|Win32.ActiveCfg = Debug|Win32
+		{03B9FB52-C7C2-4A7C-B910-D2B1EBE2C6E1}.Debug|Win32.Build.0 = Debug|Win32
+		{03B9FB52-C7C2-4A7C-B910-D2B1EBE2C6E1}.Release|Win32.ActiveCfg = Release|Win32
+		{03B9FB52-C7C2-4A7C-B910-D2B1EBE2C6E1}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
