@@ -82,6 +82,13 @@ void print(const vector<int> & r)
     cout<<endl;
 }
 
+void print(const vector<long long> & r)
+{
+    for (size_t j = 0; j < r.size(); ++j)
+        cout << r[j] << " ";
+    cout << endl;
+}
+
 void print2(const vector<int> & r)
 {
     for (size_t j = 0; j < r.size(); ++j){
@@ -215,7 +222,8 @@ int genRand(int from, int to)
     return (r % range + from);
 }
 
-void genArray(vector<int> & A, int count, int from, int to)
+template<typename T>
+void genArray(vector<T> & A, int count, int from, int to)
 {
     for (int i = 0; i < count; ++i)
         A.push_back(genRand(from, to));
