@@ -295,6 +295,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - HuaRongDao TOD
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Travel around the world", "hackerrank - Travel around the world\hackerrank - Travel around the world.vcxproj", "{CE064D6C-6FA2-4146-AB07-440C0FA5BC79}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Road Network", "hackerrank - Road Network\hackerrank - Road Network.vcxproj", "{753F00F1-D301-472F-97BE-2D0CE2EE6F59}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -857,6 +859,10 @@ Global
 		{CE064D6C-6FA2-4146-AB07-440C0FA5BC79}.Debug|Win32.Build.0 = Debug|Win32
 		{CE064D6C-6FA2-4146-AB07-440C0FA5BC79}.Release|Win32.ActiveCfg = Release|Win32
 		{CE064D6C-6FA2-4146-AB07-440C0FA5BC79}.Release|Win32.Build.0 = Release|Win32
+		{753F00F1-D301-472F-97BE-2D0CE2EE6F59}.Debug|Win32.ActiveCfg = Debug|Win32
+		{753F00F1-D301-472F-97BE-2D0CE2EE6F59}.Debug|Win32.Build.0 = Debug|Win32
+		{753F00F1-D301-472F-97BE-2D0CE2EE6F59}.Release|Win32.ActiveCfg = Release|Win32
+		{753F00F1-D301-472F-97BE-2D0CE2EE6F59}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
