@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{969402F9-56B0-4CA0-B515-515DEDA859E7}"
 	ProjectSection(SolutionItems) = preProject
@@ -295,7 +295,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - HuaRongDao TOD
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Travel around the world", "hackerrank - Travel around the world\hackerrank - Travel around the world.vcxproj", "{CE064D6C-6FA2-4146-AB07-440C0FA5BC79}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Road Network", "hackerrank - Road Network\hackerrank - Road Network.vcxproj", "{753F00F1-D301-472F-97BE-2D0CE2EE6F59}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Road Network TODO", "hackerrank - Road Network\hackerrank - Road Network.vcxproj", "{753F00F1-D301-472F-97BE-2D0CE2EE6F59}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - 2048", "hackerrank - 2048\hackerrank - 2048.vcxproj", "{598F8DCD-F51D-43C5-8B60-1F889FF92138}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Game Of Rotation", "hackerrank - Game Of Rotation\hackerrank - Game Of Rotation.vcxproj", "{05932494-D93B-419F-B2A7-37A902AD8B22}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -863,6 +867,14 @@ Global
 		{753F00F1-D301-472F-97BE-2D0CE2EE6F59}.Debug|Win32.Build.0 = Debug|Win32
 		{753F00F1-D301-472F-97BE-2D0CE2EE6F59}.Release|Win32.ActiveCfg = Release|Win32
 		{753F00F1-D301-472F-97BE-2D0CE2EE6F59}.Release|Win32.Build.0 = Release|Win32
+		{598F8DCD-F51D-43C5-8B60-1F889FF92138}.Debug|Win32.ActiveCfg = Debug|Win32
+		{598F8DCD-F51D-43C5-8B60-1F889FF92138}.Debug|Win32.Build.0 = Debug|Win32
+		{598F8DCD-F51D-43C5-8B60-1F889FF92138}.Release|Win32.ActiveCfg = Release|Win32
+		{598F8DCD-F51D-43C5-8B60-1F889FF92138}.Release|Win32.Build.0 = Release|Win32
+		{05932494-D93B-419F-B2A7-37A902AD8B22}.Debug|Win32.ActiveCfg = Debug|Win32
+		{05932494-D93B-419F-B2A7-37A902AD8B22}.Debug|Win32.Build.0 = Debug|Win32
+		{05932494-D93B-419F-B2A7-37A902AD8B22}.Release|Win32.ActiveCfg = Release|Win32
+		{05932494-D93B-419F-B2A7-37A902AD8B22}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
