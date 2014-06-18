@@ -320,6 +320,12 @@ struct SolutionSquare
     }
 };
 
+struct SolutionIntelly
+{
+    EMove nextMove(const vector<vector<int>> & board) {
+    }
+};
+
 typedef SolutionGreedyNoDownRand Solution;
 
 struct IntSet
@@ -367,10 +373,9 @@ void testSolution(const char * name)
         << endl;
 }
 
-#define __BENCH_MARK(S) testSolution<S>(#S)
-
 void benchmark()
 {
+#define __BENCH_MARK(S) testSolution<S>(#S)
     //__BENCH_MARK(SolutionRandom);
     //__BENCH_MARK(SolutionGreedy);
     __BENCH_MARK(SolutionGreedyNoDown);
@@ -378,9 +383,9 @@ void benchmark()
     __BENCH_MARK(SolutionSquare<2>);
     __BENCH_MARK(SolutionSquare<3>);
     __BENCH_MARK(SolutionSquare<4>);
+#undef __BENCH_MARK
 }
 
-#undef __BENCH_MARK
 
 void test()
 {

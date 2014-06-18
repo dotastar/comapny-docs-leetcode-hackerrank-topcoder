@@ -14,6 +14,7 @@
     <ProjectGuid>{05932494-D93B-419F-B2A7-37A902AD8B22}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>hackerrankGameOfRotation</RootNamespace>
+    <ProjectName>hackerrank - Game Of Rotation TODO</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

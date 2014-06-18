@@ -30,6 +30,10 @@ The total number of unique paths is 2.
 Note: m and n will be at most 100.
 
 
+III
+和Unique Paths不同的是要求给出任何一个点m[x][y]被visit的probability.
+
+
 
 
 和Unique Path一样的转移方程：
@@ -56,3 +60,11 @@ or            = 0 if Array[i][j] =1
 17:            }  
 18:            return maxV[n-1];  
 19:       }  
+
+
+III
+dozerg:
+Assume there are no obstacles (Unique Path I), then the total path number is: T = C(m+n, n).
+Let P(x, y) denotes the number of unique paths through (x, y) to reach the end, then:
+P(x, y) = Paths from (0, 0) to (x, y) times paths from (x, y) to (m, n) = C(x+y, x) * C((m-x)+(n-y), m-x).
+So the probability that the robot walks through position (x, y) is P(x, y)/T.

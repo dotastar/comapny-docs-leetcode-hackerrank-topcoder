@@ -297,9 +297,11 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Travel around 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Road Network TODO", "hackerrank - Road Network\hackerrank - Road Network.vcxproj", "{753F00F1-D301-472F-97BE-2D0CE2EE6F59}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - 2048", "hackerrank - 2048\hackerrank - 2048.vcxproj", "{598F8DCD-F51D-43C5-8B60-1F889FF92138}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - 2048 TODO", "hackerrank - 2048\hackerrank - 2048.vcxproj", "{598F8DCD-F51D-43C5-8B60-1F889FF92138}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Game Of Rotation", "hackerrank - Game Of Rotation\hackerrank - Game Of Rotation.vcxproj", "{05932494-D93B-419F-B2A7-37A902AD8B22}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Game Of Rotation TODO", "hackerrank - Game Of Rotation\hackerrank - Game Of Rotation.vcxproj", "{05932494-D93B-419F-B2A7-37A902AD8B22}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerranck - Closest Number", "hackerranck - Closest Number\hackerranck - Closest Number.vcxproj", "{90FDC568-EEC0-424C-8943-E17CC4A00FBA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -875,6 +877,10 @@ Global
 		{05932494-D93B-419F-B2A7-37A902AD8B22}.Debug|Win32.Build.0 = Debug|Win32
 		{05932494-D93B-419F-B2A7-37A902AD8B22}.Release|Win32.ActiveCfg = Release|Win32
 		{05932494-D93B-419F-B2A7-37A902AD8B22}.Release|Win32.Build.0 = Release|Win32
+		{90FDC568-EEC0-424C-8943-E17CC4A00FBA}.Debug|Win32.ActiveCfg = Debug|Win32
+		{90FDC568-EEC0-424C-8943-E17CC4A00FBA}.Debug|Win32.Build.0 = Debug|Win32
+		{90FDC568-EEC0-424C-8943-E17CC4A00FBA}.Release|Win32.ActiveCfg = Release|Win32
+		{90FDC568-EEC0-424C-8943-E17CC4A00FBA}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
