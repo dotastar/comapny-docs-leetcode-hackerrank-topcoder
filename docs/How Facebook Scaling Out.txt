@@ -1,0 +1,120 @@
+Scaling Out
+由 Jason Sobel 于 2008年8月21日上午 2:05 发布
+I joined Facebook in April 2007 and, after getting settled over the course of a few weeks, my manager Robert Johnson approached me. We talked for a while but the conversation boiled down to:
+
+Bobby: "So, Jason, we're going to open a new datacenter in Virginia by 2008. Do you think you can help?"
+Me: "Uh.... yes?"
+Bobby: "Great!"
+
+My first project at Facebook was a tad more involved then I was expecting, but I think that is one reason why we have such a great engineering organization; we have a lot of hard problems to solve and everyone here is excited to jump in and tackle them. I set out to really understand why we were building a new datacenter and what problems we had to overcome to make it work.
+
+Why Bother?
+
+The primary reason for building a new datacenter on the east coast was latency. It takes about 70 milliseconds to send a packet across the country on a high-speed link, and it can be much longer for an average internet user. By putting servers in Virginia we could reduce the time to send a page to users on the east coast and in Europe by a noticeable amount.
+
+Secondary concerns were space, power, and disaster recovery. We were running out of physical space in our primary datacenters in California and the Virginia site would give us lots of room to grow. We were having a similar problem with getting enough electricity to power all those servers. Finally, restricting ourselves to only one location meant that, in the event of a disaster (power failure, earthquake, Godzilla), Facebook could be unusable for extended periods of time.
+
+Build It!
+
+Before we could go to work on the application level challenges our operations team put in a heroic effort to build out the servers and the physical space in Virginia. They also brought up the intra-datacenter network and the low latency inter-datacenter fiber channel link. This work was an enormous undertaking but our operations team is top-notch and made it all look easy.
+
+With the network and hardware in place we set up our standard 3 tier architecture: web server, memcache server, and MySQL database. The MySQL databses in Virginia were going to run as slaves of the west coast databases, so we spent a couple weeks copying all the data across the country and setting up replication streams.
+
+Now that the hardware, network, and basic infrastructure was set up it was time to face the two main application level challenges: cache consistency and traffic routing.
+
+<h2>Cache Consistency</h2> 
+
+A bit of background on our caching model: when a user modifies a data object our infrastructure will write the new value in to a database and delete the old value from memcache (if it was present). The next time a user requests that data object we pull the result from the database and write it to memcache. Subsequent requests will pull the data from memcache until it expires out of the cache or is deleted by another update.
+
+This setup works really well with only one set of databases because we only delete the value from memcache after the database has confirmed the write of the new value. That way we are guaranteed the next read will get the updated value from the database and put it in to memcache. With a slave database on the east coast, however, the situation got a little tricky.
+
+When we update a west coast master database with some new data there is a replication lag before the new value is properly reflected in the east coast slave database. Normally this replication lag is under a second but in periods of high load it can spike up to 20 seconds.
+
+Now let's say we delete the value from Virginia memcache tier at the time we update the master database in California. A subsequent read from the slave database in Virginia might see the old value instead of the new one because of replication lag. Then Virginia memcache would be updated with the old (incorrect) value and it would be "trapped" there until another delete. As you can see, in the worst case the Virginia memcache tier would always be one "version" behind of the correct data.
+
+Consider the following example:
+I update my first name from "Jason" to "Monkey"
+
+We write "Monkey" in to the master database in California and delete my first name from memcache in California and Virginia
+
+Someone goes to my profile in Virginia
+
+We don't find my first name in memcache so we read from the Virginia slave database and get "Jason" because of replication lag
+
+We update Virginia memcache with my first name as "Jason"
+
+Replication catches up and we update the slave database with my first name as "Monkey"
+
+Someone else goes to my profile in Virginia
+
+We find my first name in memcache and return "Jason"
+
+
+
+Until I update my first name again or it falls out of cache and we go back to the database, we will show my first name as "Jason" in Virginia and "Monkey" in California. Confusing? You bet. Welcome to the world of distributed systems, where consistency is a really hard problem.
+
+Fortunately, the solution is a lot easier to explain than the problem. We made a small change to MySQL that allows us to tack on extra information in the replication stream that is updating the slave database. We used this feature to append all the data objects that are changing for a given query and then the slave database "sees" these objects and is responsible for deleting the value from cache after it performs the update to the database.
+
+How'd we do it? MySQL uses a lex parser and a yacc grammar to define the structure of a query and then parse it. I've simplified the following for ease of explanation, but at the highest level this grammar looks like:
+
+query:
+statement END_OF_INPUT {};
+
+statement:
+alter
+| analyze
+| backup
+| call
+... (insert, replace, select, etc.)
+
+Pretty straightforward, right? A query is a statement which breaks down to one of the MySQL expressions we all know and love. We modified this grammar to allow appending memcache keys to the end of any query, as follows:
+
+query:
+statement mc_dirty END_OF_INPUT {};
+
+mc_dirty:
+{}
+| MEMCACHE_DIRTY mc_key_list;
+
+mc_key_list:
+mc_key_list ',' text_string { Lex->mc_key_list.push_back($3); }
+| text_string { Lex->mc_key_list.push_back($1); };
+
+A query now has an additional component; after the statement comes the mc_dirty which is either empty or a keyword MEMCACHE_DIRTY followed by a mc_key_list. A mc_key_list is just a comma-separated list of strings and the rule tells the parser to push all the strings one-by-one on to a vector named mc_key_list which is stored inside a per-query parser object.
+
+As an example, an old query might look like:
+REPLACE INTO profile (`first_name`) VALUES ('Monkey') WHERE `user_id`='jsobel'
+and under the new grammar it would change to:
+REPLACE INTO profile (`first_name`) VALUES ('Monkey') WHERE `user_id`='jsobel' MEMCACHE_DIRTY 'jsobel:first_name'
+
+The new query is telling MySQL that, in addition to changing my first name to Monkey, it also needs to dirty a corresponding memcache key. This is easily implemented. Since the per-query parser object now stores all memcache keys we tack on to a query, we added a small piece of code at the end of mysql_execute_command that dirties those keys if the query is successful. Voila, we've hijacked the MySQL replication stream for our own purpose: cache consistency.
+
+The new workflow becomes (changed items in bold):
+
+I update my first name from "Jason" to "Monkey"
+
+We write "Monkey" in to the master database in California and delete my first name from memcache in California but not Virginia
+
+Someone goes to my profile in Virginia
+
+We find my first name in memcache and return "Jason"
+
+Replication catches up and we update the slave database with my first name as "Monkey." We also delete my first name from Virginia memcache because that cache object showed up in the replication stream
+
+Someone else goes to my profile in Virginia
+
+We don't find my first name in memcache so we read from the slave and get "Monkey"
+
+<h2>Page Routing</h2>
+
+The other main problem we had to address was that only our master databases in California could accept write operations. This fact meant we needed to avoid serving pages that did database writes from Virginia because each one would have to cross the country to our master databases in California. Fortunately, our most frequently accessed pages (home page, profiles, photo pages) don't do any writes under normal operation. The problem thus boiled down to, when a user makes a request for a page, how do we decide if it is "safe" to send to Virginia or if it must be routed to California?
+
+This question turned out to have a relatively straightforward answer. One of the first servers a user request to Facebook hits is called a load balancer; this machine's primary responsibility is picking a web server to handle the request but it also serves a number of other purposes: protecting against denial of service attacks and multiplexing user connections to name a few. This load balancer has the capability to run in Layer 7 mode where it can examine the URI a user is requesting and make routing decisions based on that information. This feature meant it was easy to tell the load balancer about our "safe" pages and it could decide whether to send the request to Virginia or California based on the page name and the user's location.
+
+There is another wrinkle to this problem, however. Let's say you go to editprofile.php to change your hometown. This page isn't marked as safe so it gets routed to California and you make the change. Then you go to view your profile and, since it is a safe page, we send you to Virginia. Because of the replication lag we mentioned earlier, however, you might not see the change you just made! This experience is very confusing for a user and also leads to double posting. We got around this concern by setting a cookie in your browser with the current time whenever you write something to our databases. The load balancer also looks for that cookie and, if it notices that you wrote something within 20 seconds, will unconditionally send you to California. Then when 20 seconds have passed and we're certain the data has replicated to Virginia, we'll allow you to go back for safe pages.
+
+<h1>Looking Back</h1>
+
+Nine months after our first user viewed a page in the Virginia datacenter we're still running the same architecture with good success. There were bumps along the way, of course; for the first month or two the cache consistency infrastructure was very shaky and would periodically force us to divert traffic away from Virginia while we diagnosed and fixed bugs. Over time, however, we've ironed out the issues and now serve a substantial portion of Facebook's traffic out of this datacenter.
+
+The main scaling challenge with this architecture is pretty obvious: all write operations must happen in one location. Going forward we're very excited to develop new technologies that will let us perform writes in any location. We're also thinking a lot about how to use our new datacenter as a disaster recovery site in case Godzilla decides to attack our California locations! Interested in helping us out? www.facebook.com/jobs!
