@@ -1107,3 +1107,29 @@ n=4
 3号，3号杀4号，把枪给5号，如此下去，请问最后存活的是几号?
 
 
+统计最近30分钟google的top 10 searched keywords -- getTop10InLast30mins(),需
+要经常调用。
+maxthon:
+有个想法，你可以试试。
+不用array,用linked list，
+每个keyword维护linked list，
+有的keyword如果每分钟都会出现，就是30个nodes（假设最长30），每个node存的是前
+n分钟的总数，不是第n分钟的次数。
+有的keyword不是每分钟都会出现，就小于30个nodes。
+linked list可以滚动没问题。
+从说明来看，这个function一般是getTop10inLast30， 10， 5， 1 几个特殊时间的数
+，不是1-30都有。
+在更新linked list的时候(时间复杂度 < 30*O(n) )，可以对这几个特殊时间建堆，只
+要4个 10个element的minheap。 应该是< 4*log10*O(n)的时间复杂度。
+
+
+Google电面
+1.Given a stream of double, how to find out the mean value of the double 
+with limited memory.
+
+2.Given a number m, if any digit equals to n, then it is illegal. Write a 
+function that returns whether it is legal or not. For example, m=15, n=5, m 
+has 5 in it, so m is illegal.
+
+3.Find how many legal numbers that is less than or equal to m. For example, 
+for m=15, n = 4, there are 13 legal numbers from 1 to 15.
