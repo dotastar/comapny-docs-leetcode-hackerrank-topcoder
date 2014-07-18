@@ -1133,3 +1133,53 @@ has 5 in it, so m is illegal.
 
 3.Find how many legal numbers that is less than or equal to m. For example, 
 for m=15, n = 4, there are 13 legal numbers from 1 to 15.
+
+
+Facebook
+版上看到的几道F家的题目
+1. Print all paths of a binary tree
+How to do it iteratively? 用一个stack实现preorder来做？
+2. Given an array of integers,  find any 3 numbers in array such that they 
+sum to zero. eg: 
+[1, 2, -3, 4, 0]
+1) 1 , 2, -3
+2) 0, 0, 0
+这个是不是三重循环？还有更快的吗？
+3. 一个数组,一个target,求所有的pairs, array[i] - array[j] = k.
+hash table? 要是k=0, 所有数都相等呢？怎么看都是n^2了
+4. 一个字符串,一个字符数组,求所有的子字符串,子字符串不能包括字符数组里面的所
+有元素.
+abbc, [a,b,c] ->  a, b, c, ab, abb, bbc, bb, bc
+有什么好思路？
+5.多层链表压扁及还原
+
+
+
+http://www.mitbbs.com/article_t/JobHunting/32737543.html
+一个N * M 矩阵A，里面的值是1或0，现在求矩阵里面子矩阵(square)最大边长L，满足
+1. 0 < L <= min(N, M),
+2. 0 <= X <= N - L,
+3. 0 <= Y <= M - L,
+4. A[X + I][Y + J] = 1 for all 0 <= I < L and 0 <= J < L.
+5. 子矩阵能够移动, 从(X, Y)移动到(X + 1, Y)或者(X, Y + 1)
+同时满足子矩阵能从左上角(0, 0)走到右下角(N - L, M - L)，
+即求能从左上角走到右下角的子矩阵边长最大，使子矩阵任何时刻里面全部是1,有则返
+回L，没有返回0
+For example, given array A:
+1 1 1 0
+1 1 1 0
+1 1 1 0
+1 1 1 1 
+0 1 1 1
+1 0 1 1 
+the function should return 2.
+Given array A:
+1 1 0 0
+1 0 0 0
+0 1 0 1
+the function should return 0.
+Given array A:
+1
+the function should return 1.
+要求时间O(N * M * log(N + M)), 空间O(N * M) 
+求大神指点
