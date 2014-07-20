@@ -40,10 +40,6 @@ struct TreeNode {
     TreeNode *left;
     TreeNode *right;
     TreeNode(int x = 0) : val(x), left(NULL), right(NULL) {}
-    ~TreeNode(){
-        delete left;
-        delete right;
-    }
 };
 
 struct ListNode {

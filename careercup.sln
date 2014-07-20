@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.30501.0
+VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{969402F9-56B0-4CA0-B515-515DEDA859E7}"
 	ProjectSection(SolutionItems) = preProject
@@ -302,6 +302,10 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Game Of Rotation TODO", "hackerrank - Game Of Rotation\hackerrank - Game Of Rotation.vcxproj", "{05932494-D93B-419F-B2A7-37A902AD8B22}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerranck - Closest Number", "hackerranck - Closest Number\hackerranck - Closest Number.vcxproj", "{90FDC568-EEC0-424C-8943-E17CC4A00FBA}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Die Hard 3 TODO", "hackerrank - Die Hard 3\hackerrank - Die Hard 3.vcxproj", "{43910D95-66C8-4136-B1EE-086F5606DF7B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cc150 - Binary Tree Path Sum", "cc150 - Binary Tree Path Sum\cc150 - Binary Tree Path Sum.vcxproj", "{B3CCED26-28C6-4636-8DA3-7D706FC6442D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -881,6 +885,14 @@ Global
 		{90FDC568-EEC0-424C-8943-E17CC4A00FBA}.Debug|Win32.Build.0 = Debug|Win32
 		{90FDC568-EEC0-424C-8943-E17CC4A00FBA}.Release|Win32.ActiveCfg = Release|Win32
 		{90FDC568-EEC0-424C-8943-E17CC4A00FBA}.Release|Win32.Build.0 = Release|Win32
+		{43910D95-66C8-4136-B1EE-086F5606DF7B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{43910D95-66C8-4136-B1EE-086F5606DF7B}.Debug|Win32.Build.0 = Debug|Win32
+		{43910D95-66C8-4136-B1EE-086F5606DF7B}.Release|Win32.ActiveCfg = Release|Win32
+		{43910D95-66C8-4136-B1EE-086F5606DF7B}.Release|Win32.Build.0 = Release|Win32
+		{B3CCED26-28C6-4636-8DA3-7D706FC6442D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B3CCED26-28C6-4636-8DA3-7D706FC6442D}.Debug|Win32.Build.0 = Debug|Win32
+		{B3CCED26-28C6-4636-8DA3-7D706FC6442D}.Release|Win32.ActiveCfg = Release|Win32
+		{B3CCED26-28C6-4636-8DA3-7D706FC6442D}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
