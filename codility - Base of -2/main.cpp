@@ -9,7 +9,7 @@ vector<int> solution(const vector<int> &A) {
     b.insert(b.end(), A.begin(), A.end());
     //VAL/2
     /*
-    fomulars:
+    Formulars:
     1. ...01... / 2 = ...11...
     2. ...011... / 2 = ...100...
     so:
