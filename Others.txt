@@ -1183,3 +1183,7 @@ Given array A:
 the function should return 1.
 要求时间O(N * M * log(N + M)), 空间O(N * M) 
 求大神指点
+
+
+
+已经一个n*m的0/1矩阵，行数n远大于列数m，求最少需要取多少行，才能保证每列至少有1个1。
