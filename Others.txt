@@ -1187,3 +1187,17 @@ the function should return 1.
 
 
 已经一个n*m的0/1矩阵，行数n远大于列数m，求最少需要取多少行，才能保证每列至少有1个1。
+
+
+http://www.mitbbs.com/article_t/JobHunting/32744847.html
+看面经看来的，求大牛开解
+Abbreviation: apple can be abbreviated to 5, a4, 4e, a3e, …
+    Given a target string (internationalization), and a set of strings, 
+return the minimal length of abbreviation of this target string so that it 
+won’t conflict with abbrs of the strings in the set. 
+“apple”, [“blade”] -> a4 (5 is conflicted with “blade”)
+“apple”, [“plain”, “amber”, “blade”]  ->  ???
+Problem changed to:
+If given a string and an abbreviation, return if the string matches abbr.
+“internationalization”, “i5a11o1” -> true
+后半道是正常的string processing, 问题是前半道毫无头绪，跪求思路!
