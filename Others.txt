@@ -1241,3 +1241,75 @@ session 4:   写出长度小于N的所有旋转对称数。
                    递归。也可以dp。
 session 5: 设计数据结构，满足insert,delete,getRandom都是O(1)
 http://stackoverflow.com/questions/5682218/data-structure-insert-remove-contains-get-random-element-all-at-o1
+
+
+
+Given an array containing only stars '*' and hashes '#' . Find longest contiguous sub array that will contain equal no. of stars '*' and hashes '#'. 
+Order (n) solution required
+Answer：
+Consider * and # as 1 and -1. Then calculate the sum starting from left, and store it in the array. 
+Example: *##*###** becomes 1 -1 -1 1 -1 -1 -1 1 1 and the sums = [1 0 -1 0 -1 -2 -3 -2 -1]. 
+As you can see the places where 0 appearance says that there is an equal amount of zeros and one, 
+starting from the beginning of the array. In the places where the number matches, let's say at 
+index i and j, the sum between i + 1, and j was equal 0. 
+
+In the second step you need to find the maximum distance. Consider using hash_map for storing
+the first occurence of every number. Calculate the size.
+
+
+google面经：
+假设有一台迷你计算机，1KB的内存，1MHZ的cpu，已知该计算机执行的程序可出现确定
+性终止（非死循环），问如何求得这台计算机上程序运行的 最长时间，可以做出任何
+大胆的假设。
+分析：任何时候内存状态都不能相同，否则进入死循环：假设某2个时刻t1,t2满足t1小
+于t2，内存的状态完全相同，那么到达t2时刻又想当于回到了t1的执行位置。1k的内存
+共有状态 2^(1024*8)个（相当大）每秒cpu为1m，一秒钟改变1m次，所以两者相除即可
+得CPU的最长运行时
+
+
+
+用1*2的瓷砖铺地，N*M的地板有几种铺法
+longlife：
+就是普通的状态压缩 DP 或者递推
+我都把算法描述出来了 看不懂只好丢给你个程序了
+    int mask = (1 << m) - 1;
+    f[0][0] = 1;
+    // 一行一行的来
+    for (int i = 0; i < n; ++i) {
+      FILL(f[(i + 1) & 1], 0);
+      // 枚举本行的铺法
+      for (int j = 0; j <= mask; ++j) {
+        // 上一行的铺法
+        for (int k = 0; k <= mask; ++k) {
+          // 检查相容
+          if (check(j, k, mask)) {
+            // 累加
+            f[(i + 1) & 1][j] += f[i & 1][k];
+          }
+        }
+      }
+    }
+    // 输出解
+    cout << f[n & 1][0] << endl;
+    bool check(int j, int k, int mask) {
+      if (j & k) return false;
+      int state = ~(j | k) & mask;
+      while (state) {
+        if (state & 1) {
+          state >>= 1;
+          if (!(state & 1)) return false;
+        }
+        state >>= 1;
+      }
+      return true;
+    }
+	
+	
+	
+有一组records，每个record由三个参数组成，开始时间，结束时间，权重。找到一个
+set，这个set包含的records在时间上没有重叠，并且set的权重之和最大。
+sipiprotoss：
+先排序
+在排序后的数组里定义m[i]表示以i结尾的最大权重
+m[i] = max(m[k] + weight[k]) 其中k的结束时间小于i的开始时间
+时间复杂度O(N^2)
