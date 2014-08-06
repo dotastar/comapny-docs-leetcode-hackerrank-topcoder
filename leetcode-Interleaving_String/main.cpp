@@ -64,19 +64,26 @@ public:
         if (s1.size() < s2.size())
             s1.swap(s2);
         vector<bool>  dp(s1.size() + 1);
-        dp[0] = true;
-        for (size_t j = 0; j <= s2.size(); ++j)
-            for (size_t i = 1; i <= s1.size(); ++i)
-                dp[i] = ((dp[i - 1] && s1[i - 1] == s3[i + j - 1])
-                        || (j > 0 && dp[i] && s2[j - 1] == s3[i + j - 1]));
+		for (size_t j = 0; j <= s2.size(); ++j){
+			dp[0] = (!j || (dp[0] && s2[j - 1] == s3[j - 1]));
+			for (size_t i = 1; i <= s1.size(); ++i)
+				dp[i] = ((dp[i - 1] && s1[i - 1] == s3[i + j - 1]) || (j > 0 && dp[i] && s2[j - 1] == s3[i + j - 1]));
+		}
         return dp.back();
     }
 };
 
 int main()
 {
-    {
-        string s1 = "aabcc";
+	{
+		string s1 = "a";
+		string s2 = "d";
+		string s3 = "aa";
+		cout << Solution().isInterleave(s1, s2, s3)
+			<< " " << Solution2().isInterleave(s1, s2, s3)
+			<< endl;
+	}{
+		string s1 = "aabcc";
         string s2 = "dbbca";
         string s3 = "aadbbcbcac";
         cout << Solution().isInterleave(s1, s2, s3)
