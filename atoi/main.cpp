@@ -27,6 +27,35 @@ int my_atoi(const char *str)
     return (minus ? -r : r);
 }
 
+class Solution {
+public:
+    int atoi(const char *str) {
+        if(!str)
+            return 0;
+        while(isspace(*str))
+            ++str;
+        bool minus = false;
+        if('-' == *str || '+' == *str){
+            minus = '-' == *str;
+            ++str;
+        }
+        long long r = 0;
+        while('0' <= *str && *str <= '9'){
+            r = r * 10 + *str - '0';
+            ++str;
+            if(r > INT_MAX)
+                break;
+        }
+        if(minus)
+            r = -r;
+        if(r > INT_MAX)
+            return INT_MAX;
+        if(r < INT_MIN)
+            return INT_MIN;
+        return r;
+    }
+};
+
 int main()
 {
     std::cout<<my_atoi("    10522545459")

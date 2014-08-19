@@ -79,6 +79,32 @@ public:
     }
 };
 
+class Solution2 {
+public:
+    void reverseWords(string &s) {
+        int f = -1, t = 0;
+        for(int i = 0;i <= s.length();++i){
+            if(i >= s.length() || isspace(s[i])){
+                if(f >= 0){
+                    for(int j = f, k = t - 1;j < k;++j, --k)
+                        swap(s[j], s[k]);
+                    s[t++] = ' ';
+                }
+                f = -1;
+            }else{
+                if(f < 0)
+                    f = t;
+                s[t++] = s[i];
+            }
+        }
+        if(t > 0 && s[t - 1] == ' ')
+            --t;
+        s.resize(t);
+        for(int i = 0, j = s.length() - 1;i < j;++i, --j)
+            swap(s[i], s[j]);
+    }
+};
+
 int main()
 {
     {

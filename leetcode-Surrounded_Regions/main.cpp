@@ -57,6 +57,52 @@ public:
     }
 };
 
+class Solution2 {
+public:
+    void solve(vector<vector<char>> &board) {
+        if(board.empty() || board[0].empty())
+            return;
+        //collect 'O's on the edge
+        deque<pair<int, int>> q;
+        for(int i = 0;i < board.size();++i)
+            if('O' == board[i][0])
+                q.push_back(make_pair(i, 0));
+        if(board[0].size() > 1)
+            for(int i = 0;i < board.size();++i)
+                if('O' == board[i].back())
+                    q.push_back(make_pair(i, board[i].size() - 1));
+        for(int j = 0;j < board[0].size();++j)
+            if('O' == board[0][j])
+                q.push_back(make_pair(0, j));
+        if(board.size() > 1)
+            for(int j = 0;j < board.back().size();++j)
+                if('O' == board.back()[j])
+                    q.push_back(make_pair(board.size() - 1, j));
+        //bfs for all 'O's connected to the edge, and set to 'Y'
+        for(;!q.empty();q.pop_front()){
+            const auto & p = q.front();
+            if(0 <= p.first && p.first < board.size()
+                    && 0 <= p.second && p.second < board[0].size()
+                    && 'O' == board[p.first][p.second]){
+                board[p.first][p.second] = 'Y';
+                q.push_back(make_pair(p.first - 1, p.second));
+                q.push_back(make_pair(p.first + 1, p.second));
+                q.push_back(make_pair(p.first, p.second - 1));
+                q.push_back(make_pair(p.first, p.second + 1));
+            }
+        }
+        //set all left 'O' to 'X', and 'Y' to 'O'
+        for(int i = 0;i < board.size();++i)
+            for(int j = 0;j < board[i].size();++j){
+                switch(board[i][j]){
+                    case 'O':board[i][j] = 'X';break;
+                    case 'Y':board[i][j] = 'O';break;
+                    default:;
+                }
+            }
+    }
+};
+
 int main()
 {
     {
