@@ -40,6 +40,25 @@ public:
     }
 };
 
+class Solution {
+public:
+    int numDecodings(string s) {
+        if(s.empty())
+            return 0;
+        int r[2] = {0, 1};
+        for(int i = 0;i < s.size();++i){
+            int t = 0;
+            if('0' < s[i])
+                t += r[1];
+            if(i > 0 && ('1' == s[i - 1] || ('2' == s[i - 1] && s[i] <= '6')))
+                t += r[0];
+            r[0] = r[1];
+            r[1] = t;
+        }
+        return r[1];
+    }
+};
+
 int main()
 {
     cout<<Solution().numDecodings2("1101")<<endl;

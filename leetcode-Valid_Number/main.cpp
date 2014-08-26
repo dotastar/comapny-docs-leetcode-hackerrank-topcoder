@@ -98,6 +98,33 @@ public:
     }
 };
 
+class Solution2 {
+public:
+    bool isNumber(const char *s) {
+        if(!s)
+            return false;
+        for(;isspace(*s);++s);
+        if('-' == *s || '+' == *s)
+            ++s;
+        int d = 0;
+        for(;isdigit(*s);++s, ++d);
+        if('.' == *s)
+            for(++s;isdigit(*s);++s, ++d);
+        if(!d)
+            return false;
+        if('e' == *s || 'E' == *s){
+            ++s;
+            if('-' == *s || '+' == *s)
+                ++s;
+            if(!isdigit(*s++))
+                return false;
+            for(;isdigit(*s);++s);
+        }
+        for(;isspace(*s);++s);
+        return !*s;
+    }
+};
+
 int main()
 {
     cout<<Solution().isNumber("0")<<endl;

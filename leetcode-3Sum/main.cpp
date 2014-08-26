@@ -42,6 +42,7 @@ public:
         }
     }
 
+	//O(N^3 * logN)
     vector<vector<int> > threeSum2(vector<int> &num) {
         vector<vector<int> > r;
         if(num.size() < 3)
@@ -60,6 +61,7 @@ public:
         return r;
     }
 
+	//O(N^2 * logN)
     vector<vector<int> > threeSum3(vector<int> &num) {
         vector<vector<int> > r;
         if(num.size() < 3)
@@ -182,6 +184,31 @@ public:
                     r.back().push_back(num[j]);
                     r.back().push_back(v);
                 }
+            }
+        }
+        return r;
+    }
+};
+
+class Solution2 {
+public:
+	//O(N^2 * logN)
+    vector<vector<int> > threeSum(vector<int> &num) {
+        vector<vector<int> > r;
+        sort(num.begin(), num.end());
+        for(int i = 0;i < num.size();++i){
+            if(i > 0 && num[i - 1] == num[i])
+                continue;
+            if(num[i] > 0)
+                break;
+            for(int j = i + 1;j < num.size();++j){
+                if(j > i + 1 && num[j - 1] == num[j])
+                    continue;
+                if(num[i] + 2 * num[j] > 0)
+                    break;
+                const int k = 0 - num[i] - num[j];
+                if(binary_search(num.begin() + j + 1, num.end(), k))
+                    r.push_back({num[i], num[j], k});
             }
         }
         return r;

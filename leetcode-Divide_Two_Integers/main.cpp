@@ -84,6 +84,31 @@ public:
     }
 };
 
+class Solution {
+public:
+    int divide(int dividend, int divisor) {
+        assert(divisor);
+        long long de = dividend, di = divisor;
+        bool minus = false;
+        if(de < 0){
+            minus = !minus;
+            de = -de;
+        }
+        if(di < 0){
+            minus = !minus;
+            di = -di;
+        }
+        int r = 0;
+        while(di <= de){
+            int i = 0;
+            for(; (di << (i + 1)) <= de; ++i);
+            de -= di << i;
+            r += 1 << i;
+        }
+        return minus ? -r : r;
+    }
+};
+
 int main()
 {
 #define ddd divide1

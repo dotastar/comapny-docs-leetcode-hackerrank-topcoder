@@ -139,6 +139,30 @@ public:
     }
 };
 
+class Solution2 {
+public:
+    bool isMatch(const char *s, const char *p) {
+        if(!p || !*p)
+            return !s || !*s;
+        int n = strlen(s);
+        vector<bool> dp(n + 1), t;
+        dp[0] = true;
+        for(int j = 0;*p;++j, ++p, t.clear()){
+            t.resize(dp.size());
+            t[0] = dp[0] && '*' == *p;
+            for(int i = 1;i <= n && i <= j + 1;++i){
+                switch(*p){
+                    case '*':t[i] = t[i - 1] || dp[i];break;
+                    case '?':t[i] = dp[i - 1];break;
+                    default:t[i] = dp[i - 1] && *p == s[i - 1];
+                }
+            }
+            dp.swap(t);
+        }
+        return dp.back();
+    }
+};
+
 int main()
 {
 #define IM  isMatch3
