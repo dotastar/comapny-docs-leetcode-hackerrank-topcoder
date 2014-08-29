@@ -1323,3 +1323,7 @@ m[i] = max(m[k] + weight[k]) 其中k的结束时间小于i的开始时间
 题目很简单，但是小弟只能答出简单的解法，用两个循环一个个找，想不出time 
 complexity是O(nlogn)的解法。
 求各位高手给个思路。
+
+
+given a string ,return the longest substring that contains at most two 
+characters.
