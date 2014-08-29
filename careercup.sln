@@ -307,6 +307,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "hackerrank - Die Hard 3 TOD
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cc150 - Binary Tree Path Sum", "cc150 - Binary Tree Path Sum\cc150 - Binary Tree Path Sum.vcxproj", "{B3CCED26-28C6-4636-8DA3-7D706FC6442D}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "amazon - matrix walk", "amazon - matrix walk\amazon - matrix walk.vcxproj", "{9C089F3E-4527-45B8-AED6-B56164DDB72D}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "amazon - climb mountains", "amazon - climb mountains\amazon - climb mountains.vcxproj", "{3FFACEB7-006F-4952-991B-7024CC9BE053}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -893,6 +897,14 @@ Global
 		{B3CCED26-28C6-4636-8DA3-7D706FC6442D}.Debug|Win32.Build.0 = Debug|Win32
 		{B3CCED26-28C6-4636-8DA3-7D706FC6442D}.Release|Win32.ActiveCfg = Release|Win32
 		{B3CCED26-28C6-4636-8DA3-7D706FC6442D}.Release|Win32.Build.0 = Release|Win32
+		{9C089F3E-4527-45B8-AED6-B56164DDB72D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{9C089F3E-4527-45B8-AED6-B56164DDB72D}.Debug|Win32.Build.0 = Debug|Win32
+		{9C089F3E-4527-45B8-AED6-B56164DDB72D}.Release|Win32.ActiveCfg = Release|Win32
+		{9C089F3E-4527-45B8-AED6-B56164DDB72D}.Release|Win32.Build.0 = Release|Win32
+		{3FFACEB7-006F-4952-991B-7024CC9BE053}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3FFACEB7-006F-4952-991B-7024CC9BE053}.Debug|Win32.Build.0 = Debug|Win32
+		{3FFACEB7-006F-4952-991B-7024CC9BE053}.Release|Win32.ActiveCfg = Release|Win32
+		{3FFACEB7-006F-4952-991B-7024CC9BE053}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
