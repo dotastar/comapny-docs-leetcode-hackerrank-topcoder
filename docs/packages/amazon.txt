@@ -1,14 +1,29 @@
-Amazon: $140K base + $90000 cash bonus for first 2 years + 325 stock unit/
+硅谷分部的。 请问股票是不是太少了，master＋接近6年工作经验。 面的senior 
+position，给的title就是sde。。。
+base: $145,000
+Cash sign on bonus year 1:  $30,000
+Cash sign on bonus year 2:  $25,000
+Stock Award:  350 shares
+
+
+: Seattle office SDE
+: base: 130K
+: Sign-on bonus: 20K+15K = 35K
+: RSU: 180
+: Background: MS + 7年经验
+
+
+Amazon: $140K base + $90K cash bonus for first 2 years + 325 stock unit/
 4 years。 group是dynamodb 对我应该是最好的接触noSQL的机会了, 给的title是sde 
 : II 
 
 
-120K + 45k signon + 250RSU, SDE2
-本人cs phd加不到两年经验(US)
+(US)120K + 45k signon + 250RSU, SDE2
+本人cs phd加不到两年经验
 
 
-标准的Fresh MS Base 95K base +　39K(2y) + RSU + Relocation Package
-我是Fresh MS，被recruiter骚扰参加了Online Test,然后上周五去Seattle On-site的，四轮面试(US)
+(US)标准的Fresh MS Base 95K base +　39K(2y) + RSU + Relocation Package
+我是Fresh MS，被recruiter骚扰参加了Online Test,然后上周五去Seattle On-site的，四轮面试
 
 
 拿到个Amazon SED1 offer:
@@ -48,13 +63,6 @@ Amazon买东西10%off up to 1k USD/yr
 年假第一年两周，之后三周
 
 
-: Seattle office SDE
-: base: 130K
-: Sign-one bonus: 20K+15K = 35K
-: RSU: 180
-: Background: MS + 7年经验
-
-
 Base: $125,000
 Sign-on Bonus: 
 $32,000 paid throughout your first year of employment, 
@@ -63,14 +71,6 @@ Restricted Stock:  365 XXX shares
 Stock Vest: 5% on your one-year anniversary, 
 15% on your two-year anniversary, 
 and 20% every 6 months thereafter until your 4 year anniversary. 
-
-
-硅谷分部的。 请问股票是不是太少了，master＋接近6年工作经验。 面的senior 
-position，给的title就是sde。。。
-base: $145,000
-Cash sign on bonus year 1:  $30,000
-Cash sign on bonus year 2:  $25,000
-Stock Award:  350 shares
 
 
 Amazon给9万5的base, 2万5的sign on bonus,还有Restricted Stock Units 400。（Ph
@@ -90,6 +90,9 @@ Amazon给9万5的base, 2万5的sign on bonus,还有Restricted Stock Units 400。（Ph
 
 Amazon aws: 估计是标准fresh master package。（去年十月版上报的数据供参考 95K
 + 10K relocation + 39K signon + $53K RSU)
+
+
+ Amazon Ads 组，sea， 后台分布式和统计, 基本的fresh ms offer: 100K+4.7K sign on+4.8K RSU+7500 relocation.
 
 
 
