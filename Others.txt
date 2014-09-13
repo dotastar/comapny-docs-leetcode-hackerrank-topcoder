@@ -1506,3 +1506,15 @@ A[i]为当前考察对象，假设<i的已经满足要求
         int[] A={1,1,2,2,1};
         System.out.println(new MaxNumberWithOperators().maxResult(A));
     }
+	
+	
+	
+1. Give array, return the number of possible arithmetic sequence (等差数列)。
+{-1,1,3,3,3,2,1,0} return 5:
+-1 1 3
+333
+321
+210
+3210
+2. Given a tree of N nodes, return the amplitude of the tree。Amplitude 就是
+从root到leaf， Max-Min的差~找所有路径，返回最大值
