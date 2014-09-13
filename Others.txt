@@ -1327,3 +1327,182 @@ complexity是O(nlogn)的解法。
 
 given a string ,return the longest substring that contains at most two 
 characters.
+
+
+
+
+Suppose that you want to build a wall with bricks. The store that sells 
+bricks sells them in packs of 3, 6 or 20 bricks. Suppose that you have infinite
+amount of money and the store has infinite amount of bricks of each of
+these packs. You want to build the wall so that when you are finished, you want an
+excess of 1 or 2 bricks.For instance, a wall of 4 bricks is a preferable one
+, since you can buy a pack of 6 bricks and has an excess of 2 bricks. Similarly, a wall with 5 
+bricks is also preferable.
+However, you also want the amount of bricks in your wall not to be a
+combination of 3, 6 or 20 bricks. For instance, although you can build a 
+wall of 40 bricks and have an excess of 1 brick by buying 7 packs of 3 bricks
+and 1 pack of 20 bricks, the amount 40 bricks in your wall can be obtained
+by 2 packs of 20 bricks. With this given information you want to build a wall which has the maximum
+number of bricks. What is this maximum number?
+http://www.mitbbs.com/article_t/JobHunting/32772445.html
+chern1502:
+这有个上限的, 比如大于40以后肯定都可以表示了,
+40 = 20*2
+41 = 3*7 + 20
+42 = 3*14
+43 = 40 + 3
+blaze:
+First, 37 is preferred: 37 = 20 + 3 * 5 + 2, and there is no i and j where 
+37 = 20 * i + 3 * j, apparently.
+Then prove anything greater or equal to 38 can be represented as 20 * i + 3 
+* j, for some positive integer i and j.  This is by induction:
+Base: 38 = 20 + 3 * 6.  
+Induction: Assume n = 20 * i + 3 * j, for some non-negative integer i and j.
+  There are two cases:
+(1) If i is not 0, then 
+n + 1 = 20 * (i-1) + 3 * (j+7)
+(2) If i is 0, then j >= 13, given that n >= 38, so
+n + 1 = 20 * (i+2) + 3 * (j-13)
+
+
+
+享一道google 面试题。大数据相关
+get the total number of unique lines across a data set of 1000 gzipped text 
+files.
+for instance: If every file has two lines,  "this is line1" and "this a 
+line2", then the total count of lines is 2000, and total number of unique 
+lines is 2.
+1. 1000 machines where each machine has one gzipped text file with an 
+approximate size of 50GB. The file on each machine is /0/data/foo.txt.gz
+2. 1000 machines are named data1, data2,..data1000.
+3. Data format ASCII text. 
+4. we have 11 machines named res1, res2…res11
+5. Each of 11 machines has 12 1TB disk drives mounted (/0/data, /1/data,../
+11/data). /1/data to /11/data mount points are empty on all machines. 
+6. Each machine has 128GB of RAM
+7. Each machine can 'talk' to each other via ssh without login credentials.
+8. Assume each machine runs same linux OS.
+发信人: SSA (草民), 信区: JobHunting
+标  题: Re: 分享一道google 面试题。大数据相关。
+发信站: BBS 未名空间站 (Tue Jan 14 21:25:27 2014, 美东)
+嗯，这道题有意思，是个好题目。
+注意到总共数据量是 50G ＊ 1000 ＝ 50T。
+这 1000 台机器没有提到有可以写的空间，应该就是当作分布的只读
+数据。
+然后可以用于计算的机器 11 台。每台 12T， 一共 11 x 12 = 121 T.
+> 50T. 所以应该存在可能在1000 台机器只读一次就够了。
+而且注意到没有一步机器可以存储 50T 的全部数据，也就是说，要
+在不同机器直接找 unique。
+这个考题非常考虑实际情况，所以看样子是要自己做些方案来统计。
+例如自己搭个程序框架。用 Hadoop hive 偷懒的那种用轮子的估计是
+过不了的。人家是要考造轮子的能力。
+
+
+
+数组排序， 排成 a1<a2>a3<a4>a5。。。这种形式。
+想了半天，没想到比O(n^2)更好的算法。
+
+发信人: sipiprotoss (sipiprotoss), 信区: JobHunting
+标  题: Re: 请教一道面试题，跟数组排序有关
+发信站: BBS 未名空间站 (Sun Sep  7 21:01:37 2014, 美东)
+O(N)可解
+A[i]为当前考察对象，假设<i的已经满足要求
+当i是奇数时，如果A[i]<A[i+1] 则swap(A[i], A[i+1])
+当i是偶数时，如果A[i]>A[i+1] 则swap(A[i], A[i+1])
+5< 6 > 2 < 3   前4个数字都是对的， 突然第五个数字出现个1000 你怎么对调？
+只需要将3和1000交换即可
+
+发信人: steven987 (steven987), 信区: JobHunting
+标  题: Re: 请教一道面试题，跟数组排序有关
+发信站: BBS 未名空间站 (Tue Sep  9 11:49:32 2014, 美东)
+我觉得O(n) 可以做
+1. 把无序的array给heapify
+2. 建立binary tree， 建的方法是  Ai 的左边 是 A（2i＋1）， 右边子节点是 A（
+2i ＋ 2）
+3. 把这个树， inorder打印就行了
+
+发信人: AC4400 (AC4400), 信区: JobHunting
+标  题: Re: 请教一道面试题，跟数组排序有关
+发信站: BBS 未名空间站 (Tue Sep  9 20:18:06 2014, 美东)
+这题我感觉有个陷阱——Duplicates，当duplicate数超过数组长度一半时无解。
+而且有duplicate时只有sort的办法最好，其他好些办法都不行。
+
+
+
+给出5个数字和加减乘除4个符号求最大值
+
+发信人: yangguangxia (yangguangxiaozi), 信区: JobHunting
+标  题: Re: 给出5个数字和加减乘除4个符号求最大值
+发信站: BBS 未名空间站 (Tue Sep  9 16:16:32 2014, 美东)
+遍历所有的可能性，计算。
+    public int maxResult(int[]A) {
+        int[]rel=new int[1];rel[0]=Integer.MIN_VALUE;
+        dfs(A, new int[A.length-1], 0, rel);
+        return rel[0];
+    }
+    void dfs(int[]A, int[]op, int i, int[] max) {
+        if (i==op.length) {
+            StringBuilder s=new StringBuilder();
+            s.append(Integer.toString(A[0]));
+            char[] opc=new char[4];
+            opc[0]='+';opc[1]='-';opc[2]='*';opc[3]='/';
+            for (int j=0;j<op.length;++j) {
+                s.append(opc[op[j]]);
+                s.append(A[j+1]);
+            }
+            max[0]=Math.max(max[0], eval(s.toString()));
+            return;
+        }
+        for (int j=0;j<4;++j){
+            op[i]=j;
+            dfs(A, op, i+1, max);
+        }
+    }
+    int eval(String s) {
+        List<String> rel=new ArrayList<>();
+        //0 : operator 1: numbers
+        for (int i=0, n=s.length();i<n;) {
+            if (rel.size()==0||rel.get(rel.size()-1).charAt(0)=='0') {
+                int j=i+1;
+                while (j<n&&Character.isDigit(s.charAt(j)))++j;
+                rel.add("1,"+s.substring(i,j));
+                i=j;
+            } else {
+                rel.add("0,"+s.substring(i,i+1));
+                ++i;
+            }
+        }
+        return evaluateInorder(rel);
+    }
+    int evaluateInorder(List<String> s) {
+        String[] rp=new String[s.size()];
+        Queue<String>stc=Collections.asLifoQueue(new ArrayDeque<String>());
+        int j=0;
+        for (int i=0;i<s.size();) {
+            if (s.get(i).charAt(0)=='0') {
+                char c=s.get(i).charAt(2);
+                if (c=='/'||c=='*') {
+                    rp[j++]=s.get(i+1).split(",")[1];
+                    rp[j++]=s.get(i).split(",")[1];
+                    i+=2;
+                } else stc.offer(s.get(i++).split(",")[1]);
+            } else rp[j++]=s.get(i++).split(",")[1];
+        }
+        while (!stc.isEmpty())rp[j++]=stc.poll();
+        for (int i=0;i<rp.length;++i){
+            if (rp[i].length()==1&&!Character.isDigit(rp[i].charAt(0))) {
+                int b=Integer.parseInt(stc.poll());
+                int a=Integer.parseInt(stc.poll());
+                char c=rp[i].charAt(0);
+                if (c=='*') stc.offer(Integer.toString(a*b));
+                if (c=='/') stc.offer(Integer.toString(a/b));
+                if (c=='+') stc.offer(Integer.toString(a+b));
+                if (c=='-') stc.offer(Integer.toString(a-b));
+            } else stc.offer(rp[i]);
+        }
+        return Integer.parseInt(stc.poll());
+    }
+    public static void main(String[] args) {
+        int[] A={1,1,2,2,1};
+        System.out.println(new MaxNumberWithOperators().maxResult(A));
+    }
