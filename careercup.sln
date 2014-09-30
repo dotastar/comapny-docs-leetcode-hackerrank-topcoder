@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{969402F9-56B0-4CA0-B515-515DEDA859E7}"
 	ProjectSection(SolutionItems) = preProject
@@ -310,6 +310,10 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "amazon - matrix walk", "amazon - matrix walk\amazon - matrix walk.vcxproj", "{9C089F3E-4527-45B8-AED6-B56164DDB72D}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "amazon - climb mountains", "amazon - climb mountains\amazon - climb mountains.vcxproj", "{3FFACEB7-006F-4952-991B-7024CC9BE053}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Reservoir Sampling", "Reservoir Sampling\Reservoir Sampling.vcxproj", "{74CD8F2E-4F01-4E23-846F-EB447D541E52}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "getRandomTriplet", "getRandomTriplet\getRandomTriplet.vcxproj", "{76E6E6DA-0413-40BA-B2F5-31DBEA9613A4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -905,6 +909,14 @@ Global
 		{3FFACEB7-006F-4952-991B-7024CC9BE053}.Debug|Win32.Build.0 = Debug|Win32
 		{3FFACEB7-006F-4952-991B-7024CC9BE053}.Release|Win32.ActiveCfg = Release|Win32
 		{3FFACEB7-006F-4952-991B-7024CC9BE053}.Release|Win32.Build.0 = Release|Win32
+		{74CD8F2E-4F01-4E23-846F-EB447D541E52}.Debug|Win32.ActiveCfg = Debug|Win32
+		{74CD8F2E-4F01-4E23-846F-EB447D541E52}.Debug|Win32.Build.0 = Debug|Win32
+		{74CD8F2E-4F01-4E23-846F-EB447D541E52}.Release|Win32.ActiveCfg = Release|Win32
+		{74CD8F2E-4F01-4E23-846F-EB447D541E52}.Release|Win32.Build.0 = Release|Win32
+		{76E6E6DA-0413-40BA-B2F5-31DBEA9613A4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{76E6E6DA-0413-40BA-B2F5-31DBEA9613A4}.Debug|Win32.Build.0 = Debug|Win32
+		{76E6E6DA-0413-40BA-B2F5-31DBEA9613A4}.Release|Win32.ActiveCfg = Release|Win32
+		{76E6E6DA-0413-40BA-B2F5-31DBEA9613A4}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
