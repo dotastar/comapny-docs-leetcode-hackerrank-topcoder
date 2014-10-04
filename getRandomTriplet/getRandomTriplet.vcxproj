@@ -20,6 +20,7 @@
     <ProjectGuid>{76E6E6DA-0413-40BA-B2F5-31DBEA9613A4}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>getRandomTriplet</RootNamespace>
+    <ProjectName>getRandomTriplet TODO</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
