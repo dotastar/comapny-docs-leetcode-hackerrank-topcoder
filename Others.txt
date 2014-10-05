@@ -1732,4 +1732,37 @@ you find out the problems, and how to fix them?
 者 binary tree。
 面试官建议： 选binary tree. 因为用户需要看到sorted的结果， 而hashtable需要
 额外的空间进行sorting。binary tree的插入和寻找虽然更加耗时，但是因为手机用户
-contact数目有限(比如一般不超过1,000或者5,000个)，所以O(logN)可以接受.
+contact数目有限(比如一般不超过1,000或者5,000个)，所以O(logN)可以接受.
+
+
+spreadsheet 的label 是 从A 到Ｚ然后ＡＡ，AB,...AZ, BA...ZZ，ＡＡＡ。。。
+写函数，输入是整数，输出是这个字符串。
+1: 可以理解为十进制转化成26进制？
+2: 这个题我刚刚在彭博社的校招上做过。。。。其实很简单，就是对26求余，然后
+recursive。
+The row and column indices in Excel are denoted by:
+A, B, C, ..., Z, AA, AB, ... AZ, BA, ...
+The corresponding decimal numbers are:
+1, 2, 3, ..., 26, 27, 28, ...
+Implement two functions to transform decimal numbers to Excel numbers and vice versa.
+Excel number is a numeral system based 26.
+string decToExcel(int decNum) {
+    string result;
+    char digit = 'A' + (decNum - 1) % 26;
+    result += digit;
+    while ((decNum - 1) / 26 > 0) {
+        decNum = (decNum - 1) / 26;
+        digit = 'A' + (decNum - 1) % 26;
+        result += digit;
+    }
+    reverse(result.begin(), result.end());
+    return result;
+}
+int excelToDec(string excelNum) {
+    int result = 0;
+    for (int i = 0; i < (int)excelNum.size(); ++i) {
+        result *= 26;
+        result += excelNum[i] - 'A' + 1;
+    }
+    return result;
+}
