@@ -3,6 +3,12 @@ Google： $115K base + 15% bonus + 200 GSU/4 years + $30K signon， group 是
 : technical solution engineer, 实际上software engineer
 
 
+报G家 offer:
+fail掉了facebook 也没有跟HR抬价成功 
+base: 127k bonus 15% GSU 320/4yr 
+忘记说背景了 fresh phd 
+
+
 LinkedIn: $125K base + 10% bonus + $210K stock option/4 years, group是
 : subscription & payment, 好像这个组的visibility很高？ back end software 
 : engineer， hiring manager是印度人 专门去面谈了一次 了解了解了project 据他说
@@ -24,10 +30,17 @@ on bonus.
 
 
 加拿大Master，有半年工作经验
-先报一下Offer
 Facebook： Base 120k+, RSU 135K/4年，20k Sign
 Palantir ：  Base 120k+， 300k(makert value)的stock option/5年，10k sign on
 Amazon： Base 95k, 70k RSU／4年，60k Sign on/2年
+
+
+
+都是startup
+1. 150k base ＋ 25% cash bonus, title "director", nyc
+2. 145k base + 5k equity (worth 110k as of now, fully vested in 4 years), 
+title "senior dev", 弯曲
+两个工作都会很忙， 估计 50+hour／week
 
 
 
