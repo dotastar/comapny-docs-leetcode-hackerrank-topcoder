@@ -1,0 +1,39 @@
+骑驴找马 EE master + 2年工作经验 最近刚结束了所有面试 拿到了几个offer 都在湾
+区下周需要做决定 现在比较纠结 请各位大牛分析分析
+
+Google： $115K base + 15% bonus + 200 GSU/4 years + $30K signon， group 是
+gTech， 面向enterprise 客户 算是一个新组， 据说今年要招很多人 title是
+technical solution engineer, 实际上software engineer， 不太清楚hiring 
+manager的情况 做的项目会比较杂  问过hr 和别的部门之间transfer 应该没有问题 
+绿卡一开始就可以办
+
+LinkedIn: $125K base + 10% bonus + $210K stock option/4 years, group是
+subscription & payment, 好像这个组的visibility很高？ back end software 
+engineer， hiring manager是印度人 专门去面谈了一次 了解了解了project 据他说
+有机会做full stack, 感觉人还ok 
+
+Facebook： $135K base + 10% bonus + $170K stock option/4 years + $24000 
+signon, group 应该是infrastructure titile是software engineer hr告诉我进去之
+后需要先bootCamp 然后有组需要的话 就把我接受了 之前自己看了一些有关
+distributed system的东西 感觉去fb的话 应该有机会能具体做一做 不过现在fb的股
+票已经非常高了 hr忽悠我说再涨一倍也说不定
+
+Amazon: $140K base + $90000 cash bonus for first 2 years + 325 stock unit/ 4
+years。 group是dynamodb 对我应该是最好的接触noSQL的机会了, 给的title是sde 
+II 这个offer来得最早 amazon就给了一共10天时间 当时面试没有完全搞完 所以就很
+遗憾地拒掉了
+这个组的manager是个印度人 很nice 听说我锯了offer 还专门打电话来劝说我 再重新
+考虑考虑 和我分享当年找工作的经历 说自己2000年左右毕业的时候有ibm research和
+google的offer 因为心里有个ibm梦 就选了ibm research 现在想想好后悔啊。。。 建
+议我选工作多想想工作能帮助到达怎么样的高度 如果能去startup尽量去 否则就来
+amazon学学怎么搞noSQL 以后再去startup
+
+谈offer的时候 hr或者hm听说有google offer的时候 都强调如果现在加入他们公司 机
+会难得 想去google以后机会有的是。。。这算是现在的趋势吗
+
+这几家的offer 钱上基本上都差不多 除了A家福利不太好 其它各家的福利好像都挺好
+我现在在纠结各种利弊 希望版上在以上各家的大牛们不吝赐教！
+
+这半年来复习准备全靠版上帖子和leetcode 版上各位大牛实在是指引前进的明灯 很多
+时候给出了idea和解法让人醍醐灌顶 虽然面试的过程中很多情况下遇不到原题 但是这
+个训练过程让我受益良多
