@@ -1,0 +1,35 @@
+Building Efficient Data Centers with the Open Compute Project
+
+A small team of Facebook engineers spent the past two years tackling a big challenge: how to scale our computing infrastructure in the most efficient and economical way possible.
+ 
+Working out of an electronics lab in the basement of our Palo Alto, California headquarters, the team designed our first data center from the ground up; a few months later we started building it in Prineville, Oregon. The project, which started out with three people, resulted in us building our own custom-designed servers, power supplies, server racks, and battery backup systems.
+ 
+Because we started with a clean slate, we had total control over every part of the system, from the software to the servers to the data center. This meant we could:
+ 
+Use a 480-volt electrical distribution system to reduce energy loss.
+Remove anything in our servers that didn¡¯t contribute to efficiency.
+Reuse hot aisle air in winter to both heat the offices and the outside air flowing into the data center.
+Eliminate the need for a central uninterruptible power supply.
+ 
+The result is that our Prineville data center uses 38 percent less energy to do the same work as Facebook¡¯s existing facilities, while costing 24 percent less.
+ 
+Releasing Open Hardware
+ 
+Inspired by the model of open source software, we want to share the innovations in our data center for the entire industry to use and improve upon. Today we¡¯re also announcing the formation of the Open Compute Project, an industry-wide initiative to share specifications and best practices for creating the most energy efficient and economical data centers.
+ 
+As a first step, we are publishing specifications and mechanical designs for the hardware used in our data center, including motherboards, power supply, server chassis, server rack, and battery cabinets. In addition, we¡¯re sharing our data center electrical and mechanical construction specifications. This technology enabled the Prineville data center to achieve an initial power usage effectiveness (PUE) ratio of 1.07, compared with an average of 1.5 for our existing facilities.
+ 
+Everyone has full access to these specifications, which are available at http://opencompute.org/. We want you to tell us where we didn¡¯t get it right and suggest how we could improve. And opening the technology means the community will make advances that we wouldn¡¯t have discovered if we had kept it secret.
+ 
+Having efficient software and servers means we can support more people on Facebook and offer them new and real-time social experiences -- such as the ability to see comments appear the instant they are written or see friends of friends appear dynamically as you search.
+ 
+In developing the Open Compute Project we rethought our previous assumptions about infrastructure and efficiency in order to generate a better outcome. The result: energy-efficient technology saves money, both on capital and operational costs.
+ 
+Starting the Dialogue
+ 
+The ultimate goal of the Open Compute Project, however, is to spark a collaborative dialogue. We¡¯re already talking with our peers about how we can work together on Open Compute Project technology. We want to recruit others to be part of this collaboration -- and we invite you to join us in this mission to collectively develop the most efficient computing infrastructure possible.
+ 
+To get a behind-the-scenes look at the birth of the project, watch this video:
+ 
+ 
+Jonathan is Vice President of Technical Operations at Facebook.
