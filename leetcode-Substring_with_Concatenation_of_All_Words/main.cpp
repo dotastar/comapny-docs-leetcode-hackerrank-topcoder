@@ -1,5 +1,7 @@
 #include "../inc.h"
 
+//161 / 161 test cases passed.
+//Runtime: 1092 ms
 class Solution {
 public:
     vector<int> findSubstring(string S, vector<string> &L) {
@@ -64,6 +66,41 @@ public:
                 r.push_back(i);
         }
         return r;
+    }
+};
+
+//161 / 161 test cases passed.
+//Runtime: 1864 ms
+class Solution2 {
+public:
+    vector<int> findSubstring(string S, vector<string> &L) {
+        vector<int> r;
+        if(L.empty())
+            return r;
+        const size_t len = L[0].size();
+        if(S.size() < len * L.size())
+            return r;
+        const unordered_multiset<string> set(L.begin(), L.end());
+        unordered_multiset<string> tmp(set);
+        for(size_t i = 0;i <= S.size() - len * L.size();++i){
+            if(eraseOne(tmp, S.substr(i, len)) > 0){
+                size_t j = i + len;
+                for(;!tmp.empty();j += len)
+                    if(!eraseOne(tmp, S.substr(j, len)))
+                        break;
+                if(tmp.empty())
+                    r.push_back(i);
+                tmp = set;
+            }
+        }
+        return r;
+    }
+    bool eraseOne(unordered_multiset<string> & set, const string & str){
+        auto wh = set.find(str);
+        if(set.end() == wh)
+            return false;
+        set.erase(wh);
+        return true;
     }
 };
 
