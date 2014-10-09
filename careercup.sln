@@ -313,7 +313,9 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "amazon - climb mountains", 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Reservoir Sampling", "Reservoir Sampling\Reservoir Sampling.vcxproj", "{74CD8F2E-4F01-4E23-846F-EB447D541E52}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "getRandomTriplet", "getRandomTriplet\getRandomTriplet.vcxproj", "{76E6E6DA-0413-40BA-B2F5-31DBEA9613A4}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "getRandomTriplet TODO", "getRandomTriplet\getRandomTriplet.vcxproj", "{76E6E6DA-0413-40BA-B2F5-31DBEA9613A4}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "leetcode - Maximum Product Subarray", "leetcode - Maximum Product Subarray\leetcode - Maximum Product Subarray.vcxproj", "{3DC96EE4-2AFA-4E36-B2C3-7AD8F814596E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -917,6 +919,10 @@ Global
 		{76E6E6DA-0413-40BA-B2F5-31DBEA9613A4}.Debug|Win32.Build.0 = Debug|Win32
 		{76E6E6DA-0413-40BA-B2F5-31DBEA9613A4}.Release|Win32.ActiveCfg = Release|Win32
 		{76E6E6DA-0413-40BA-B2F5-31DBEA9613A4}.Release|Win32.Build.0 = Release|Win32
+		{3DC96EE4-2AFA-4E36-B2C3-7AD8F814596E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{3DC96EE4-2AFA-4E36-B2C3-7AD8F814596E}.Debug|Win32.Build.0 = Debug|Win32
+		{3DC96EE4-2AFA-4E36-B2C3-7AD8F814596E}.Release|Win32.ActiveCfg = Release|Win32
+		{3DC96EE4-2AFA-4E36-B2C3-7AD8F814596E}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
