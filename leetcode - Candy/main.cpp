@@ -34,6 +34,40 @@ public:
     }
 };
 
+class Solution {
+public:
+    int candy(vector<int> &ratings) {
+        if (ratings.empty())
+            return 0;
+        size_t h = 0;
+        int c = 1, r = c;
+        for (size_t i = 1; i <= ratings.size(); ++i){
+            if (ratings.size() <= i){
+                if (h + 1 < i && 1 < c)
+                    r -= (i - h - 1) * (c - 1);
+            } else if (ratings[i - 1] <= ratings[i]){
+                if (h + 1 < i && 1 < c){
+                    r -= (i - h - 1) * (c - 1);
+                    c = 1;
+                }
+                if (ratings[i - 1] < ratings[i])
+                    ++c;
+                else
+                    c = 1;
+                r += c;
+                h = i;
+            } else{
+                r += --c;
+                if (0 == c){
+                    c = 1;
+                    r += i - h + 1;
+                }
+            }
+        }
+        return r;
+    }
+};
+
 int main()
 {
 }

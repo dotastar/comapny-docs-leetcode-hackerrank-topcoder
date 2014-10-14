@@ -2,7 +2,7 @@
 
 class Solution {
 public:
-    //O(N) time
+    //O(M+N) time
     double findMedianSortedArrays1(int A[], int m, int B[], int n) {
         assert(m >= 0 && n >= 0);
         int len = m + n;
@@ -22,7 +22,7 @@ public:
         }
         return (len & 1 ? v1 : (v1 + v2) / 2);
     }
-    //O(logN)
+    //O(log(M+N))
     double findMedianSortedArrays2(int A[], int m, int B[], int n) {
         int *AA, *BB, mm, nn;
         if(m < n){

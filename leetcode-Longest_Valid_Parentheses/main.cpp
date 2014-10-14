@@ -2,7 +2,7 @@
 
 class Solution {
 public:
-    //O(2N) space
+    //O(N) space
     int longestValidParentheses1(string s) {
         vector<int> stack, his;
         int r = 0;
@@ -72,6 +72,41 @@ public:
     }  
 
 
+};
+
+class Solution {
+public:
+    int longestValidParentheses(string s) {
+        vector<int> istack;
+        vector<pair<int, int>> pstack;
+        pair<int, int> cur;
+        int r = 0;
+        for(size_t i = 0;i < s.size();++i){
+            if('(' == s[i]){
+                istack.push_back(i);
+                if(cur.first + 1 <= cur.second){
+                    pstack.push_back(cur);
+                    cur = {0, 0};
+                }
+            }else{
+                if(!istack.empty()){
+                    cur.first = istack.back();
+                    cur.second = i;
+                    istack.pop_back();
+                    while(!pstack.empty()){
+                        if(pstack.back().second + 1 == cur.first){
+                            cur.first = pstack.back().first;
+                            pstack.pop_back();
+                        }else
+                            break;
+                    }
+                    r = max(r, cur.second - cur.first + 1);
+                }else
+                    pstack.clear();
+            }
+        }
+        return r;
+    }
 };
 
 int main()

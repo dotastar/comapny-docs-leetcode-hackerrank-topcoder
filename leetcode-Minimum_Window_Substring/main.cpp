@@ -89,6 +89,47 @@ public:
     }
 };
 
+class Solution2 {
+public:
+    string minWindow(string S, string T) {
+        int tc[256] = {};
+        for(char c : T)
+            ++tc[(unsigned char)(c)];
+        size_t r = 0, len = 0;
+        bool full = false;
+        int sc[256] = {};
+        for(size_t s = 0, e = 0;e < S.size();){
+            const unsigned char c = S[e++];
+            if(!tc[c])
+                continue;
+            if(tc[c] == ++sc[c] && !full){
+                bool f = true;
+                for(int i = 0;i < 256;++i)
+                    if(sc[i] < tc[i]){
+                        f = false;
+                        break;
+                    }
+                full = f;
+            }
+            if(!full)
+                continue;
+            for(;s < e;++s){
+                const unsigned char cc = S[s];
+                if(!tc[cc])
+                    continue;
+                if(sc[cc] <= tc[cc])
+                    break;
+                --sc[cc];
+            }
+            if(!len || s + len > e){
+                r = s;
+                len = e - s;
+            }
+        }
+        return S.substr(r, len);
+    }
+};
+
 int main()
 {
     {

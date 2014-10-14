@@ -53,6 +53,20 @@ public:
     }
 };
 
+class Solution2 {
+public:
+    vector<int> twoSum(vector<int> &numbers, int target) {
+        unordered_map<int, size_t> h;
+        for(size_t i = 0;i < numbers.size();++i){
+            auto wh = h.find(target - numbers[i]);
+            if(h.end() != wh)
+                return {wh->second + 1, i + 1};
+            h[numbers[i]] = i;
+        }
+        return {};
+    }
+};
+
 int main()
 {
     vector<int> n;

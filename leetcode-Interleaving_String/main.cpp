@@ -73,6 +73,24 @@ public:
     }
 };
 
+class Solution3 {
+public:
+    bool isInterleave(string s1, string s2, string s3) {
+        if(s1.size() + s2.size() != s3.size())
+            return false;
+        vector<bool> r(s2.size() + 1);
+        r[0] = true;
+        for(size_t i = 0;i <= s1.size();++i){
+            if(i > 0)
+                r[0] = (r[0] && s1[i - 1] == s3[i - 1]);
+            for(size_t j = 0;j < s2.size();++j)
+                r[1 + j] = ((r[j] && (s3[i + j] == s2[j]))
+                        || (i > 0 && r[1 + j] && s3[i + j] == s1[i - 1]));
+        }
+        return r.back();
+    }
+};
+
 int main()
 {
 	{

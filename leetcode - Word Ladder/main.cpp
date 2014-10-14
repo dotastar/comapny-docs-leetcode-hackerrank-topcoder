@@ -90,6 +90,37 @@ public:
     }
 };
 
+class SolutionI_2 {
+public:
+    int ladderLength(string start, string end, unordered_set<string> &dict) {
+        if(start == end)
+            return 1;
+        int r = 2;
+        vector<string> cur(1, start), tmp;
+        for(dict.erase(start);!cur.empty();++r, tmp.clear()){
+            for(auto & s : cur){
+                for(size_t i = 0;i < s.size();++i){
+                    const char o = s[i];
+                    for(s[i] = 'a';s[i] <= 'z';++s[i]){
+                        if(o == s[i])
+                            continue;
+                        if(s == end)
+                            return r;
+                        auto wh = dict.find(s);
+                        if(dict.end() == wh)
+                            continue;
+                        tmp.push_back(s);
+                        dict.erase(wh);
+                    }
+                    s[i] = o;
+                }
+            }
+            cur.swap(tmp);
+        }
+        return 0;
+    }
+};
+
 class SolutionII {
 public:
     vector<vector<string> > findLadders(string start, string end, unordered_set<string> &dict) {
@@ -172,6 +203,65 @@ public:
     }
 };
 
+class SolutionII_2 {
+public:
+    vector<vector<string>> findLadders(string start, string end, unordered_set<string> &dict) {
+        vector<vector<string>> route{ { start } };
+        if (start == end)
+            return route;
+        for (dict.erase(start); !route.back().empty();){
+            vector<string> tmp;
+            for (auto s : route.back()){
+                for (size_t i = 0; i < s.size(); ++i){
+                    const char o = s[i];
+                    for (s[i] = 'a'; s[i] <= 'z'; ++s[i]){
+                        if (o == s[i])
+                            continue;
+                        if (s == end)
+                            goto __outloop;
+                        auto wh = dict.find(s);
+                        if (dict.end() == wh)
+                            continue;
+                        tmp.push_back(s);
+                        dict.erase(wh);
+                    }
+                    s[i] = o;
+                }
+            }
+            route.push_back(move(tmp));
+        }
+    __outloop:
+        if (route.back().empty())
+            return{};
+        vector<vector<string>> ret;
+        vector<string> path{ end };
+        help(ret, path, route);
+        for (auto & cur : ret)
+            for (size_t i = 0, j = cur.size() - 1; i < j; ++i, --j)
+                cur[i].swap(cur[j]);
+        return ret;
+    }
+    void help(vector<vector<string>> & ret, vector<string> & path, vector<vector<string>> & route){
+        const size_t sz = path.size();
+        if (sz > route.size()){
+            ret.push_back(path);
+            return;
+        }
+        for (const auto & s : route[route.size() - sz]){
+            int d = 0;
+            for (size_t i = 0; i < s.size(); ++i)
+                if (s[i] != path.back()[i])
+                    if (++d > 1)
+                        break;
+            if (d > 1)
+                continue;
+            path.push_back(s);
+            help(ret, path, route);
+            path.resize(sz);
+        }
+    }
+};
+
 int mainI()
 {
     {
@@ -200,6 +290,14 @@ int mainI()
 int mainII()
 {
     {
+        string start = "hot";
+        string end = "dog";
+        const char * d[] = { "hot", "dog", "dot" };
+        unordered_set<string> dict;
+        for (size_t i = 0; i < sizeof d / sizeof d[0]; ++i)
+            dict.insert(d[i]);
+        print(SolutionII_2().findLadders(start, end, dict));
+    }{
         string start = "hit";
         string end = "cog";
         const char * d[] = { "hot", "dot", "dog", "lot", "log" };
@@ -213,6 +311,6 @@ int mainII()
 
 int main()
 {
-    mainI();
+    //mainI();
     mainII();
 }
