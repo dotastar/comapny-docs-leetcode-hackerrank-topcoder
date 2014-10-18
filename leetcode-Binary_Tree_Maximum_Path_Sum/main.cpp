@@ -70,13 +70,38 @@ public:
     }
 };
 
+class Solution3 {
+public:
+    int maxPathSum(TreeNode *root) {
+        return help(root).first;
+    }
+    pair<int, int> help(TreeNode * root){
+        if (!root)
+            return{ 0, 0 };
+        auto left = help(root->left);
+        auto right = help(root->right);
+        pair<int, int> ret;
+        ret.second = max({ root->val, root->val + left.second, root->val + right.second });
+        ret.first = max(ret.second, root->val + left.second + right.second);
+        if (root->left)
+            ret.first = max(ret.first, left.first);
+        if (root->right)
+            ret.first = max(ret.first, right.first);
+        return ret;
+    }
+};
+
 int main()
 {
     {
+        TreeNode n1(1);
+        cout << Solution3().maxPathSum(&n1) << endl;
+    }{
         TreeNode n1(1), n2(2), n3(3);
         n1.left = &n2;
         n1.right = &n3;
         cout << Solution().maxPathSum(&n1) << endl;
         cout << Solution2().maxPathSum(&n1) << endl;
+        cout << Solution3().maxPathSum(&n1) << endl;
     }
 }

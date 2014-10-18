@@ -37,6 +37,32 @@ public:
     }
 };
 
+class Solution2 {
+public:
+    string simplifyPath(string path) {
+        vector<string> que;
+        string dir;
+        for(size_t i = 0;i <= path.size();++i){
+            const char c = (i < path.size() ? path[i] : '/');
+            if('/' == c){
+                if(".." == dir){
+                    if(!que.empty())
+                        que.pop_back();
+                }else if("." != dir && !dir.empty())
+                    que.push_back(dir);
+                dir.clear();
+            }else
+                dir.push_back(c);
+        }
+        if(que.empty())
+            return "/";
+        ostringstream oss;
+        for(string d : que)
+            oss<<'/'<<d;
+        return oss.str();
+    }
+};
+
 int main()
 {
     cout<<Solution().simplifyPath("/home/")<<endl;

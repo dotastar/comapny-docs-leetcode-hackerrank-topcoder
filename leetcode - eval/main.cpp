@@ -38,4 +38,46 @@ public:
     }
 };
 
+class Solution2 {
+public:
+    int evalRPN(vector<string> &tokens) {
+        vector<int> stack;
+        for(const auto & s : tokens){
+            if("+" == s){
+                if(stack.size() < 2)
+                    return -1;
+                int right = stack.back();
+                stack.pop_back();
+                stack.back() += right;
+            }else if("-" == s){
+                if(stack.size() < 2)
+                    return -1;
+                int right = stack.back();
+                stack.pop_back();
+                stack.back() -= right;
+            }else if("*" == s){
+                if(stack.size() < 2)
+                    return -1;
+                int right = stack.back();
+                stack.pop_back();
+                stack.back() *= right;
+            }else if("/" == s){
+                if(stack.size() < 2)
+                    return -1;
+                int right = stack.back();
+                if(!right)
+                    return -1;
+                stack.pop_back();
+                stack.back() /= right;
+            }else{
+                int v = 0;
+                istringstream iss(s);
+                iss>>v;
+                stack.push_back(v);
+            }
+        }
+        return (stack.empty() ? -1 : stack.back());
+    }
+};
+
 int main(){}

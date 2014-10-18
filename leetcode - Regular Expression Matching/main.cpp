@@ -78,6 +78,26 @@ public:
     }
 };
 
+class Solution3 {
+public:
+    bool isMatch(const char *s, const char *p) {
+        vector<bool> dp{true}, tmp;
+        for(const char * pp = p;pp && *pp;++pp)
+            dp.push_back('*' == *pp ? *(dp.rbegin() + 1) : false);
+        for(const char * ss = s;ss && *ss;++ss, tmp.clear()){
+            tmp.push_back(false);
+            for(size_t i = 0;i < dp.size() - 1;++i)
+                tmp.push_back('.' == p[i] || *ss == p[i] ?
+                    dp[i] :
+                    ('*' == p[i] ?
+                        *(tmp.rbegin() + 1) || (('.' == p[i - 1] || *ss == p[i - 1]) && (tmp.back() || dp[i + 1]))
+                        : false));
+            dp.swap(tmp);
+        }
+        return dp.back();
+    }
+};
+
 template<class S>
 void test()
 {
