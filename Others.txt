@@ -1766,3 +1766,44 @@ int excelToDec(string excelNum) {
     }
     return result;
 }
+
+
+
+Find the 90th percentile of a stream of numbers between 1 and 10^6. 
+Followup: What if there is not enough memory to store all numbers and no 
+upper bound.
+smallpatrick:
+这个题和那个在很多数据里找median是一个思路
+关于第一部分，可以在内存里放one million个counter 
+第二部分可以分段读入内存，不断缩小搜索范围
+
+
+判断两个Strings是否相差一个Edit distance
+public static boolean oneEditApart(String a, String b) {
+        
+        String small = a.length() > b.length() ? b : a;
+        String large = a.length() > b.length() ? a : b;
+        
+        int operation = 0;
+        //case 1, two word's length differ by more than one
+        if(large.length() - small.length() > 1) return false;
+        //case 2, length is equal, check every char one by one
+        else if(large.length() == small.length()){
+            int i = 0;
+            while(i < small.length()){
+                if(small.charAt(i) != large.charAt(i) && ++operation > 1)
+                    return false;
+                i++;
+            }
+        //case 3, two word's length differ by one, only one differ allow    
+        }else{
+            int i = 0;
+            while(i < small.length()){
+                if(small.charAt(i) != large.charAt(i+operation)){
+                    if(++operation > 1)
+                        return false;
+                }else i++;
+            }
+        }
+        return true;
+    }
