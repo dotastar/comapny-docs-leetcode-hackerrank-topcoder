@@ -317,6 +317,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "getRandomTriplet TODO", "ge
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "leetcode - Maximum Product Subarray", "leetcode - Maximum Product Subarray\leetcode - Maximum Product Subarray.vcxproj", "{3DC96EE4-2AFA-4E36-B2C3-7AD8F814596E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "leetcode - Find Minimum in Rotated Sorted Array", "leetcode - Find Minimum in Rotated Sorted Array\leetcode - Find Minimum in Rotated Sorted Array.vcxproj", "{75AAE587-BEA4-453B-BCC0-C0B2B1BDF6E4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -923,6 +925,10 @@ Global
 		{3DC96EE4-2AFA-4E36-B2C3-7AD8F814596E}.Debug|Win32.Build.0 = Debug|Win32
 		{3DC96EE4-2AFA-4E36-B2C3-7AD8F814596E}.Release|Win32.ActiveCfg = Release|Win32
 		{3DC96EE4-2AFA-4E36-B2C3-7AD8F814596E}.Release|Win32.Build.0 = Release|Win32
+		{75AAE587-BEA4-453B-BCC0-C0B2B1BDF6E4}.Debug|Win32.ActiveCfg = Debug|Win32
+		{75AAE587-BEA4-453B-BCC0-C0B2B1BDF6E4}.Debug|Win32.Build.0 = Debug|Win32
+		{75AAE587-BEA4-453B-BCC0-C0B2B1BDF6E4}.Release|Win32.ActiveCfg = Release|Win32
+		{75AAE587-BEA4-453B-BCC0-C0B2B1BDF6E4}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
