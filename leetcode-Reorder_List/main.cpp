@@ -97,3 +97,28 @@ public:
         }
     }
 };
+
+class Solution2 {
+public:
+    void reorderList(ListNode *head) {
+        ListNode * tail = head;
+        ListNode * cur = tail;
+        for(;tail && tail->next && tail->next->next;cur = cur->next, tail = tail->next->next);
+        if(cur == head)
+            return;
+        tail = cur->next;
+        cur->next = NULL;
+        ListNode * prev = NULL;
+        for(cur = tail;cur;){
+            ListNode * next = cur->next;
+            cur->next = prev;
+            prev = cur;
+            cur = next;
+        }
+        for(tail = prev;tail;head = tail->next = cur, tail = prev){
+            cur = head->next;
+            prev = tail->next;
+            head->next = tail;
+        }
+    }
+};
