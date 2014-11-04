@@ -44,6 +44,33 @@ public:
     }
 };
 
+class Solution2 {
+public:
+    string multiply(string num1, string num2) {
+        string ret;
+        for(int i = 0;i < num1.size();++i){
+            for(int j = 0;j < num2.size();++j){
+                int r = (*(num1.rbegin() + i) - '0') * (*(num2.rbegin() + j) - '0');
+                for(int k = 0;r;r /= 10, ++k){
+                    const int idx = i + j + k;
+                    if(ret.size() < idx + 1)
+                        ret.resize(idx + 1);
+                    r += ret[idx];
+                    ret[idx] = r % 10;
+                }
+            }
+        }
+        int j = ret.size() - 1;
+        for(;j >= 0 && !ret[j];--j);
+        for(int i = 0;i <= j;++i, --j){
+            const char t = '0' + ret[i];
+            ret[i] = '0' + ret[j];
+            ret[j] = t;
+        }
+        return (ret.empty() ? "0" : ret);
+    }
+};
+
 int main()
 {
     cout<<Solution().multiply("123", "456")<<endl;

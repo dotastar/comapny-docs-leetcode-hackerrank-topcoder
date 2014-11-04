@@ -66,4 +66,41 @@ public:
     }
 };
 
+class Solution2 {
+public:
+    void solveSudoku(vector<vector<char> > &board) {
+        help(board, 0);
+    }
+    bool help(vector<vector<char>> & board, size_t index){
+        size_t x, y;
+        for(;;++index){
+            if(index >= 81)
+                return true;
+            x = index / 9;
+            y = index % 9;
+            if('.' == board[x][y])
+                break;
+        }
+        int mask = 0;
+        for(size_t i = 0, bx = x / 3 * 3, by = y / 3 * 3;i < 9;++i){
+            if('.' != board[x][i])
+                mask |= 1 << (board[x][i] - '1');
+            if('.' != board[i][y])
+                mask |= 1 << (board[i][y] - '1');
+            if('.' != board[bx + i / 3][by + i % 3])
+                mask |= 1 << (board[bx + i / 3][by + i % 3] - '1');
+        }
+        if(mask >= 1023)
+            return false;
+        for(int i = 0;i < 9;++i){
+            if(0 != (mask & (1 << i)))
+                continue;
+            board[x][y] = i + '1';
+            if(help(board, index + 1))
+                return true;
+            board[x][y] = '.';
+        }
+    }
+};
+
 int main(){}

@@ -73,4 +73,29 @@ public:
     }
 };
 
+class Solution2 {
+public:
+    vector<int> spiralOrder(vector<vector<int> > &matrix) {
+        if(matrix.empty() || matrix[0].empty())
+            return {};
+        const pair<int, int> kDir[] = {{0, 1}, {1, 0}, {0, -1}, {-1, 0}};
+        vector<vector<bool>> v(matrix.size(), vector<bool>(matrix[0].size()));
+        vector<int> ret;
+        pair<int, int> c(0, -1);
+        for(int i = 0, f = 0;f < 2;){
+            pair<int, int> n(c.first + kDir[i].first, c.second + kDir[i].second);
+            if(0 <= n.first && n.first < matrix.size() && 0 <= n.second && n.second < matrix[0].size() && !v[n.first][n.second]){
+                f = 0;
+                c = n;
+                ret.push_back(matrix[c.first][c.second]);
+                v[c.first][c.second] = true;
+            }else{
+                ++f;
+                i = ++i % 4;
+            }
+        }
+        return ret;
+    }
+};
+
 int main(){}

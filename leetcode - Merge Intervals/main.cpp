@@ -25,6 +25,29 @@ public:
     }
 };
 
+class Solution {
+public:
+    struct Comp{
+        bool operator ()(const Interval & a, const Interval & b) const{
+            return a.start < b.start;
+        }
+    };
+    vector<Interval> merge(vector<Interval> &intervals) {
+        if(intervals.empty())
+            return intervals;
+        sort(intervals.begin(), intervals.end(), Comp());
+        size_t i = 0;
+        for(size_t j = 1;j < intervals.size();++j){
+            if(intervals[i].end >= intervals[j].start){
+                intervals[i].end = max(intervals[i].end, intervals[j].end);
+            }else
+                intervals[++i] = intervals[j];
+        }
+        intervals.resize(i + 1);
+        return intervals;
+    }
+};
+
 int main()
 {
     {

@@ -73,6 +73,59 @@ public:
     }
 };
 
+class Solution2 {
+public:
+    ListNode *sortList(ListNode *head) {
+        vector<ListNode *> vec(33);
+        while(head){
+            vec[0] = head;
+            head = head->next;
+            vec[0]->next = NULL;
+            for(size_t i = 1;i < vec.size();++i)
+                if(!mergeOrMove(vec[i - 1], vec[i]))
+                    break;
+        }
+        for(size_t i = 1;i < vec.size();++i)
+            vec[0] = merge(vec[0], vec[i]);
+        return vec[0];
+    }
+    bool mergeOrMove(ListNode *& from, ListNode *& to){
+        if(!to){
+            swap(from, to);
+            return false;
+        }
+        to = merge(from, to);
+        from = NULL;
+        return true;
+    }
+    ListNode * merge(ListNode * h1, ListNode * h2){
+        ListNode * r = NULL;
+        ListNode * t = NULL;
+        while(h1 && h2){
+            if(h1->val < h2->val){
+                append(r, t, h1);
+                h1 = h1->next;
+            }else{
+                append(r, t, h2);
+                h2 = h2->next;
+            }
+        }
+        if(h1)
+            append(r, t, h1);
+        if(h2)
+            append(r, t, h2);
+        return r;
+    }
+    void append(ListNode *& head, ListNode *& tail, ListNode * node){
+        assert(node);
+        if(tail)
+            tail->next = node;
+        tail = node;
+        if(!head)
+            head = tail;
+    }
+};
+
 void print(ListNode * h)
 {
     while(h){

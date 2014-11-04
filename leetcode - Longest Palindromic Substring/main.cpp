@@ -1,6 +1,6 @@
 #include "..\inc.h"
 
-class Solution {
+class Solution1 {
 public:
     string longestPalindrome(string s) {
         if(s.size() < 2)
@@ -50,6 +50,38 @@ public:
         return ret;
     }
 };
+
+class Solution2 {
+public:
+    string longestPalindrome(string p) {
+        vector<int> pp(1, 256);
+        for (unsigned char c : p){
+            pp.push_back(c);
+            pp.push_back(256);
+        }
+        vector<int> s(pp.size(), 1);
+        size_t id = 0, mx = id + s[id], idx = id;
+        for (size_t i = 1; i < s.size(); ++i){
+            s[i] = (i < mx ? min<int>(mx - i, s[2 * id - i]) : s[i]);
+            if (mx <= i + s[i]){
+                for (; s[i] <= i && i + s[i] < s.size() && pp[i - s[i]] == pp[i + s[i]]; ++s[i]);
+                id = i;
+                mx = i + s[i];
+            }
+            idx = (s[i] > s[idx] ? i : idx);
+        }
+        string ret;
+        for (size_t i = 0; i < s[idx]; ++i)
+            if (pp[idx - s[idx] + i + 1] < 256)
+                ret.push_back(pp[idx - s[idx] + i + 1]);
+        for (size_t i = 1; i < s[idx]; ++i)
+            if (pp[idx + i] < 256)
+                ret.push_back(pp[idx + i]);
+        return ret;
+    }
+};
+
+typedef Solution2 Solution;
 
 int main()
 {

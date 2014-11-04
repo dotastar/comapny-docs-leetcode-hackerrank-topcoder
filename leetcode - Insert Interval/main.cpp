@@ -46,6 +46,34 @@ public:
     }
 };
 
+class Solution2 {
+public:
+    vector<Interval> insert(vector<Interval> &intervals, Interval newInterval) {
+        const size_t f = help(intervals, 0, intervals.size(), newInterval.start);
+        vector<Interval> ret(intervals.begin(), intervals.begin() + f);
+        if(f < intervals.size())
+            newInterval.start = min(newInterval.start, intervals[f].start);
+        size_t t = help(intervals, f, intervals.size() - f, newInterval.end);
+        if(t < intervals.size() && intervals[t].start <= newInterval.end)
+            newInterval.end = max(newInterval.end, intervals[t++].end);
+        ret.push_back(newInterval);
+        ret.insert(ret.end(), intervals.begin() + t, intervals.end());
+        return ret;
+    }
+    size_t help(const vector<Interval> & intervals, size_t from, size_t len, int val){
+        while(len){
+            size_t mid = len / 2;
+            if(val <= intervals[from + mid].end){
+                len = mid;
+            }else{
+                from += mid + 1;
+                len -= mid + 1;
+            }
+        }
+        return from;
+    }
+};
+
 int main()
 {
     {
