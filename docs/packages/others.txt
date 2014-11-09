@@ -1,3 +1,9 @@
+saleforce：120k base， 15k sign on， 税后9.5k的relocation，价值27k的RSU/4年
+
+startup（实在太小不方便说名字）：120k base，10k sign on，15k stock options/4
+年，他家对股票超有信心，股票估值60万
+
+
 Google： $115K base + 15% bonus + 200 GSU/4 years + $30K signon， group 是
 : gTech， 面向enterprise 客户 算是一个新组， 据说今年要招很多人 title是
 : technical solution engineer, 实际上software engineer
