@@ -83,6 +83,33 @@ public:
     }
 };
 
+class Solution2 {
+public:
+    vector<vector<int> > fourSum(vector<int> &num, int target) {
+        unordered_map<int, vector<pair<int, int>>> s;
+        for(size_t i = 0;i < num.size();++i)
+            for(size_t j = i + 1;j < num.size();++j)
+                s[num[i] + num[j]].emplace_back(i, j);
+        set<vector<int>> ret;
+        for(auto it1 = s.begin();it1 != s.end();++it1){
+            auto it2 = s.find(target - it1->first);
+            if(s.end() == it2)
+                continue;
+            for(const auto & p1 : it1->second)
+                for(const auto & p2 : it2->second){
+                    vector<int> idx{p1.first, p1.second, p2.first, p2.second};
+                    sort(idx.begin(), idx.end());
+                    if(idx[0] == idx[1] || idx[1] == idx[2] || idx[2] == idx[3])
+                        continue;
+                    vector<int> r{num[idx[0]], num[idx[1]], num[idx[2]], num[idx[3]]};
+                    sort(r.begin(), r.end());
+                    ret.insert(r);
+                }
+        }
+        return vector<vector<int>>(ret.begin(), ret.end());
+    }
+};
+
 int main()
 {
     {

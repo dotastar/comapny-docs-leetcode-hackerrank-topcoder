@@ -1,6 +1,6 @@
 #include "../inc.h"
 
-class Solution {
+class Solution1 {
 public:
     struct Node{
         Node * next[256];    //0, ['a, 'z']
@@ -114,22 +114,101 @@ public:
     }
 };
 
+class Solution2 {
+public:
+    struct Trie{
+        Trie * next[256];
+        Trie(){ memset(next, 0, sizeof next); }
+        void add(const string & word, size_t pos = 0){
+            if (pos > word.size())
+                return;
+            const unsigned char c = (pos < word.size() ? word[pos] : 0);
+            if (!next[c])
+                next[c] = new Trie;
+            next[c]->add(word, pos + 1);
+        }
+        const Trie * find(unsigned char c) const{ return next[c]; }
+    };
+    //TLE
+    //O(2^s.size())
+    bool wordBreakI(string s, unordered_set<string> &dict) {
+        if (s.empty())
+            return true;
+        if (dict.empty())
+            return false;
+        Trie root;
+        for (const auto & w : dict)
+            root.add(w);
+        vector<size_t> stack;
+        const Trie * cur = &root;
+        for (size_t pos = 0; pos <= s.size();){
+            const Trie * const n = cur->find(pos < s.size() ? s[pos] : 0);
+            if (!n){
+                cur = &root;
+                if (cur->next[0])
+                    continue;
+                if (stack.empty())
+                    return false;
+                pos = stack.back();
+                stack.pop_back();
+            } else{
+                if (cur->next[0] && pos < s.size())
+                    stack.push_back(pos);
+                ++pos;
+                cur = n;
+            }
+        }
+        return true;
+    }
+};
+
+class SolutionIII {
+public:
+    //O(dict.size()) + O(s.size() * word.size() * word.size())
+    bool wordBreakI(string s, unordered_set<string> &dict) {
+        if (s.empty())
+            return true;
+        if (dict.empty())
+            return false;
+        size_t maxlen = 0, minlen = -1;
+        for (const auto & w : dict){
+            maxlen = max(maxlen, w.size());
+            minlen = min(minlen, w.size());
+        }
+        vector<bool> dp(s.size() + 1);
+        dp[0] = true;
+        for (size_t i = 0; i < s.size(); ++i){
+            for (size_t j = minlen; j <= i + 1 && j <= maxlen; ++j){
+                if (!dp[i + 1 - j])
+                    continue;
+                if (dict.count(s.substr(i + 1 - j, j)) > 0){
+                    dp[i + 1] = true;
+                    break;
+                }
+            }
+        }
+        return dp.back();
+    }
+};
+
+typedef Solution2 Solution;
+
 int main()
 {
     {
         unordered_set<string> dict;
         dict.insert("a");
-        cout << Solution().wordBreakI2("a", dict) << endl;
+        cout << Solution().wordBreakI("a", dict) << endl;
     }{
         unordered_set<string> dict;
         dict.insert("dog");
         dict.insert("s");
         dict.insert("gs");
-        cout << Solution().wordBreakI2("dogs", dict) << endl;
+        cout << Solution().wordBreakI("dogs", dict) << endl;
     }{
         unordered_set<string> dict;
         dict.insert("aaaa");
         dict.insert("aa");
-        cout << Solution().wordBreakI2("aaaaaaa", dict) << endl;
+        cout << Solution().wordBreakI("aaaaaaa", dict) << endl;
     }
 }

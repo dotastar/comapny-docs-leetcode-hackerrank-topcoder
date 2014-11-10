@@ -62,6 +62,49 @@ public:
     }
 };
 
+class Solution2 {
+public:
+    ListNode *mergeKLists(vector<ListNode *> &lists) {
+        while(lists.size() > 1){
+            vector<ListNode *> tmp;
+            for(size_t i = 0;i < lists.size();++i){
+                if(0 == (i & 1))
+                    tmp.push_back(lists[i]);
+                else
+                    tmp.back() = merge(tmp.back(), lists[i]);
+            }
+            tmp.swap(lists);
+        }
+        return (lists.empty() ? NULL : lists[0]);
+    }
+    ListNode * merge(ListNode * h1, ListNode * h2){
+        ListNode * h = NULL;
+        ListNode * t = NULL;
+        while(h1 && h2){
+            if(h1->val < h2->val){
+                append(h, t, h1);
+                h1 = h1->next;
+            }else{
+                append(h, t, h2);
+                h2 = h2->next;
+            }
+        }
+        if(h1)
+            append(h, t, h1);
+        if(h2)
+            append(h, t, h2);
+        return h;
+    }
+    void append(ListNode *& h, ListNode *& t, ListNode * n){
+        assert(n);
+        if(t)
+            t->next = n;
+        t = n;
+        if(!h)
+            h = t;
+    }
+};
+
 int main()
 {
 }
