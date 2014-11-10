@@ -1811,3 +1811,13 @@ public static boolean oneEditApart(String a, String b) {
     
 given an array of words find what is and how long is the
 length of the longest common substring between two words in the array 
+
+
+
+一个n * n 的board, 可以上下左右的走， 但是不可以到一个cell两次。
+问从左上到右下角有多少种走法
+发信人: autumnhu (autumn):
+Brute Force暴力解决
+如果想快一点的话就用插头DP
+http://acm.timus.ru/problem.aspx?num=1519
+http://quartergeek.com/summary-of-simple-plug-dp/
