@@ -11,3 +11,8 @@ substring is "b", with the length of 1.
 前重复的字符（前一次出现称为Occur 1, 这一次出现称为Occur 2）
 时，即遇到了一个可能的最大值；进行比较后，将下一次扫描的起点
 设置为刚才这个重复字符的Occur 1的后一位即可。
+
+Solution2:
+dozerg
+前后2个指针。当mode=false时，向后移动尾指针，直到某个字符的cnt变成2，改变mode；当mode=true时，向后移动头指针，直到末各字符的cnt变成1。
+记录mode=false时的头尾指针代表的字符串的最大长度。

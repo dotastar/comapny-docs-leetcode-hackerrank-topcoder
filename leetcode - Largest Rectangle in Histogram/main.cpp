@@ -16,6 +16,23 @@ public:
     }
 };
 
+class Solution2 {
+public:
+    int largestRectangleArea(vector<int> &height) {
+        int r = 0;
+        vector<size_t> s;
+        for(size_t i = 0;i <= height.size();++i){
+            while(!s.empty() && (i >= height.size() || height[i] < height[s.back()])){
+                const int h = s.back();
+                s.pop_back();
+                r = max<int>(r, height[h] * (s.empty() ? i : i - s.back() - 1));
+            }
+            s.push_back(i);
+        }
+        return r;
+    }
+};
+
 int main()
 {
     {

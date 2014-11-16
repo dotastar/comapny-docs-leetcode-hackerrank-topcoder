@@ -44,6 +44,26 @@ public:
     }
 };
 
+class Solution2 {
+public:
+    int lengthOfLongestSubstring(string s) {
+        int r = 0;
+        int cnt[256] = {0};
+        bool mode = false;
+        for(size_t i = 0, len = 0;i + len < s.size();){
+            if(mode){
+                if(--cnt[s[i++]] == 1)
+                    mode = false;
+                --len;
+            }else if(++cnt[s[i + len++]] > 1)
+                mode = true;
+            else
+                r = max<int>(r, len);
+        }
+        return r;
+    }
+};
+
 int main()
 {
     cout<<Solution().lengthOfLongestSubstring2("hchzvfrkmlnozjk")<<endl;

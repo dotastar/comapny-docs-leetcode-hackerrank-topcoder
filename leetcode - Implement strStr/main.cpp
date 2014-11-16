@@ -25,6 +25,26 @@ public:
     }
 };
 
+class Solution2 {
+public:
+    int strStr(char *haystack, char *needle) {
+        if(!haystack)
+            return -1;
+        if(!needle)
+            return 0;
+        const int hlen = strlen(haystack), nlen = strlen(needle);
+        for(int i = 0;i <= hlen - nlen;++i){
+            bool match = true;
+            for(int j = 0;j < nlen;++j)
+                if(!(match = (needle[j] == haystack[i + j])))
+                    break;
+            if(match)
+                return i;
+        }
+        return -1;
+    }
+};
+
 int main()
 {
     {

@@ -39,6 +39,26 @@ public:
     }
 };
 
+class Solution2 {
+public:
+    ListNode *rotateRight(ListNode *head, int k) {
+        if(!head || !k)
+            return head;
+        ListNode * tail = head;
+        for(int i = 1;i <= k;++i){
+            tail = tail->next;
+            if(!tail)
+                return rotateRight(head, k % i);
+        }
+        ListNode * cur = head;
+        for(;tail->next;cur = cur->next, tail = tail->next);
+        tail->next = head;
+        head = cur->next;
+        cur->next = NULL;
+        return head;
+    }
+};
+
 int main()
 {
     ListNode n1(1), n2(2);
