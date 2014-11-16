@@ -1,3 +1,14 @@
+Startup offer negotiation
+本人10年+经验老码农（惭愧阿）。Got an offer from an early stage startup (
+still in stealthy mode, had many alpha releases, plan to do beta release 
+soon). 我将是大约第16个雇员。160k基本工资，0.25%股票。 猎头说可以讨价还价。
+那我应该给猎头什么样的目标工资和股票？180k, 0.5%? 请有经验的大牛们支支着。
+
+
+报ebay小offer: SDE3, base 135K,10%bonus,sign on 10k, no RSU. 
+MS Fresh之前拿到SDE3, 130K, 30K signon
+
+
 saleforce：120k base， 15k sign on， 税后9.5k的relocation，价值27k的RSU/4年
 
 startup（实在太小不方便说名字）：120k base，10k sign on，15k stock options/4
