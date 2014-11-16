@@ -1824,6 +1824,16 @@ http://quartergeek.com/summary-of-simple-plug-dp/
 
 
 
+1. Manager聊经历半小时 然后半小时coding: 给你一个read_buffer(char*buffer, 
+int len)，用这个实现read_line()，完全设计这个interface.
+2. 给个数组，找出所有的三个数字trio, 加起来等于目标数字
+3. 设计tinyurl
+4. 给一个dict，然后一个长字符串，和长度len，找出所有长字符串里长度为len的在
+字典内的子串。
+
+
+
+
 http://www.mitbbs.com/article_t/JobHunting/32830225.html
 有一个长为L的木料需要割开，割的位置在一个数组里A[1...N]，从一个地方切开的
 cost是当前所切木料的长度，按不同的顺序切割，得到的total cost是不一样的，问怎
