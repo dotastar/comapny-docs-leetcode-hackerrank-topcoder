@@ -1946,3 +1946,74 @@ visited和treenodes
 Given a matrix, each cell having only 0's or 1's, find the largest sub-
 matrix with equal number of 0's and 1's in it.
 http://www.geeksforgeeks.org/largest-subarray-with-equal-number-of-0s-and-1s/
+
+
+
+给个数组seq， 和一个total，找 if there is a contiguous sequence in seq 
+which sums to total.
+chaeyoung:
+O(n) solution for unsorted array.
+An example
+arr=[-1 4 1 0 -2 -3 7],
+sum = 2
+step 1: accumulate the sums
+arr -> acc = [0 -1 3 4 4 2 -1 6]. Insert 0 at the front
+step 2: traverse the acc with hash table
+the hash table will store the following values
+ht = [0+2, -1+2, 3+2, 4+2] 
+It returns when finding an element of acc in the hash table (2 in this case)
+
+
+{ "face", "ball", "apple", "art", "ah" }
+"htarfbp..."
+根据下面的string去给上面list words排序。
+就是平常我们按abcd。。。排，这次按string里的letter顺序排
+
+
+
+给一个time series，要求计算这个值是最大的连续的天数，很难描述…给个例子：
+input: 3.2, 5, 6, 4
+output: 1, 2, 3, 1
+就是开始时只有3.2最大，所以长度是1
+然后输入5,5比3.2大，所以长度是2
+以此类推，可以知道输入6，长度是3；输入4长度是1 因为4比6小
+例如：
+input:  3 5 6 4 5 6 1 1 1 9 8 7
+output: 1 2 3 1 2 6 1 2 3 10 1 1
+input:  6, 1, 2, 1, 4
+output: 1, 1, 2, 1, 4
+kevy1984:
+试着写了下time serises那道题，
+void printConsectiveLength(vector<int> A)
+{
+    if (A.size() == 0)
+        return;
+    stack<int> st;
+    
+    for(int i=0; i<A.size(); i++)
+    {
+        while(st.size() > 0 && A[i] >= A[st.top()])
+            st.pop();
+        if (st.size() > 0)
+            cout<<i-st.top()<<"\t";
+        else
+            cout<<i+1<<"\t";
+
+        st.push(i);
+    }
+    cout<<endl;
+    return;
+}
+每个index进出stack最多一次，时间O(n),空间O(n).
+
+
+
+Give an integer array, adjust each integers so that the difference of every 
+adjacent integers are not greater than a given number target. If the array 
+before adjustment is A, the array after adjustment is B, you should minimize 
+the sum of abs(A[i] - B[i])
+You can assume each number in the array is a positive integer and not 
+greater than 100
+Example:
+Given [1,4,2,3] and target=1, one of the solutions is [2,3,2,3], the 
+adjustment cost is 2 and it's minimal. Return 2.

@@ -3,6 +3,7 @@
 #include <vector>
 #include <algorithm>
 #include <iostream>
+#include <functional>
 
 using namespace std;
 
@@ -77,12 +78,14 @@ Int solve(int n)
 }
 
 //calc No. of factors of s
-Int factors(Int s){
+Int factors(Int s, bool print = false){
     if(!s){
-        //cout<<"INF\n";
+		if (print)
+			cout << "INF\n";
         return 0;
     }
-    //cout<<s<<" = 1";
+	if (print)
+		cout << s << " = 1";
     map<Int, int> f;
     while(0 == (s & 1)){
         ++f[2];
@@ -98,12 +101,14 @@ Int factors(Int s){
     int c = 0;
     for(map<Int, int>::const_iterator it = f.begin();it != f.end();++it){
         c += c * it->second + it->second;
-        //cout<<" * "<<it->first;
-        //if(it->second > 1)
-            //cout<<'^'<<it->second;
+		if (print)
+			cout << " * " << it->first;
+		if (print && it->second > 1)
+            cout<<'^'<<it->second;
     }
     ++c;
-    //cout<<" has "<<c<<" factors\n";
+	if (print)
+		cout << " has " << c << " factors\n";
     return c;
 }
 
@@ -112,8 +117,48 @@ void test(int n)
     factors(solve(n));
 }
 
+/*
+compute Highly composite numbers
+https://oeis.org/A002182
+1, 2, 4, 6, 12, 24, 36, 48, 60, 120, 180, 240, 360, 720, 840, 1260, 1680, 2520,
+5040, 7560, 10080, 15120, 20160, 25200, 27720, 45360
+*/
+void proc1()
+{
+	int m = 0;
+	for (Int i = 1;m < 100; ++i){
+		int n = factors(i);
+		if (n > m){
+			m = n;
+			cout << i << ", ";
+		}
+	}
+}
+
+//Numbers that have more than 10w divisors
+void proc2()
+{
+	for (int i = 100000, j = 0; j < 3; ++i){
+		Int r = solve(i);
+		if (r > 0){
+			factors(r);
+			//getchar();
+			++j;
+		}
+	}
+}
+
+//https://oeis.org/A002182
+void proc3()
+{
+	cout << "The number under 2^64 that has most divisors is:\n";
+	factors(18401055938125660800ULL, true);
+	//factors(27601583907188491200ULL, true);
+}
+
 int main()
 {
+	proc3();
 /*
     int n, f = 0;
     for(int i = 1;i < 2000;++i){
@@ -127,11 +172,8 @@ int main()
     factors(n);
     test(f);
 /*/
-    for(int i = 1;;++i){
-        cout<<i<<' '<<solve(i)<<endl;
-        if(0 == i % 100)
-            getchar();
-    }
+
 //*/
+	system("pause");
     return 0;
 }
