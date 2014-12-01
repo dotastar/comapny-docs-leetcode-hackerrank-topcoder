@@ -1,3 +1,7 @@
+qcom
+sr principal,san diego vs irvine,base 180k vs 160k
+
+
 Startup offer negotiation
 本人10年+经验老码农（惭愧阿）。Got an offer from an early stage startup (
 still in stealthy mode, had many alpha releases, plan to do beta release 
