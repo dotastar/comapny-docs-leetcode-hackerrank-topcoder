@@ -2148,3 +2148,15 @@ Note
 The array may contains multiple peeks, find any of them.
 Example
 [1, 2, 1, 3, 4, 5, 7, 6]
+
+
+Suppose N patients and M diseases. N is sufficiently large number and M is 
+relatively small, say 30-ish. Each patient can have possible 0 to M kinds of
+diseases.
+Given one patient¡¯s name, show me a list of similar patients sharing same 
+deseases within 2-3 seconds.
+
+
+http://www.mitbbs.com/article_t1/JobHunting/32772225_0_2.html
+Given an int array A[], define: distance=A[i]+A[j]+(j-i), j>=i. Find max 
+distance in A[]?
