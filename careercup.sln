@@ -321,6 +321,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "leetcode - Find Minimum in 
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dozerg - Smallest Number with N Divisors", "dozerg - Smallest Number with N Divisors\dozerg - Smallest Number with N Divisors.vcxproj", "{B18ECF88-9158-4637-A65E-20F66D7BF763}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Indeed - Linear Congruential Generators", "Indeed - Linear Congruential Generators\Indeed - Linear Congruential Generators.vcxproj", "{DD6FAFA2-55F8-4921-989F-E2D0C2694F9B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -935,6 +937,10 @@ Global
 		{B18ECF88-9158-4637-A65E-20F66D7BF763}.Debug|Win32.Build.0 = Debug|Win32
 		{B18ECF88-9158-4637-A65E-20F66D7BF763}.Release|Win32.ActiveCfg = Release|Win32
 		{B18ECF88-9158-4637-A65E-20F66D7BF763}.Release|Win32.Build.0 = Release|Win32
+		{DD6FAFA2-55F8-4921-989F-E2D0C2694F9B}.Debug|Win32.ActiveCfg = Debug|Win32
+		{DD6FAFA2-55F8-4921-989F-E2D0C2694F9B}.Debug|Win32.Build.0 = Debug|Win32
+		{DD6FAFA2-55F8-4921-989F-E2D0C2694F9B}.Release|Win32.ActiveCfg = Release|Win32
+		{DD6FAFA2-55F8-4921-989F-E2D0C2694F9B}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
