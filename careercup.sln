@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
-VisualStudioVersion = 12.0.21005.1
+VisualStudioVersion = 12.0.30501.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{969402F9-56B0-4CA0-B515-515DEDA859E7}"
 	ProjectSection(SolutionItems) = preProject
@@ -322,6 +322,10 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "dozerg - Smallest Number with N Divisors", "dozerg - Smallest Number with N Divisors\dozerg - Smallest Number with N Divisors.vcxproj", "{B18ECF88-9158-4637-A65E-20F66D7BF763}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Indeed - Linear Congruential Generators", "Indeed - Linear Congruential Generators\Indeed - Linear Congruential Generators.vcxproj", "{DD6FAFA2-55F8-4921-989F-E2D0C2694F9B}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "cities distances", "cities distances\cities distances.vcxproj", "{2D098983-3708-4950-8B8A-DD1471C50556}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Indeed - Appropriate Contact Network", "Indeed - Appropriate Contact Network\Indeed - Appropriate Contact Network.vcxproj", "{A9DF6ABE-4E21-4246-9D0C-7A7FF06778ED}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -941,6 +945,14 @@ Global
 		{DD6FAFA2-55F8-4921-989F-E2D0C2694F9B}.Debug|Win32.Build.0 = Debug|Win32
 		{DD6FAFA2-55F8-4921-989F-E2D0C2694F9B}.Release|Win32.ActiveCfg = Release|Win32
 		{DD6FAFA2-55F8-4921-989F-E2D0C2694F9B}.Release|Win32.Build.0 = Release|Win32
+		{2D098983-3708-4950-8B8A-DD1471C50556}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2D098983-3708-4950-8B8A-DD1471C50556}.Debug|Win32.Build.0 = Debug|Win32
+		{2D098983-3708-4950-8B8A-DD1471C50556}.Release|Win32.ActiveCfg = Release|Win32
+		{2D098983-3708-4950-8B8A-DD1471C50556}.Release|Win32.Build.0 = Release|Win32
+		{A9DF6ABE-4E21-4246-9D0C-7A7FF06778ED}.Debug|Win32.ActiveCfg = Debug|Win32
+		{A9DF6ABE-4E21-4246-9D0C-7A7FF06778ED}.Debug|Win32.Build.0 = Debug|Win32
+		{A9DF6ABE-4E21-4246-9D0C-7A7FF06778ED}.Release|Win32.ActiveCfg = Release|Win32
+		{A9DF6ABE-4E21-4246-9D0C-7A7FF06778ED}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
