@@ -2131,3 +2131,166 @@ deseases within 2-3 seconds.
 http://www.mitbbs.com/article_t1/JobHunting/32772225_0_2.html
 Given an int array A[], define: distance=A[i]+A[j]+(j-i), j>=i. Find max 
 distance in A[]?
+
+
+
+给定一个二叉树，所有的节点值（包括中间，叶子节点）有可能重复，题目要求找出所
+有的没有重复节点的子树（包括叶子节点，这个算作一个节点的子树）。
+e.g.
+    3
+  2    4
+1 5   7 2
+总共有6个这样的子树，即除了3之外，所有的节点所对应的子树都符合要求。
+cb20082856 (海地民工):
+不是大牛，来个naive的方法吧：
+后续遍历二叉树，
+建一个哈希表 key是root节点，value是这颗树的所有节点的值 包括root，
+没访问一个节点，看他左右子树哈希表值有没有重复，有的话就不符合，
+然后再把左右子树的set merge 加上他自己作为这个节点的值放到哈希表里，
+比如说 节点4 左边是 7 右边是 2 没有重合，符合要求， 然后把 4 2 7 座位一个set
+放到哈希表里
+节点3 左边 1 2 5 右边 4 7 2 有重合 不符合要求， 然后把3 1 2 5 4 7作为 节点3 
+的set，
+因为是post order所以可以保证 左右孩子都算完了再算父节点，
+复杂度n2
+
+
+
+我的面试总结(FLGT+UPASD)和伪面经
+基本都面完了，前一段刚注册了一个帐号，上来发文，大概说下自己的经历，抛个砖头
+，希望对大家有用，也祝愿大家都能找到满意的工作。有NDA就不说onsite具体题目了
+，感觉也没什么必要说，会大概说说面到的知识点，可能比较乱，大家将就着看。
+基本情况：fresh cs phd, 找的都是SE的工作，为啥不找教职或者research lab这里就
+不讨论了. FLGT(2 offers, 1家withdraw, 1家简历被刷), startups UPASD(2 offers,
+2家电面挂，1家没申请)
+pros：背景还不错，都是top school, GPA高。。(fresh貌似公司还是会稍微看看这个)
+cons: 没有intern经验是硬伤，PhD期间，上完课后代码写得不多
+package还没开始谈，initial offer都差不多200k+的样子，大公司hr明确表示等我都
+面完了可以谈, startup都是late stage, 股票都是十万分之5-10, 感觉不好谈。LD目
+前在一家大公司，说其实先去大公司几年也不错，比较稳定，貌似股票refresh也可能
+不错，work/life balance比较好。我自己是想去startup, 但是究竟现在去还是大公司
+里先办绿卡，积累几年经验再去，也是有些纠结的，目前倾向于去其中一家startup，
+主要concern是hr说主要办Eb2，绿卡可能不方便走EB1b，另外package也希望能谈高一
+些。
+准备：周围同学有准备1，2天coding就上的，我主要是平时代码写得不多，coding要热
+身一下。programming exposed和cc150看了一遍，没有动手写，leecode动手写了，半
+年前过了一遍，找工作前又过了一遍。Research也简单准备了下，怎么说high level 
+idea, 我自己没怎么讲details, 感觉面试官都会问下potential应用之类的问题。
+design看了下几篇文章，知道个大意，google的mapreduce, file system, big table,
+fb的memcache, unicorn。其他看到过的觉得还不错的design资料，最后一个常见题目
+汇总可以过过看，很有帮助:
+http://blog.csdn.net/v_july_v/article/details/7382693
+https://www.youtube.com/watch?v=-W9F__D3oY4 
+http://www.mitbbs.com/article_t/JobHunting/32741713.html
+另外建议稍微准备下常见数据类的写法(包括generic programming), 我倒是没碰到其
+他一些concurrency, database, NP-hard之类的题目.
+如果说有什么经验教训的话，我个体采样样本感觉就是要找refer!
+我的offer都是找refer投简历的，1家大公司免了phone interview. 2家startup面试的
+时候面
+试官都超级热情, 相反两家电面就挂了的startup是自己网投的，可能是对比强烈，明
+显感觉得出面试官语气比较冷淡, 谈话会让人略微不舒服，也可能是我自己修为不够，
+题目倒不难，没想到结果是据信(1家说不match,1家不给feedback)。
+面试时，对不同的部分我的基本步骤是
+1.coding: 
+(a) 先确保理解了题意，然后一边想一遍描述思路，coding前和面试官confirm，这时
+候要是面
+试官有其他想法会和你交流，或者给你hint，从中你可以大概知道他们脑子里预定的解
+法.
+(b) coding 
+(c) test case (corner cases, negative&positive cases。。。): 一个是确保你自
+己写对了，没有粗心之类的错误。另外有时也是一个考察点，这个看时间，大概说说其
+实也可以，也有些面试官会直接说不用了，挺好的。
+2.design: 其实这部分我没怎么准备，基本就是凭感觉和常识扯蛋，面试前很紧张这部
+分，其实后来觉得这部分大多数面试可能都是表现不错，和面试官聊得很开心，可能是
+对fresh要求不高吧。
+我自己给自己定的步骤如下
+(a) 分析需求和给个要考虑问题的outline: 可以画画大概前端，后端之类的，然后数
+据流啊啥的，这个时候我一般是针对问题本身，但是会提到scale的问题作为一点以后
+讨论，不过有的时候scale小和大的方案会不同，所以中间会有一些back and forth
+(b) 根据outline预留的问题开始一个个讨论解决方案, 比如算法，数据结构，
+tradeoff
+(c) 一般会有一个估算的问题，比如这个问题多少用户，数据多少字节，算法处理时间
+...不确定的数据可以问他是否这个估计make sense
+(d) 根据前面的估算，小scale的时候一个机器就可以解决(不同的问题可能要考虑
+cache, memory, disk, cpu)；大scale的时候怎么办？vertical/horizontal scaling,
+数据怎么partition, load balancer, index server, backup for single-point 
+failure, consistency, sharding。。。。。知道什么说什么，可能是fresh, 面试官
+倒是没大追根究底为难我。
+(e) 只有一家公司让我最后编程实现一个核心的算法，不难，不过这时候时间不够了，
+最后就是一个伪代码的思路
+面试伪面经：
+公司A： 
+电面(华人马内基：needle in haystack, sqrt(double)：binary search, 因为是
+double需要
+考虑精度，然后boundary细心些)
+onsite: 
+1. 小印：edit distance简化版，用双指针iterate，中间让我做了几个小改进，比如
+constant 
+space(我偷懒，没有iterate到底); 数组里找数，binary search的经典题, 当时还剩
+10分钟，还要留5分钟问问题，小印让我只描述算法，当时犹豫了下要不要快速写掉，
+但是怕一急出bug；应该最后没难为我。
+2. 华人马内基: expression matching类的经典题, recursion和dp的方法各写一遍，
+分析复杂度
+3. 东欧人: design常见题
+4. 老美: thesis research + 最后5分钟1题小编程...
+公司B：免了电面
+onsite: 这家一般是白板，但是那天拿了一台笔记本给我用，不过我怕新机器打字不习
+惯，还是白板。
+1. 华人：几何直线常见题，略微变形：没啥算法，数据结构用hashmap就可以了，直线
+的表示我用了点斜式，面试官想让我用斜截式，省一个返回参数，其实一样，最后
+output返回直线的时候，转换一下就好了。cache的设计: 我扯到了这是一个online问
+题，解决hit，miss，很多heuristic, 常见的是LRU, 有一个所谓的理论保证, 然后实
+现思路，数据结构，算法，没让我写.
+2. 老美： design
+3. 老美： 排列组合常见题，有略微变形，用recursion, backtracking就可以了
+4. 不明国籍美女： thesis research，面试官超短裙。。hot。。
+5. 前苏联加盟共和国： 常见题 binary search; sorting相关的题目，但是需要
+linear time, 要么heap，伪代码实现了下，要么用那个NB的5个一堆的quick sort，后
+一个我说了算法，没让
+我证明和实现. http://www.cs.rit.edu/~ib/Classes/CS515_Spring12-13/Slides/022-
+SelectMasterThm.pdf
+公司C：
+电面：华人校友 两道tree的问题；第二题没时间了，就描述了思路, 太久了，忘了题
+了，记得不难.
+onsite:
+1. 华人：实际问题，没有什么算法，但是数据结构要想下，用到一个固定长度array的
+循环查找更新；
+2. 东欧人：实际问题，本质是给定会议起止时间，最多需要几个会议室的问题，然后
+有一个扩展是海量数据，需要按照时间partition怎么办，因为一个会议可能跨越多个
+partition，有个小trick, 需要不同partition间传递参数.
+3. 老美： dp经典题目，不难；还有一个类似log hit的实际问题，描述思路，没让写
+code
+4. 华人： design常见题
+公司D:
+电面：华人校友 recoverBinaryTree from preorder and inorder，需要在网上运行程
+序，写test case时需要顺便实现tree的traversal
+onsite:
+1. 老美： 一个简单的数据结构类，需要用generic programming
+2. 老美： DP问题，就是直线上jump的经典问题，但是加了扩展，有速度，有限的加速
+度，需要小心构造dp的表格，其实本质一样，然后描述下扩展到多维的情况。但是。。
+。。面试官觉得dp太复杂。。。。然后我写了recursion，但是说这个要exponential，
+然后就僵持了，我说你让我用recursion但是还要polynomial time，这个怎么可能，那
+我肯定要存中间结果啊，那不就是dp么，中间略过我快崩溃的不知道多久时间，然后面
+试官说你phd啊，本科的东西忘了呀，memorization, 我瞬间明白他要让我存中间输入
+参数到输出结果的映射，说了下，宾主尽欢。。他说dp的dimension不好，用hashmap是
+linear的结构，简单明了，我只好狗腿的附和。然后电脑上写个简单的code，test
+3. 华人： thesis research， 问了一道图的遍历的题目，电脑上跑code
+4. 老美： 给了个实际问题，其实最后转换下就是字典查找的问题，可以直接比较，
+linear time，但是如果海量查询的话，还是先把字典建一个trie tree, 然后让我实现
+trie tree的查找，不用construct.
+公司E和F电面：
+马内基: 电话聊天
+越南人:类似tree traversal的问题，输出root到某个node的路径.
+华人: 给一个file system, 让找到里面文件内容一样的所有文件，分开存储返回文件
+路径，比如输出vector<vector<string>>, inner的vector里存同一个内容的所有文件
+路径，给了几个辅助函数，isfile判断是否文件还是文件夹，readfile是一个读取文件
+内容的函数. 我假设文件读出来的是string, 用了tree traversal+hashmap做的，不知
+道是不是有其他方法. 
+
+
+
+Given a array of positive integers, find all possible triangle triplets that
+can be formed from this array.
+eg: 9 8 10 7
+ans: 9 8 10, 9 8 7, 9 10 7, 7 8 10
+Note : array not sorted, there is no limit on the array length
