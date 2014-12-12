@@ -2294,3 +2294,27 @@ can be formed from this array.
 eg: 9 8 10 7
 ans: 9 8 10, 9 8 7, 9 10 7, 7 8 10
 Note : array not sorted, there is no limit on the array length
+
+
+
+就是用1*2的瓷砖铺地，N*M的地板有几种铺法
+现在有点想不通这种情况怎么处理法
+@@^
+**^
+&##
+&aa
+
+
+https://www.quantnet.com/threads/jane-street-interview-question-needing-help.7591/
+1. There are 50 noodles in a bowl. You can tie two ends of either one noodle or two different noodles, forming a nod.
+Q: After 50 nods are tied. What is the expected value of number of circles in the bowl?
+2. There are two dice. The game is as following: two dice will be thrown at once. Adding the number together you will get a number ranging from 2 to 12.
+The probability of getting 12 is 40%, and 6% for getting 2,3,4,5,...11
+Person A and B will need to guess what the number would be. The one who has a closer guess will win.
+Q: A will guess first and then B guess, after they've guessed, two dice will be thrown at once, what number should A guess and what number should be B guess?
+
+
+发个airbnb电面面经，跪求onsite面经
+给一个2d array，要求写一个顺序访问这个2d array的Iterator，包括hasNext()与
+next()。注意2d array的每行中元素的个数可能不一样，也可能为空。followup是写一
+个remove()，注意是remove当前item，不是下一个item。
