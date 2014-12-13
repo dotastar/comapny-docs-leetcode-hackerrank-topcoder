@@ -2318,3 +2318,12 @@ Q: A will guess first and then B guess, after they've guessed, two dice will be 
 给一个2d array，要求写一个顺序访问这个2d array的Iterator，包括hasNext()与
 next()。注意2d array的每行中元素的个数可能不一样，也可能为空。followup是写一
 个remove()，注意是remove当前item，不是下一个item。
+
+
+
+给定一非负整数数组a={a[1], a[2], ..., a[n]}
+a中元素无序，且可能含有重复元素
+定义s = 2^a[1]+2^a[2]+...+2^a[n]
+求3s转换为2进制后1的个数
+要求：时间O(n)，空间O(1)
+提示：直接求2^a[i]可能会overflow
