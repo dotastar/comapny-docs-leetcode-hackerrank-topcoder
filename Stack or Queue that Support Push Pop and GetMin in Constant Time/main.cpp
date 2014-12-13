@@ -1,6 +1,6 @@
 #include "../inc.h"
 
-struct MyStack
+struct MyStack1
 {
     void push(int v){
         stack_.push_back(v);
@@ -49,6 +49,35 @@ public:
     int getMin() {
         return (m_.empty() ? 0 : s_[m_.back()]);
     }
+};
+
+//AC by oj.leetcode.com
+class MinStack3 {
+public:
+    void push(int v){
+        stack_.push(v);
+        if(minStack_.empty() || v <= minStack_.top())
+            minStack_.push(v);
+    }
+    void pop(){
+        if(stack_.empty())
+            return;
+        int v = stack_.top();
+        stack_.pop();
+        assert(!minStack_.empty());
+        if(v == minStack_.top())
+            minStack_.pop();
+    }
+    int top(){
+        return stack_.top();
+    }
+    int getMin() const{
+        if(minStack_.empty())
+            return false;
+        return minStack_.top();
+    }
+private:
+    stack<int> stack_, minStack_;
 };
 
 struct MyQueue
