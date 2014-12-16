@@ -53,6 +53,7 @@ load balancer你会想到 Amazon ELB, F5一类的
 Facebook非常好的技术日志 会讲很多facebook的feature怎么实现的 比如facebook 
 message:https://www.facebook.com/notes/facebook-engineering/the-underlying-
 technology-of-messages/454991608919 建议看看 尤其是准备面facebook的同学
+这有一个facebook talk讲storage的https://www.youtube.com/watch?v=5RfFhMwRAic
 
 8. 一些国内网站上的资料
 http://blog.csdn.net/sigh1988/article/details/9790337
@@ -65,7 +66,15 @@ Eventual Consistency vs Strong Consistency
 Read Heavy vs Write Heavy
 Consistent Hashing
 Sticky Sessions
+Structured Data(uses DynamoDB) vs Unstructured Data(uses S3)http://smartdatacollective.com/michelenemschoff/206391/quick-guide-structured-and-unstructured-data http://stackoverflow.com/questions/18678315/amazon-s3-or-dynamodb
 
+10 给有兴趣深入研究的人看的
+Mining Massive Datasets --讲很多big data和data mining的东西
+Big Data: Principles and best practices of scalable realtime data systems --
+twitter的前员工讲述如何处理实时数据
+
+10 凌乱的资料 随便看看吧
+http://highscalability.com/blog/2013/10/28/design-decisions-for
 == 小结＝＝
 看多了以后 你的最终目标应该是心里有了一个大框架 一个基本的distributed system
 是怎么搭起来的 然后心里有很多if condition 如果要是满足这个条件 我应该用什么
