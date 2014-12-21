@@ -1,3 +1,42 @@
+lz是国内本科转专业的，现在在一所公立大学读书，还有半年cs硕士毕业。
+在阳光谷的雅虎：
+115k的base，10%bonus，价值60k RSU，没有signon
+在山景城的 Tan go：
+125k的base，10%bonus，35k股的期权，没有signon
+在库珀蒂诺的苹果：
+105k的base，10%bonus，价值50k的 RSU，10k的singon
+在圣何塞的贝宝PP：
+120k的base，10%bonus，价值20k的RSU，20k signon
+在红杉城的艺电EA：
+110k的base，10%bonus，股数为700的RSU，10k的 signon
+在三番的销售力S force：
+115k的base，10%bonus，价值25k的RSU，10k的singon
+
+
+lz CS master 刚刚毕业，今年运气不太好，intern 遇到极品manager 没拿到fb 的 
+return offer， 还被冻结了一年。 google linkedin 面的都挺好但是都没offer。FLG
+都没机会去了现在。最后拿了3个大公司的offer， bloomberg， amazon， paypal。
+细节是 :
+Bloomberg: 
+115k base + 10k relocation + 10% bonos  组未定
+Amazon：consumer service team , seattle
+100k base + 58k RSU (5% first year, 15 % second year, 20% every following 6 
+months) + 44K sign on /2year + 10k reimbursement of relocation
+Paypal: team 名字记不得了， 但是是做fraud transaction detection
+105k base + 15k sign on / first year + 12k RSU (25% every year) + 7.5 
+relocation(cash) + 10% bonos / every year
+
+
+
+本人现在在Qualcomm (San Diego), salary $110000 + 10% bonus
+Google offer : base $132000 + 15% bonus + 320 GSU
+
+
+拿到了houzz家的offer, 140K base, Option按照当前估价减去行权价是750k/4年。
+我现在在FLG中的一家干了两年，base也是140K，股票按当前股价来算有90+K/年。但是
+目前干得略不爽。
+
+
 国内老码农。小硕10年经验。在国内面了个大西雅图地区的offer。
 base:   160K
 bonus:  target 20%
@@ -75,3 +114,5 @@ title "senior dev", 弯曲
 2. 雅虎 110K base，30K RSU，10% target bonus。
 雅虎的offer明显要好，而且好像雅虎的绿卡政策也比投行要好。但感觉投行比雅虎要
 稳定，雅虎给人一种风雨飘摇的感觉。大家觉得该怎么选择？谢谢
+
+

@@ -2504,3 +2504,60 @@ message queue里面，coordinator取出结果然后sumAll.
 
 
 http://www.quora.com/What-is-the-distributed-algorithm-to-determine-the-median-of-arrays-of-integers-located-on-different-computers
+
+
+G家题讨论： harry potter 走矩阵
+假设你是harry potter，在grid的左上角，你现在要走到右下角，grid中有
+正数也有负数，遇到正数表示你的strength增加那么多，遇到负数表示strength减少那
+么多，在任何时刻如果你的strength小于等于0，那么你就挂了。在一开始你有一定的
+初始的strength，现在问这个初始的strength最少是多少，才能保证你能够找到一条路
+走到右下角。每一步只能向右或者向下。
+
+
+
+Google面经
+1，一个graph旋转90度，求新图
+2，设计实现jigsaw puzzle
+3，tree的一个基本题，写next function
+4, 一堆随机数字，求最长的连续数字的长度
+5，evolving canvas
+
+
+
+面经总结
+Google( ~5000):
+https://www.evernote.com/shard/s224/sh/577d79e4-ed20-4de0-9afb-289a3a3b6f60/
+15a796b781d633650be821142b8ca9a1
+Facebook (~200): 
+https://www.evernote.com/shard/s224/sh/0a805f7b-c3e5-4b87-9932-0a854207d9e5/
+fe2a5388fd04fc687045127ef727847c
+LinkedIn(~30):
+https://www.evernote.com/shard/s224/sh/623608cf-dac6-41be-ac32-d8b54861e81c/
+d7aa2b23705156cbc36551c2b8257adc
+Palantir(~40):
+https://www.evernote.com/shard/s224/sh/777939bc-9644-452b-af4f-9d38a6aec56a/
+4b622d4c5c12bd8b835b0f3615324414
+Dropbox (~10):
+https://www.evernote.com/shard/s224/sh/1e53d2de-20b2-4087-a6fc-ad95b85a0214/
+e1262a76fc2ef6a8455ebab1fa19a36a
+
+
+RocketFuel
+http://get-that-job-at-google.blogspot.com/2013/02/rocketfuel-codesprint-at-iit-bombay.html
+godking ：
+给你举个例子：
+25134 作为输入
+这个结果应该是 
+push_back 1 -> push_back 2 -> pop_back 2 ->
+push_back 5 -> push_front 3 -> push_front 4->
+pop_back 1 ->pop_back 3 ->pop_back 4
+
+假设你已经维护了一个堆栈到当前状态
+front - > end:  1, 下个输入 3
+如何决定push 前还是后？
+在原来输入顺序里，3是在1的后面的，所以要保证pop 1在3前，只能push 3在front。
+那么现在 堆栈状态： 3，1
+基于这个原则：
+1) 如果当前数字的原始顺序在back的前面 =〉push_back 保证先输出
+2) 如果当前数字的原始顺序在front的后面 =〉push_front 保证后输出
+如果与两个规则抵触即， 在back和front的中间，不可能。直接返回：
