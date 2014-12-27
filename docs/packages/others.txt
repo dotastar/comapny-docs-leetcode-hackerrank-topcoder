@@ -1,3 +1,16 @@
+报offer，fresh，pure storage
+offer是他们家标准的fresh package
+base 115K, sign on 10K, 15000 stock options
+
+
+刚毕业在找码农的工作
+现在有两个offer, 一个是yahoo的, 115k base 在硅谷，好像是communication组的，
+统招，月底deadline，不给extend；
+另外一个是微软的，105k在西雅图那边，active directory $ security 组，1月初
+deadline，recruiter也不肯延的样子。
+
+
+
 lz是国内本科转专业的，现在在一所公立大学读书，还有半年cs硕士毕业。
 在阳光谷的雅虎：
 115k的base，10%bonus，价值60k RSU，没有signon

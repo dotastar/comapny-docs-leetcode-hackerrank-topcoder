@@ -1858,7 +1858,6 @@ k-sum: 给定一个数组A, A中无重复数字,且都是正整数,k,target是某两个给定数,求A
    
 Pure Storage面经
 总共面了四轮：
-
 第一轮：定义buddy system为一棵complete binary tree。一个node可能为0也可能为1
 . 它的
 value为1，当且仅当它所有的child的value均为1.
@@ -1869,20 +1868,16 @@ value为1，当且仅当它所有的child的value均为1.
 1     2       3     4
 |     |      |    | 
 1 2  3 4    5 6  7 8
-
 实现下列的method。
 1' clearBit(int offset, int len);
 2' setBit(int offset, int len);
-
 第二轮：设计一个task dispatching system，里面有一个task queue和两个function。
 1’ trigger。这个function运行并清空task queue中所有的tasks。
 2‘ addTask。在trigger之前把task加入task queue，在trigger之后直接运行task。
-
 第三轮：产生一个圆上的所有坐标。不用sqrt, sin, cos等内建函数。
 提示：所有的点都是整点。首先我们可以利用对称性把圆分成8块，先画出0-45度角内
 的点，然后映射之。对于其中0-45度角中的点，当X＋1时，Y的值或者不变或者－1，然
 后放入圆方程中看哪一个是对的。
-
 第四轮：设计一个Map<Integer, Integer>，满足下面的复杂度。
 add: O(1)  deletion: O(1)  lookup: O(1)  clear:O(1)  iterate: O(number of 
 elements)。
@@ -2560,3 +2555,90 @@ front - > end:  1, 下个输入 3
 1) 如果当前数字的原始顺序在back的前面 =〉push_back 保证先输出
 2) 如果当前数字的原始顺序在front的后面 =〉push_front 保证后输出
 如果与两个规则抵触即， 在back和front的中间，不可能。直接返回：
+
+
+
+给定一个数字数组 ,其中每个元素是从末端数小于原数组中该元素的个数。求原数组。
+原数组中元素是 从1到n。Example:
+原数组4, 1, 3, 2
+Count array 3, 0, 1, 0
+考古发现这个帖子里面有些讨论，但不是很懂：
+http://www.weiming.info/zhuti/JobHunting/31903469/
+另外最近G家也考了这一题：
+给一个数组a[n]，
+令s[i]为a[i+1..n-1]中比a[i]大的数的数量。求最大的s[i]。要求O(nlogn)
+
+
+
+T家电面经
+1) design:
+设计一个metadata service，用在持续集成环境中, 用于接收和广播各个build 
+service push过来的状态和信息。
+设计API (should be RESTful) ,  data model, etc.
+(==> 应该类似于zookeeper的设计思路，只是restful ...)
+2) coding:
+合并两颗文件树：
+Dir1
+  a1.txt
+  a2.txt
+  DD
+    a3.txt
+Dir2
+  b1.txt
+  DD
+    b2.txt
+  EE
+    b3.txt
+合并成: (同名子目录需要合并成一个)
+Dir3
+  a1.txt
+  a2.txt
+  b1.txt
+  DD
+    a3.txt
+    b2.txt
+  EE
+    b3.txt
+	
+	
+	
+问一题Google onsite
+有若干个盒子，每个盒子有length和width，不考虑高度。只要尺寸fit，大盒子就可以
+放小盒子，但是一层只能套一个，即便还有空余；但可以多层嵌套。求最小的面积放所
+有的盒子
+比如 7*7  5*5, 4*6, 3*3
+答案是7*7+4*6
+感觉要用DP
+求大牛给个解法
+
+
+http://www.mitbbs.com/article_t1/JobHunting/32803907_0_1.html
+发个L家面经
+打印一个数的所有乘数组合，从大到小，不要有重复
+24=2*2*2*3
+  =2*3*4
+  =2*12
+  =3*8
+  =4*6
+  =...
+cb20082856:
+List<List<Integer>> factorCombination(int n) {
+        List<List<Integer>> result = new ArrayList<List<Integer>>();
+        dfs(n, 2, result, new ArrayList<Integer>());
+        return result;
+    }
+    void dfs(int n, int start, List<List<Integer>> result, List<Integer> sub
+) {
+        if(n == 1) { 
+            result.add(new ArrayList<Integer>(sub));
+            return;
+        }
+        
+        for(int i = start; i <= n; i++) {
+            if(n % i != 0) continue;
+            if(i == n && sub.isEmpty()) continue;
+            sub.add(i);
+            dfs(n / i, i, result, sub);
+            sub.remove(sub.size() - 1);
+        }
+    }
