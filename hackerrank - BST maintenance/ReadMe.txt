@@ -1,6 +1,8 @@
-Consider a binary search tree T which is initially empty. Also, consider the first N positive integers {1, 2, 3, 4, 5, ¡­.., N} and its permutation P {a1, a2, ¡­, aN}.
+http://codeforces.com/blog/entry/12982
 
-If we start adding these numbers to the binary search tree T, starting from a1, continuing with a2, ¡­ (and so on) ¡­, ending with aN. After every addition we ask you to output the sum of distances between every pair of T¡¯s nodes.
+Consider a binary search tree T which is initially empty. Also, consider the first N positive integers {1, 2, 3, 4, 5, ..., N} and its permutation P {a1, a2, ., aN}.
+
+If we start adding these numbers to the binary search tree T, starting from a1, continuing with a2, ... (and so on) ..., ending with aN. After every addition we ask you to output the sum of distances between every pair of T¡¯s nodes.
 
 Input Format
 The first line of the input consists of the single integer N, the size of the list.
