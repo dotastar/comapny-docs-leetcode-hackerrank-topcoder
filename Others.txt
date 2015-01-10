@@ -2642,3 +2642,51 @@ List<List<Integer>> factorCombination(int n) {
             sub.remove(sub.size() - 1);
         }
     }
+    
+    
+    
+Groupon一个店面题. sort with 3 stacks.
+sorting with 3 stacks.
+all numbers are initially in stack one. 
+no other space allowed.
+回答了一个O(N^2)的方法, 要问一个更小的.
+uba:
+It's basically a merge sort. O(nlogn).
+
+
+
+1.有个很大很大的文件， 每一行是一句话。有可能有重复的话。
+如何设计一种算法，能达到如下目的
+（1）找出只出现一次的句子
+（2）找出类似的句子。 （类似的定义是：两个句子只相差一个单词但是相同的单词
+顺序需要一样。  比如"I love you" 和 "I love", "I love him", "I love you two"
+都可以算作是类似的句子）
+题目并没有说需要分布式算法还是单机算法。
+2. 有很多很大的文件，文件中每一行是一个正整数。 所有文件中，数字的总
+数量是Y。 所有这些数字的数值范围是[1,X]，可能有重复。  （换句话说，如果每一
+个数字都不一样的话那么X==Y，但是实际情况可能是X接近于Y）
+如何设计分布式算法，找到最小的没有出现的数？ 
+3. 给一个字符串S，如何在S的前端加最少字符使得S成为一个回文？只能在前端加，不
+能在中间或者后端加。
+
+
+
+请教一道Groupon的题目
+写一个function，对于参数n，输出从0到n之间所有含5的数字。
+func(30) 应该输出5，15，25
+这道题除了一个个数字的检查以外，还有什么更efficient的解法吗？
+sprinter:
+用递归，基本思路是，
+考虑第i位的数字，取得值可以是0-9；唯一要注意的是最后一位数字，如果5没有出现
+过，只能取5.
+
+
+
+请教FB on-site 面试题
+1. Parse a formula string (only contains "+-()", no "*/"), for example,   “
+5 + 2x – ( 3y + 2x  - ( 7 – 2x) – 9 ) = 3 + 4y”, parse this string, with
+a given float of ‘x’ value, output a float for ‘y’ value.
+http://www.fgdsb.com/2015/01/08/parse-formula/
+2. Calculate the max area of a colored map. design a data structure yourself.
+3. Architecture design. design data structure, let your friends and friends'
+friends shown to you. (two level far).
