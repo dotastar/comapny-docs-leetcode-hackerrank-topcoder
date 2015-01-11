@@ -2690,3 +2690,111 @@ http://www.fgdsb.com/2015/01/08/parse-formula/
 2. Calculate the max area of a colored map. design a data structure yourself.
 3. Architecture design. design data structure, let your friends and friends'
 friends shown to you. (two level far).
+
+
+http://www.mitbbs.com/article_t/JobHunting/32854141.html
+我忘了是F家还是G家的了，当时没仔细看大家的讨论，这两天做lintcode,竟然和这题
+重逢了，看了半天一点思路也没有，不知有没有大神愿意指点一下，动态方程应该怎么
+写？
+题目：
+Given an integer array, adjust each integers so that the difference of every
+adjcent integers are not greater than a given number target.
+If the array before adjustment is A, the array after adjustment is B, you 
+should minimize the sum of |A[i]-B[i]| 
+例子
+Given [1,4,2,3] and target=1, one of the solutions is [2,3,2,3], the 
+adjustment cost is 2 and it's minimal. Return 2.
+luckier80:
+My solution should be correct. It prints the followings when you run the 
+code
+
+min cost = 2
+B = 1   2    2    3    
+
+public class MinAdjustment {
+
+    public int[] adjust(int[] A, int target) {
+        // state: cost[i][v] - the total cost of changing A[i] to v, where v
+belongs to [0, max]
+        // init: cost[0][v] = |A[0] - v|;
+        // function: cost[i][v] = min(cost[i-1][v - target ... v + target]) 
++ |A[i] - v|
+        //           where v, v - target and v + target all belong to [0, 
+max]
+        // result: min(cost[A.length - 1][v])
+
+        int[] B = new int[A.length];
+
+        int max = Integer.MIN_VALUE;
+        for(int i = 0; i < A.length; i ++)
+            if(A[i] > max) max = A[i];
+        int range = max + 1;
+
+        int[][] cost = new int[A.length][range];
+        for(int i = 0; i < range; i ++)
+            cost[0][i] = Math.abs(A[0] - i);
+
+        for(int i = 1; i < A.length; i ++) {
+            int currentMinCost = Integer.MAX_VALUE;
+            for(int v = 0; v < range; v ++) {
+                // calculate the min cost for changing A[i] to v
+                cost[i][v] = Integer.MAX_VALUE;
+                for(int diff = -1 * target; diff <= target; diff ++) {
+                    int v1 = v + diff;
+                    if(v1 < 0) continue;
+                    if(v1 > max) break;
+                    int tempCost = cost[i-1][v1] + Math.abs(A[i] - v);
+                    if(tempCost < cost[i][v]) cost[i][v] = tempCost;
+                    if(tempCost < currentMinCost) {
+                        currentMinCost = tempCost;
+                        B[i-1] = v1;
+                    }
+                }
+            }
+        }
+
+        // resolve the value of B[A.length - 1], i.e. the last element of B
+        int lastMinCost = cost[A.length - 1] [0];
+        B[A.length - 1] = 0;
+        for(int v = 1; v < range; v ++) {
+            if(cost[A.length - 1][v] < lastMinCost) {
+                lastMinCost = cost[A.length - 1][v];
+                B[A.length - 1] = v;
+            }
+        }
+
+        System.out.println("min cost = " + lastMinCost);
+        return B;
+    }
+
+    public static void main(String[] args) {
+        MinAdjustment sol = new MinAdjustment();
+        int[] A = {1,4,2,3};
+        int[] B = sol.adjust(A, 1);
+        System.out.print("B = ");
+        for(int b : B) System.out.print(b + "\t");
+    }
+}
+
+
+
+http://www.mitbbs.com/article_t/JobHunting/32744847.html
+问道G家的题
+Abbreviation: apple can be abbreviated to 5, a4, 4e, a3e, …
+    Given a target string (internationalization), and a set of strings, 
+return the minimal length of abbreviation of this target string so that it 
+won’t conflict with abbrs of the strings in the set. 
+“apple”, [“blade”] -> a4 (5 is conflicted with “blade”)
+“apple”, [“plain”, “amber”, “blade”]  ->  ???
+Problem changed to:
+If given a string and an abbreviation, return if the string matches abbr.
+“internationalization”, “i5a11o1” -> true
+后半道是正常的string processing, 问题是前半道毫无头绪，跪求思路!
+
+
+
+http://www.mitbbs.com/article_t/JobHunting/32711257.html
+find kth element in n*n sorted matrix
+O(n) is doable. But I need O(n lgn) and the code.
+O(n) algorithm
+http://www.cse.yorku.ca/~andy/pubs/X+Y.pdf
