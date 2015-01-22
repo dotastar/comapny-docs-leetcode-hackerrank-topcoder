@@ -2798,3 +2798,16 @@ find kth element in n*n sorted matrix
 O(n) is doable. But I need O(n lgn) and the code.
 O(n) algorithm
 http://www.cse.yorku.ca/~andy/pubs/X+Y.pdf
+
+
+
+FB面经里面的，没想明白怎么做，望各位大牛赐教。
+1， 给一个string，比如UAXXBAUB，给一个pattern，比如AB，返回包含pattern的最短
+substring，结果是AUB,考虑pattern是有序的。
+      就是Minimum Window Substring的有序版，主要考虑的是找到window后shrink到
+底怎么做，有好几种情况。比如"UAXSSXSXAAUB", "XXA"，找到XSSXSXA之后shrink窗口
+，得把leftBound前进到第2个X。
+2， 给一个int array，有正有负， 给一个target number，找出这个array里有没有连
+续的几个数之和等于target number 要用O(n) time
+      感觉是DP，但是没什么头绪。
+3,  给一个字典，可以组合任意个单词，怎么找到最长的可能的palindom
