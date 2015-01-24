@@ -2811,3 +2811,14 @@ substring，结果是AUB,考虑pattern是有序的。
 续的几个数之和等于target number 要用O(n) time
       感觉是DP，但是没什么头绪。
 3,  给一个字典，可以组合任意个单词，怎么找到最长的可能的palindom
+
+
+
+问一个G家面试题
+一个int[ ]里面只有一个int出现偶数次，其它的都出现奇数次，求这个出现偶数次的
+int，用bit op做
+
+
+
+有一个graph，每个node有自己的weight。如何找出subgraph， 让subgroup所有node的
+weight和为k.
