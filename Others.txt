@@ -2822,3 +2822,29 @@ int，用bit op做
 
 有一个graph，每个node有自己的weight。如何找出subgraph， 让subgroup所有node的
 weight和为k.
+
+
+
+Google
+最大的感受就是他家的题库真大！onsite两次了，只有一道题是见过的。
+电面：一位国人大哥。只做了一道题：给我一个string of nested ternary 
+operations例如a?b?c:d:e，让我build a tree：root是a，左子树是b?c:d对应的tree
+，右子树是e。保证input都是valid的。这题用recursion的话非常容易写。但我当时不
+知道发什么神经，坚持iterative更好写。结果花了半个小时死活写不出来。最后眼看
+时间不多了，赶紧把recursion写了。当时以为一定挂了。可后来还是拿到了onsite。
+真的非常感谢这位大哥。
+第二轮是个感觉挺smart挺干练的白人小伙，让我implement BigInt class和add 
+method。算法上也是没有难度的题目。可明显考点在于implementation上的
+engineering issue，例如两个很接近INT_MAX的数相加时overflow该怎么处理。
+第四轮是个经验很丰富的白人大叔。没考算法。先让我介绍自己做过的project，然后
+让我设计一个类似netflix的online movie streaming的system。最后让我挑一个
+google product来improve
+第五轮是个很好玩的白人胖小哥。还没讲题目就告诉我说他要考engineering details
+。第一道题目很简单就是求moving window average，但很抠细节。写完第一遍之后反
+复improve了不少地方。然后第二道感觉是偏数值计算的问题：让我对很多个（say 10 
+trillion）个大小相近的double求和。不需要写code。因为实在没做过这方面的东西，
+跟他讨论了好久才明白有普通的直接一个一个加有什么问题：当加到一定数目之后，比
+如加完前1 trillion个数，再加下一个的时候，因为前面的sum的量级比新加这个数大
+很多。结果新加的数就会被rounding掉，导致sum不再改变。明白了问题所在之后就简
+单了，先两两相加，再把结果两两相加。。。repeat到完成。这样就能保证每次都是相
+同量级的两个数相加。
