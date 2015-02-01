@@ -2848,3 +2848,44 @@ trillion）个大小相近的double求和。不需要写code。因为实在没做过这方面的东西，
 很多。结果新加的数就会被rounding掉，导致sum不再改变。明白了问题所在之后就简
 单了，先两两相加，再把结果两两相加。。。repeat到完成。这样就能保证每次都是相
 同量级的两个数相加。
+
+
+一个boolean矩阵，判断是否有四个true点可以组成矩形.
+另一个题目 平面上n个点 有没有一个axis align的矩形用其中4个做顶点
+
+
+FB电面
+shift all zeros to right of array
+http://www.mitbbs.com/article_t/JobHunting/32876621.html
+
+
+
+Consider this string representation for binary trees. Each node is of the 
+form (lr), where l represents the left child and r represents the right 
+child. If l is the character 0, then there is no left child. Similarly, if r
+is the character 0, then there is no right child. Otherwise, the child can 
+be a node of the form (lr), and the representation continues recursively. 
+For example: (00) is a tree that consists of one node. ((00)0) is a two-node
+tree in which the root has a left child, and the left child is a leaf. And 
+((00)(00)) is a three-node tree, with a root, a left and a right child. 
+Write a function that takes as input such a string, and returns -1 if the 
+string is malformed, and the depth of the tree if the string is well-formed. 
+For instance: 
+find_depth('(00)') -> 0 
+find_depth('((00)0)') -> 1 
+find_depth('((00)(00))') -> 1 
+find_depth('((00)(0(00)))') -> 2 
+find_depth('((00)(0(0(00))))') -> 3 
+find_depth('x') -> -1 
+find_depth('0') -> -1 
+find_depth('()') -> -1 
+find_depth('(0)') -> -1 
+find_depth('(00)x') -> -1 
+find_depth('(0p)') -> -1
+yrqls21: 感觉就是一边扫一边check是不是valid，然后用算深度最深的括号有几层
+
+
+Google Onsite
+一组字符串，求所有彼此之间无公共字符的两两组合中，两字符串长度乘积的最大值
+http://www.mitbbs.com/article_t/JobHunting/32868775.html
+http://www.quora.com/Given-a-dictionary-of-words-how-can-we-efficiently-find-a-pair-words-s-t-they-dont-have-characters-in-common-and-sum-of-their-length-is-maximum

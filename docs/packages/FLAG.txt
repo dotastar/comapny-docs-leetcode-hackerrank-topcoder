@@ -1,3 +1,10 @@
+Google Offer, 是不是lowball了
+刚收到HR 给的compensation Model让我看看，110K base， +15% bonus，RSU 250/4，
+signon没说还不知道有没有。
+我是藤校EE Master+ 非谷歌的MFLAGT两年工作经验，大家说我这个package是不是
+Lowball了？还有这个是Level 3还是Level 4的package？
+
+
 本人CS master + 2 年工作经验。面试题没啥新内容，见leetcode和HiredinTech. 现
 在收到了口头offer: 130k base, 10% bonus, 180 k RSU, 10k sign on. 求有经验的
 大牛们点评一下这个offer怎么样，还有怎样negotiate比较合理？
