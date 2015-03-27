@@ -1,3 +1,28 @@
+F和T的Offer求比较
+T家SDE II，package四年平均每年大概200k
+缺点：
+去的组不是公司核心组，比较偏support
+公司前途不是特别明朗，用户数增长缓慢，股价不稳定
+优点：
+title高，钱多点
+公司员工不多，或许成长能快点
+FB的level 3，package四年平均每年187k左右
+缺点：
+level比T低，package比T小
+人已经很多了，individual impact会比较小
+据说活比较多
+优点：
+公司发展相对稳定
+还有选组机会
+
+
+
+T和G选哪个
+SDE2 VS T4
+24.5 VS 24 total package 不过T的只是口头，G的已经敲定
+ads VS shopping express
+
+
 问个GOOGLE的T4 PACKAGE
 MS,1年FLT。
 145, 10K, 500股。
