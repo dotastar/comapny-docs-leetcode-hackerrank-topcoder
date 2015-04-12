@@ -1,3 +1,14 @@
+数学PHD，中间读了个cs的master，今年夏天毕业，现在手上有两个SDE的offer， 真心
+求比较~
+1. Bloomberg：NYC总部，还没选组。package是 base 117.5k + bonus 17.5k + 
+relocation 10k. 为了赶上今年H1B申请，offer一下来就签了，今年的H1B也file上了。
+2. Amazon：西雅图， SDE1. 不知道为什么走的不是校招，能选的组就是面试我的两个
+组：Personalization Data Services Team 和 Digital Store Platform Team。 如果
+有大牛了解这两个组，给点建议呗。 正式offer要等选了组才发，现在HR给开的价钱是
+base 105k + signon 38k(2 years) + 160 share 股票 （4 years） + relocation 
+10k。 不知道有没有negotiable的余地，比我Bloomberg的package还要低~
+
+
 FLG offer range 求科普 （T5/senior或staff/E5 level)
 面经比较多,最近工作面试很忙,一两周内整理开新帖放出,请见谅。
 请指点下 FLG offer range（T5/senior或staff/E5 level) 以及构成。未来一两周有
