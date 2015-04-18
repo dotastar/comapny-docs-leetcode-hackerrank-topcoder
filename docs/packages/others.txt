@@ -1,3 +1,33 @@
+报个ZENEFITS PACKAGE吧(Thu Feb 19 19:16:36 2015, 美东)
+BASE 140K 7500 OPTIONS STRIKE 5.5
+不到万分之4
+18个月内无BONUS 保险非免费 无401K （说今年可能会有）
+觉得7500太少 应该还是算了。感谢板上lubyfall的帮助，我混买买提少，没什么伪币
+，下周去三番请你吃饭：）
+
+
+问个zenefit offer（Fri Apr  3 23:52:26 2015, 美东）
+说给3万option，strike 2-2.5. 现在每股值10刀。硕士＋10年经验
+是不是给得很少？总共才24万4年。这样每年才6万左右的股票。拿其他startup的
+option，怎么也能每年给价值于10-15万的股票啊。而且那个烙印owner感觉很会忽悠，
+很能堪。这个公司工作怎么样？是血汗工厂么？owner体恤，value员工么？
+我有个zenefits offer不如你这个。 15k option + 140k base. 本科4年经验。 hr说
+股票最近1分10 所以版内原来的offer option你放大10倍看。 按10刀一股，这公司估
+到了2.6B了.
+
+
+问一下Wepay的Offer(Fri Apr 17 20:01:37 2015, 美东)
+本人new grad。今天收到Wepay的Offer，base是115k, options 10k。HR告诉我他们的
+估值有2b了？可是我在网上查不到啊？？面试的过程中我觉得他们的员工很好，但是感
+觉目前技术偏前端，我自己的背景则偏系统底层。HR也非常nice。目前他们有20几个
+engineer吧，我同学说这个情况下他们给我的股票其实偏少，我的股票数只占0.02%。
+这样的Offer算什么水平？感兴趣的同学可以投一下他们家。工作环境挺不错的，他们5
+月底就要把office搬到RedWood City了。华人和阿三的比例类似吧。里面有个叫
+Terrence的华人超级nice。另外Raymond Ng也很好。他是从LinkedIn的infrastructure
+team过来的，之前在LinkedIn是做Graph Database的东西。目前他们没有专门的
+infrastructure组，但看的出来这块在这边会越来越重要。
+
+
 小弟是EE master，毕业一年了，自学CS终于找到工作，不知道offer该怎么选，请大家
 给点意见
 Bloomberg（NYC）：SDE，103k base + 10k bonus + 10k relocation. package是同届
